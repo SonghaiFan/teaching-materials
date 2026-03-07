@@ -1,19 +1,8 @@
 ---
-theme: default
+theme: apple-basic
 title: FIT5196 - Data Wrangling
-layout: cover
-info: |
-  ## FIT5196 Slide Template
-  Lincoin tutoring style - minimal & Klein Blue
-highlighter: shiki
-drawings:
-  persist: false
-transition: slide-left
 ---
 
-<style>
-@import './styles/lincoin-theme.css';
-</style>
 
 # FIT5196 Data Wrangling
 
@@ -111,22 +100,6 @@ layout: default
 | 任务一 | 基础练习 | 20% |
 | 任务二 | 综合应用 | 30% |
 | 任务三 | 项目作业 | 50% |
-
----
-layout: default
----
-
-# Mermaid 流程图
-
-```mermaid
-flowchart TB
-    A[开始] --> B[处理]
-    B --> C[结束]
-    
-    style A fill:#ffffff,stroke:#002FA7,stroke-width:2px
-    style B fill:#ffffff,stroke:#002FA7,stroke-width:2px
-    style C fill:#ffffff,stroke:#002FA7,stroke-width:2px
-```
 
 ---
 layout: default

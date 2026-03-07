@@ -1,19 +1,12 @@
 ---
-theme: default
+theme: apple-basic
 title: FIT5196 - Week 1 辅导
 layout: cover
-info: |
-  ## FIT5196 Week 1
-  课程要求 + 作业安排 + Python/Jupyter 入门
 highlighter: shiki
 drawings:
   persist: false
 transition: slide-left
 ---
-
-<style>
-@import '../styles/lincoin-theme.css';
-</style>
 
 # FIT5196 Data Wrangling
 
@@ -110,37 +103,27 @@ layout: default
 | In-class Participation | 5% | 课堂活动 | 若干周 seminar | 个人 |
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # 每个作业考什么
 
-<div class="card-grid card-grid-2 mt-6">
+### Assessment 1 — EDA
 
-<div class="card">
-  <div class="eyebrow">Assessment 1</div>
-  <h3 class="font-bold text-lg mt-2">EDA</h3>
-  <ul class="text-sm mt-3">
-    <li>读取和提取数据</li>
-    <li>做基础预处理</li>
-    <li>做 exploratory data analysis</li>
-    <li>使用合适的可视化</li>
-    <li>总结 raw / processed data 的发现</li>
-  </ul>
-</div>
+- 读取和提取数据  
+- 做基础预处理  
+- 做 exploratory data analysis (EDA)  
+- 使用合适的可视化  
+- 总结 raw / processed data 的发现  
 
-<div class="card">
-  <div class="eyebrow">Assessment 2</div>
-  <h3 class="font-bold text-lg mt-2">Parsing, Cleansing, Integrating</h3>
-  <ul class="text-sm mt-3">
-    <li>检查并审计 parsed data</li>
-    <li>识别 lexical errors / irregularities</li>
-    <li>处理 duplication / inconsistency</li>
-    <li>修复并整合多源数据</li>
-  </ul>
-</div>
+::right::
 
-</div>
+### Assessment 2 — Parsing, Cleansing, Integrating
+
+- 检查并审计 parsed data  
+- 识别 lexical errors / irregularities  
+- 处理 duplication / inconsistency  
+- 修复并整合多源数据  
 
 ---
 layout: default
