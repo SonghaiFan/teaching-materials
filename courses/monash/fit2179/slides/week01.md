@@ -1,0 +1,12 @@
+---
+theme: default
+title: FIT2179 - Week 1
+course: FIT2179 - Data Visualisation
+week: 1
+class: text-center
+highlighter: shiki
+drawings:
+  persist: false
+transition: slide-left
+src: ./weeks/week01-intro.md
+---

@@ -4,7 +4,13 @@
   "description": "FIT2179 Data Visualisation - Slidev Course Slides",
   "scripts": {
     "dev": "slidev",
+    "dev:week1": "slidev week01.md",
+    "dev:week2": "slidev week02.md",
+    "dev:week3": "slidev week03.md",
     "build": "slidev build",
+    "build:week1": "slidev build week01.md",
+    "build:week2": "slidev build week02.md",
+    "build:week3": "slidev build week03.md",
     "export": "slidev export --output ./exports/",
     "export-per": "slidev export --per-slide --output ./exports/per-slide/"
   },
