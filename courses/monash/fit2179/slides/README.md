@@ -6,34 +6,15 @@
 
 ```
 slides/
-├── slides.md              # 主入口文件（导入所有周）
+├── slides.md              # 主入口文件（当前作为 AI-friendly template）
 ├── package.json           # Slidev 依赖
-├── components/            # 可复用组件
-│   ├── CodeBlock.vue
-│   ├── DataVizExample.vue
-│   └── WeekHeader.vue
-├── layouts/               # 自定义布局
-│   ├── week-intro.vue
-│   └── exercise.vue
 ├── public/                # 静态资源
 │   ├── images/
 │   ├── datasets/
 │   └── icons/
-├── styles/                # 自定义样式
-│   └── custom.css
-├── weeks/                 # 每周课件
-│   ├── week01-intro.md
-│   ├── week02-data-types.md
-│   ├── week03-tableau-basics.md
-│   ├── week04-visual-encoding.md
-│   ├── week05-interaction.md
-│   ├── week06-color-design.md
-│   ├── week07-narrative.md
-│   ├── week08-evaluation.md
-│   ├── week09-advanced-tableau.md
-│   ├── week10-d3-intro.md
-│   ├── week11-d3-advanced.md
-│   └── week12-wrapup.md
+├── styles/                # 当前启用的全局样式
+│   ├── index.css
+│   └── monash-theme.css
 └── exports/               # 导出 PDF（不提交 Git）
 ```
 
@@ -58,68 +39,58 @@ npm run build
 
 ### Monash Slidev 模版
 
-当前项目已经补了一组可复用的 Monash 风格 layout，放在 [layouts](./layouts)：
+当前模板推荐 **built-in layouts first**：
 
-- `monash-cover`：黑底封面，右侧 Monash 风格装饰栏
-- `monash-section`：章节切换页
-- `monash-default`：标准内容页
-- `monash-split`：左文右图或左图右文
-- `monash-end`：收尾 / Q&A 页面
-- `monash-bottom-graphic`：带底部图形条的内容页
-- `monash-vertical`：右侧竖排标题页
+- 优先使用 Slidev 内建 layout，例如 `cover`、`default`、`two-cols`、`image-right`、`section`、`statement`、`end`、`none`
+- 页面层面的微调优先放在 markdown 里，用 `class:`、局部 `<style>`、HTML 和 utility classes 完成
+- 只有当一个页面壳会在很多 deck 里重复出现时，才考虑新增自定义 layout
 
-为了和 `week3_pptx` 的 PowerPoint 母版对齐，也补了更贴近原始母版名的 Slidev layout 别名：
+样式入口在 `styles/index.css`，主题定义在 `styles/monash-theme.css`。
 
-- `title-slide-6` -> `Title Slide 6`
-- `title-content-side-pic` -> `Title and Content Side pic`
-- `title-content` -> `Title and Content`
-- `title-content-bottom-graphic` -> `Title and Content bottom graphic`
-- `vertical-title-text` -> `Vertical Title and Text`
-- `section-header` -> `Section Header`
-- `thank-you` -> `Thank You`
+当前主题已经收敛为 **AI-friendly** 的薄样式层：
 
-样式入口在 `styles/index.css`，主题定义在 `styles/monash-theme.css`，示例文件在 `week03-pptx-style.md`。
+- 全局只定义字体、logo、cover image、背景和基础排版
+- AI 可以在具体 slide 中自由使用 Markdown、HTML 和 Tailwind/UnoCSS utility classes
+- 具体美术风格尽量写在 markdown 文档里，用局部 HTML 和 utility classes 完成
+- 除非一个视觉模式会在多个 deck 重复出现，否则不要继续往全局样式里加 helper class
 
 示例：
 
 ```md
 ---
-layout: title-slide-6
-subtitle: Data Visualisation Fundamentals and Tableau Introduction
-date: 09/08/2023
-presenter: Songhai (Frank) Fan
+layout: default
+class: compact-slide
 ---
 
 # FIT2179 Studio Week 3
 
+<div class="max-w-[85%]">
+  Your content here.
+</div>
+
+<style>
+.compact-slide table {
+  font-size: 0.92rem;
+}
+</style>
+
 ---
-layout: title-content-side-pic
-eyebrow: Speaker introduction
+layout: image-right
 image: /images/pptx/image2.jpg
-imageAlt: Songhai (Frank) Fan
 ---
 
 # Introduction
 
-Your content here.
+Use a built-in image layout, then style locally.
 ```
 
-### 每周课件规范
+### 模板使用建议
 
-- 文件名：`week{NN}-{topic}.md`
-- 每节课 8-15 张 slides
-- 包含：学习目标、核心内容、实践练习、总结
-
-### 当前状态
-
-| 周次 | 主题 | 文件 | 状态 |
-|-----|------|------|------|
-| 1 | Introduction to Data Visualisation | week01-intro.md | ✅ 已创建 |
-| 2 | Data Types & Structures | week02-data-types.md | 📝 待创建 |
-| 3 | Tableau Basics | week03-tableau-basics.md | ✅ 已有 |
-| 4-12 | ... | ... | 📝 待创建 |
-
----
+- 默认先选 built-in layout，不要先写新的 `.vue` layout
+- 默认内容页优先用 Markdown + HTML + utility classes 自由排版
+- 用 `class:` 和局部 `<style>` 做单页微调，例如表格密度、两栏间距、局部字号
+- 全局样式负责品牌一致性，不负责替代具体页面设计
+- 美术风格建议直接写在 deck 文档里，例如避免圆角、限制颜色、鼓励扁平化版式等
 
 ## Git 忽略规则
 
@@ -135,5 +106,5 @@ Your content here.
 
 1. 安装依赖：`npm install`
 2. 启动开发：`npm run dev`
-3. 编辑 `weeks/weekXX-xxx.md` 文件
+3. 从 `slides.md` 复制或扩展新 deck
 4. 导出 PDF：`npm run export`
