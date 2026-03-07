@@ -1,0 +1,19 @@
+{
+  "name": "fit2179-slides",
+  "version": "1.0.0",
+  "description": "FIT2179 Data Visualisation - Slidev Course Slides",
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export --output ./exports/",
+    "export-per": "slidev export --per-slide --output ./exports/per-slide/"
+  },
+  "dependencies": {
+    "@slidev/cli": "^0.49.0",
+    "@slidev/theme-default": "^0.49.0",
+    "@slidev/theme-seriph": "^0.49.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.42.0"
+  }
+}

@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Slidev cache
+.slidev/
+
+# Build output
+dist/
+
+# Exported PDFs (generated on demand)
+exports/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
