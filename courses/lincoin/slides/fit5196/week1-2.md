@@ -15,11 +15,12 @@ layout: default
 # 这份课件讲什么
 
 1. 前两周到底在学什么
-2. Week 1 的核心概念与工具要求
-3. Week 2 的八大 wrangling 流程
-4. case study 怎么把概念变成真实任务
-5. Jupyter / pandas 实操重点
-6. quiz 易错点与最终 checklist
+2. 课程要求、assessment 与时间点
+3. Week 1 的核心概念与工具要求
+4. Week 2 的八大 wrangling 流程
+5. case study 怎么把概念变成真实任务
+6. Jupyter / pandas 实操重点
+7. quiz 易错点与最终 checklist
 
 ---
 layout: statement
@@ -42,6 +43,116 @@ layout: default
 - 能按顺序说出 8 个步骤
 - 能判断每个操作属于哪一步
 - 能在 Jupyter 里做最基本的 Python / pandas 操作
+
+</v-clicks>
+
+---
+layout: section
+---
+
+# 课程概览
+
+---
+layout: default
+---
+
+# 这门课到底要求你做什么
+
+| 能力 | 说明 |
+|------|------|
+| Parse data | 读取并解析不同格式的数据 |
+| Assess quality | 判断数据质量，定位问题 |
+| Resolve issues | 修复缺失、错误、重复、不一致 |
+| Integrate data | 合并多源数据并做 enrichment |
+| Document process | 用 notebook / report 记录过程 |
+| Write scripts | 用 Python 写 wrangling 脚本 |
+
+---
+layout: statement
+---
+
+这门课默认你已经会基础 Python。
+
+辅导课会帮你补方法和节奏，不会从零开始教编程。
+
+---
+layout: default
+---
+
+# 你现在至少要会这些
+
+<v-clicks>
+
+- Python 基础：变量、list、dict、for loop、function
+- Jupyter：会创建 / 运行 code cell 和 markdown cell
+- 文件处理：知道 CSV、JSON、HTML/XML 是什么
+- Python 包：至少能 import 并使用基础库
+- 结果展示：会把代码输出保留在 notebook 里
+
+</v-clicks>
+
+<div v-click class="callout text-sm">
+如果这些不熟，Week 6 之后的 quiz 和 group assessment 会明显吃力。
+</div>
+
+---
+layout: section
+---
+
+# 作业与时间
+
+---
+layout: default
+---
+
+# Assessment 总表
+
+| 项目 | 权重 | 内容 | 截止时间 | 形式 |
+|------|------|------|----------|------|
+| Quiz 1 | 10% | Applied session MCQ | Week 6 | 个人、线下 |
+| Quiz 2 | 10% | Applied session MCQ | Week 12 | 个人、线下 |
+| Assessment 1 | 35% | Coding + Report + Demo Video | Week 7 周四 23:55 | 小组 |
+| Assessment 2 | 40% | Coding + Report | Week 12 周四 23:55 | 小组 |
+| Presentation | 未单独列权重 | 课堂展示 | Week 15 周一 / 周二 | 小组 |
+| In-class Participation | 5% | 课堂活动 | 若干周 seminar | 个人 |
+
+---
+layout: two-cols
+---
+
+# 每个作业考什么
+
+### Assessment 1 - EDA
+
+- 读取和提取数据
+- 做基础预处理
+- 做 exploratory data analysis
+- 使用合适的可视化
+- 总结 raw / processed data 的发现
+
+::right::
+
+### Assessment 2 - Parsing, Cleansing, Integrating
+
+- 检查并审计 parsed data
+- 识别 lexical errors / irregularities
+- 处理 duplication / inconsistency
+- 修复并整合多源数据
+
+---
+layout: default
+---
+
+# 你需要尽早掌握什么
+
+<v-clicks>
+
+1. `pandas` 基础操作
+2. Jupyter Notebook 写报告
+3. 数据清洗思路：缺失、异常、重复、不一致
+4. 基础可视化
+5. Python 函数和循环
+6. 读懂并处理表格 / 文本 / 网页数据
 
 </v-clicks>
 
@@ -173,6 +284,38 @@ layout: default
 - `for loop` 与 nested `for loop`
 - `function`
 - `transpose_matrix` 练习
+
+---
+layout: default
+---
+
+# Week 1 Applied Session 练习
+
+| 练习 | 要求 |
+|------|------|
+| Markdown 总结 | 写你过去处理过的数据、遇到的问题、怎么处理、学到了什么 |
+| Matrix transpose | 写一个函数，把矩阵行列互换 |
+
+---
+layout: default
+---
+
+# `transpose_matrix` 参考写法
+
+```python
+def transpose_matrix(matrix):
+    rows = len(matrix)
+    cols = len(matrix[0])
+
+    result = []
+    for col in range(cols):
+        new_row = []
+        for row in range(rows):
+            new_row.append(matrix[row][col])
+        result.append(new_row)
+
+    return result
+```
 
 ---
 layout: default
@@ -517,6 +660,40 @@ layout: default
 - “Checking M/F only” -> validation
 
 </v-clicks>
+
+---
+layout: section
+---
+
+# 学习建议
+
+---
+layout: default
+---
+
+# Week 1 必须完成
+
+1. 能打开并运行 Jupyter Notebook 或 Google Colab
+2. 能创建并运行 code cell
+3. 能写 markdown cell
+4. 会写变量、list、dict
+5. 会写 for loop 和 nested loop
+6. 会定义简单函数
+7. 能手写 `transpose_matrix`
+8. 知道 Quiz 1、Assessment 1、Assessment 2 的时间点
+
+---
+layout: default
+---
+
+# 接下来怎么学
+
+| 时间 | 建议 |
+|------|------|
+| 本周 | 把 Python / Jupyter 基础补齐 |
+| Week 2-4 | 跟上 wrangling 流程、regex、EDA |
+| Week 5-6 | 开始为 Quiz 1 和 A1 做准备 |
+| Week 7 后 | 重点转向 parsing / cleansing / integrating |
 
 ---
 layout: section
