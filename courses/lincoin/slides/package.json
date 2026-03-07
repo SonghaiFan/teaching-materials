@@ -9,11 +9,11 @@
     "export-per": "slidev export --per-slide --output ./exports/per-slide/"
   },
   "dependencies": {
-    "@slidev/cli": "latest",
-    "@slidev/theme-default": "latest",
+    "@slidev/cli": "^52.14.1",
+    "@slidev/theme-default": "^0.25.0",
     "@slidev/theme-seriph": "latest"
   },
   "devDependencies": {
-    "playwright-chromium": "^1.42.0"
+    "playwright-chromium": "^1.58.2"
   }
 }
