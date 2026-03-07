@@ -1,74 +1,62 @@
 ---
 theme: default
-title: FIT5196 - Data Visualisation
+title: FIT5196 - Data Wrangling
 layout: cover
 info: |
   ## FIT5196 Slide Template
-  Built-in layouts first, local styling second, new layouts last
+  Lincoin tutoring style - clean and rounded
 highlighter: shiki
 drawings:
   persist: false
 transition: slide-left
 ---
 
-# FIT5196 Data Visualisation
+<style>
+@import './styles/lincoin-theme.css';
+</style>
 
-Teaching slides for FIT5196
+# FIT5196 Data Wrangling
+
+Lincoin tutoring slides
 
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Design rules</p>
+# 设计原则
 
-# What This Template Optimizes For
+本模板设计目标是：
 
-This template is designed to be:
+- **简洁通用** - 覆盖大多数教学场景
+- **灵活可扩展** - 易于针对特定页面调整
+- **视觉一致** - 保持整体风格统一
 
-- broad enough to cover most teaching scenarios
-- thin enough that AI can still invent page-specific compositions
-- stable enough that default decks still look consistent
-
-
-<div class="mt-6 border border-slate-300 bg-white/55 p-4 text-sm">
-Rule: if a visual decision only helps one deck, keep it in markdown or local HTML instead of pushing it into global CSS.
-</div>
-
-<div class="mt-4 border-l-2 border-slate-400 pl-4 text-sm text-slate-600">
-Default recommendation: start with a built-in layout, then use utility classes or local <code>&lt;style&gt;</code> before creating any new layout file.
+<div class="mt-6 card">
+    <p>规则：如果某个视觉决定只适用于一个课件，请将其保留在 markdown 或本地 HTML 中，而不是推送到全局 CSS。</p>
 </div>
 
 ---
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Scenario chooser</p>
+# 布局选择指南
 
-# Which Built-in Layout Should Start From?
-
-| Scenario | Start from | Typical local tweak |
-|----------|------------|---------------------|
-| opening or closing | `cover`, `intro`, `end` | add local spacing or a quiet subtitle block |
-| lecture notes and explanation | `default`, `center` | wrap content in `max-w-*` or add a callout box |
-| screenshot, chart, or diagram | `image-right`, `image-left`, `image` | adjust image fit and scale text block |
-| comparison | `two-cols` | tighten gap, style one side as a panel |
-| section divider | `section`, `statement` | add one short supporting line |
-| quote or big message | `quote`, `fact`, `statement` | tune typography locally |
-| total custom art direction | `none`, `full` | build the whole slide in HTML |
-
-<div class="mt-6 border-l-2 border-sky-700 pl-4 text-sm text-slate-600">
-Keep layout choice simple. Most teaching slides still start from <code>default</code>, <code>two-cols</code>, or an image layout.
-</div>
+| 场景 | 推荐布局 | 本地调整 |
+|------|----------|----------|
+| 开场或结束 | `cover`, `end` | 添加副标题间距 |
+| 讲解内容 | `default`, `center` | 使用卡片包裹内容 |
+| 图文并排 | `image-right`, `image-left` | 调整图片比例 |
+| 对比展示 | `two-cols` | 调整列间距 |
+| 章节分隔 | `section`, `statement` | 添加简短说明 |
+| 引用强调 | `quote`, `fact` | 调整字体大小 |
 
 ---
 layout: two-cols
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Deck map</p>
-
-# Template Map
+# 目录示例
 
 ::right::
 
-<div class="border border-slate-300 bg-white/60 p-4 text-sm">
+<div class="card text-sm">
   <Toc maxDepth="1" listClass="text-sm leading-snug" />
 </div>
 
@@ -76,99 +64,74 @@ layout: two-cols
 layout: section
 ---
 
-# Cover Or Section Break
+# 章节分隔页
 
-Use a built-in section slide when the job is just to reset attention and mark a new phase.
+使用 section 布局标记新的学习阶段
 
 ---
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Scenario 1 - lecture content</p>
+# 标准内容页
 
-# Standard Lecture Page
+这是大多数教学幻灯片的默认模式。
 
-This is the default pattern for most teaching slides.
+- 解释一个概念
+- 列出要点
+- 添加关键总结
 
-- explain a concept
-- give a short list
-- add one key takeaway
+## 为什么有效
 
-## Why it works
+页面简洁、易读，易于使用 HTML 块或工具类扩展。
 
-The page is calm, readable, and easy for AI to extend with HTML blocks or utility classes.
-
-<div class="mt-6 border border-slate-300 bg-white/60 p-4">
-    <p class="mt-2">Use one strong title, one secondary heading, then a small number of bullets or short paragraphs.</p>
+<div class="mt-6 card">
+    <p>使用一个强标题、一个二级标题，然后少量要点或短段落。</p>
 </div>
 
 ---
 layout: two-cols
 ---
 
-# Scenario 2 - Comparison
+# 对比布局示例
 
-When the page is really about comparing two ideas, the built-in `two-cols` layout is usually enough.
+当页面真正需要对比两个概念时，使用 `two-cols` 布局。
 
-- left: concept A
-- right: concept B
-- simple slot syntax
-- no custom layout file needed
+- 左侧：概念 A
+- 右侧：概念 B
+- 简单的插槽语法
+- 无需自定义布局文件
 
 ::right::
 
-<div class="border border-slate-300 bg-white/60 p-5 text-sm">
-  <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Comparison block</p>
-  <p class="mt-3">This slide is only using a built-in layout plus a local class for tighter spacing.</p>
-</div>
-
----
-layout: image-right
-image: https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Scenario 3 - image walkthrough</p>
-
-# Image-First Explanation
-
-Use this when the visual is part of the teaching logic:
-
-- software interface walkthrough
-- chart critique
-- diagram explanation
-- before and after comparison
-
-<div class="mt-6 border border-slate-300 bg-white/55 p-4 text-sm">
-If the image is secondary, switch back to <code>default</code> and place the image manually inside a local grid.
+<div class="card text-sm">
+  <p class="tag mb-2">对比块</p>
+  <p>此幻灯片仅使用内置布局加本地类进行紧凑间距调整。</p>
 </div>
 
 ---
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Scenario 4 - data or rubric</p>
+# 表格示例
 
-# Table, Checklist, or Rubric Page
+内置 `default` 布局适用于表格，只需本地调整紧凑样式。
 
-The built-in `default` layout works fine for tables if you tighten the table locally instead of inventing a new global component.
+| 项目 | 用途 | 权重 |
+|------|------|------|
+| 论坛发帖 | 批判练习 | 2% |
+| 课堂任务 | 实践应用 | 3% |
+| 项目作业 | 深度综合 | 25% |
 
-| Item | Purpose | Weight |
-|------|---------|--------|
-| Forum post | critique practice | 2% |
-| Studio task | in-class application | 3% |
-| Project work | deeper synthesis | 25% |
+## 实际应用场景
 
-## Practical use cases
-
-- assessment breakdown
+- 评估 breakdown
+- 任务清单
 
 ---
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Scenario 5 - interactive explanation</p>
-
-# Built-in Components Still Fit
+# 交互组件
 
 <div class="grid grid-cols-2 gap-6 items-start">
 
@@ -176,47 +139,47 @@ layout: default
 
   <VClicks>
 
-  - reveal steps one by one
-  - control pacing in class
-  - reduce clutter on dense slides
+  - 逐步揭示内容
+  - 控制课堂节奏
+n  - 减少密集幻灯片的杂乱
 
   </VClicks>
 
-  <div class="mt-6 border border-slate-300 bg-white/60 p-4 text-sm">
+  <div class="mt-6 card text-sm">
     <VSwitch>
-      <template #1>State 1: introduce the concept</template>
-      <template #2>State 2: compare alternatives</template>
-      <template #3>State 3: land the takeaway</template>
+      <template #1>状态 1：引入概念</template>
+      <template #2>状态 2：对比替代方案</template>
+      <template #3>状态 3：得出结论</template>
     </VSwitch>
   </div>
 
 </div>
 
-<div class="border border-slate-300 bg-white/60 p-4">
+<div class="card">
   <Transform :scale="0.82" origin="top left">
     <table>
       <thead>
         <tr>
-          <th>Component</th>
-          <th>Use</th>
+          <th>组件</th>
+          <th>用途</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>`Toc`</td>
-          <td>agenda and overview</td>
+          <td>议程和概览</td>
         </tr>
         <tr>
           <td>`VClicks`</td>
-          <td>progressive reveal</td>
+          <td>逐步揭示</td>
         </tr>
         <tr>
           <td>`VSwitch`</td>
-          <td>show states</td>
+          <td>展示状态</td>
         </tr>
         <tr>
           <td>`Transform`</td>
-          <td>shrink large content</td>
+          <td>缩放内容</td>
         </tr>
       </tbody>
     </table>
@@ -229,9 +192,9 @@ layout: default
 layout: statement
 ---
 
-Use built-in layouts for emphasis when they are already the fastest way to express the slide.
+当内置布局已经是最快表达幻灯片的方式时，使用它们进行强调。
 
-This is `statement`: one clear teaching takeaway, minimal supporting text.
+这是 `statement`：一个清晰的教学要点，最少的支持文本。
 
 ---
 layout: fact
@@ -239,91 +202,82 @@ layout: fact
 
 # 75%
 
-of layout problems in teaching decks are density problems, not styling problems.
+教学课件中的布局问题大多是密度问题，而非样式问题。
 
 ---
 layout: quote
 ---
 
-"The point of the theme is consistency, not decoration."
+"主题的重点是一致性，而非装饰。"
 
-Theme rule: use `quote` for attributed lines, reflection prompts, or a single voice you want students to pause on.
+使用 `quote` 展示引用语、反思提示或你想让学生暂停思考的一句话。
 
 ---
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Built-in compatibility</p>
-
-# Built-in Layouts That Still Work Well
+# 推荐的内置布局
 
 <div class="grid grid-cols-2 gap-6 text-sm">
 
 <div>
 
-## Recommended built-ins
+## 推荐布局
 
 - `default`
 - `center`
 - `two-cols`
-- `statement`,`quote`,`fact`
-- `image-left`,`image-right`
+- `statement`, `quote`, `fact`
+- `image-left`, `image-right`
 
 </div>
 
 <div>
 
-## Use with care
+## 谨慎使用
 
-- `iframe`, `iframe-left`, `iframe-right`
+- `iframe` 相关
 - `Youtube`
 - `Tweet`
 - `SlidevVideo`
 
-
 </div>
 
 </div>
 
-<div class="mt-6 border border-slate-300 bg-white/55 p-4 text-sm">
-The template does not try to restyle every built-in layout. It only keeps the visual baseline calm enough that built-ins remain usable.
-</div>
-
-<div class="mt-4 border-l-2 border-slate-400 pl-4 text-sm text-slate-600">
-Difference: `statement` is for a strong takeaway, `fact` is for one number or datum, `quote` is for a line you want to attribute or let resonate.
+<div class="mt-6 card text-sm">
+模板不会尝试重新样式化每个内置布局，只保持视觉基线足够简洁，使内置布局保持可用。
 </div>
 
 ---
 layout: two-cols
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Prompting AI</p>
+# AI 提示建议
 
-# What To Tell AI In The Deck
+在 markdown 中直接放入艺术指导。
 
-Put art direction in the markdown itself.
+好的指示：
 
-Good instructions:
-
-- avoid large rounded corners
-- prefer thin borders and flat blocks
-- keep the palette restrained
-- use asymmetry and whitespace
-- make charts and screenshots functional, not decorative
-- favor editorial composition over dashboard clutter
+- 避免大圆角
+- 偏好细边框和平面块
+- 保持配色克制
+- 使用不对称和留白
+- 让图表和截图功能化，而非装饰性
+- 偏爱编辑式排版而非仪表板杂乱
 
 ::right::
 
-Bad instructions:
+不好的指示：
 
-- invent a new global helper class for every page
-- add a new layout file for every variation
-- encode one lesson's styling choices into the theme
+- 为每个页面发明新的全局辅助类
+- 为每个变体添加新布局文件
+- 将单个课程的风格选择编码到主题中
 
 ---
 layout: end
 ---
 
-# Template Ready
+# 模板就绪
 
-Built-in layouts first, local styling second, new layouts last.
+内置布局优先，本地样式其次，新布局最后。

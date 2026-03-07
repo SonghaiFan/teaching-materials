@@ -1,1 +1,6 @@
-/* Additional custom styles for FIT5196 slides */
+/* Lincoin custom styles */
+
+/* Import Lincoin theme */
+@import './lincoin-theme.css';
+
+/* Additional custom styles for Lincoin slides */
