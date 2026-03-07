@@ -7,6 +7,7 @@
     "dev:week1": "slidev week01.md",
     "dev:week2": "slidev week02.md",
     "dev:week3": "slidev week03.md",
+    "dev:week3-pptx": "slidev week03-pptx-style.md",
     "build": "slidev build",
     "build:week1": "slidev build week01.md",
     "build:week2": "slidev build week02.md",

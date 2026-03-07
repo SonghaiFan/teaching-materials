@@ -8,5 +8,6 @@ highlighter: shiki
 drawings:
   persist: false
 transition: slide-left
+css: styles/custom.css
 src: ./weeks/week03-tableau-basics.md
 ---
