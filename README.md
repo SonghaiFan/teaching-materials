@@ -1,73 +1,91 @@
-# 教学协作指南
+# Teaching Slides Repository
 
-## 如何使用这个系统
+This repository contains teaching slide decks for both Monash University courses and external tutoring (Lincoin).
 
-### 1. 规划新课程
+## Folder Structure
 
-告诉我：
-- 课程名称和目标学生
-- 总课时和每周时长
-- 核心知识点
+```
+teaching/
+├── courses/
+│   ├── lincoin/          # External tutoring slides (课外辅导)
+│   │   └── slides/
+│   │       ├── fit5178/  # Example: FIT5178 - Software Design
+│   │       ├── fit5196/  # Example: FIT5196 - Data Visualisation
+│   │       └── ...       # Add new courses as needed
+│   │
+│   └── monash/           # Monash University internal tutor slides (校内tutor)
+│       └── slides/
+│           ├── fit2179/  # Example: FIT2179 - Data Visualisation
+│           ├── fit5196/  # Example: FIT5196 - Data Visualisation
+│           └── ...       # Add new courses as needed
+│
+└── README.md             # This file
+```
 
-我会帮你：
-- 生成完整教学大纲
-- 设计每周 slides 结构
-- 准备代码示例和练习题
+## Two Different Contexts
 
-### 2. 制作单节课件
+### 1. Lincoin (External Tutoring)
+- **Purpose**: Personal tutoring outside of Monash
+- **Location**: `courses/lincoin/slides/<course-code>/`
 
-告诉我：
-- 课程主题
-- 这节课的具体目标
-- 需要多少 slides（建议 8-15 张）
+### 2. Monash (Internal Tutor)
+- **Purpose**: Official Monash University tutoring
+- **Location**: `courses/monash/slides/<course-code>/`
 
-我会生成：
-- 完整的 slides 大纲
-- 每页内容（文字 + 代码）
-- 讲师备注和时间分配
+## How to Add a New Course
 
-### 3. 迭代优化
+### For Monash Courses:
 
-你可以：
-- "这页太复杂，简化一下"
-- "加一个实际案例"
-- "给这个算法配个图"
-- "生成 3 道练习题"
+1. Create a new folder under `courses/monash/slides/`:
+   ```bash
+   mkdir courses/monash/slides/fitxxxx
+   ```
 
-### 4. 导出使用
+2. Copy the template files from an existing Monash course (e.g., `fit2179` or `fit5196`):
+   ```bash
+   cp -r courses/monash/slides/fit2179/* courses/monash/slides/fitxxxx/
+   ```
 
-目前支持：
-- **Markdown 格式**（通用）
-- **纯文本大纲**（粘贴到任何工具）
-- **HTML 格式**（浏览器展示）
+3. Update the following files:
+   - `package.json` - Change name to `fitxxxx-slides`
+   - `slides.md` - Update title and content (this is your slide template)
+   - `slidev.config.ts` - Update base path to `/fitxxxx-slides/`
+   - `README.md` - Update course-specific information
 
-你可以复制到：
-- Google Slides
-- PowerPoint
-- Keynote
-- Canva
+4. Install dependencies and start:
+   ```bash
+   cd courses/monash/slides/fitxxxx
+   npm install
+   npm run dev
+   ```
 
----
+### For Lincoin Courses:
 
-## 示例对话
+1. Create a new folder under `courses/lincoin/slides/`:
+   ```bash
+   mkdir courses/lincoin/slides/fitxxxx
+   ```
 
-**你：** 我要给 Monash FITxxxx 做第 3 周的课件，主题是递归算法，90 分钟。
+2. Copy the template files from an existing Lincoin course.
 
-**我：** 好的，这是 12 张 slides 的结构...
+## Template Reference
 
-**你：** 第 5 页的代码例子太简单了，换个实际的。
+Each course folder contains a `slides.md` file that serves as the template for that specific course. Refer to the `slides.md` in each folder to see the available layouts and styling options for that particular course.
 
-**我：** 已更新，用文件系统遍历作为例子...
+## Common Commands
 
-**你：** 再加 2 道课堂练习题。
+```bash
+# Development
+npm run dev          # Start dev server
 
-**我：** 这是练习题和参考答案...
+# Export
+npm run build        # Build for production
+npm run export       # Export to PDF
+npm run export-per   # Export per-slide PDFs
+```
 
----
+## Notes
 
-## 文件命名规范
-
-- 教学大纲：`syllabus.md`
-- 课件：`week03_recursion_slides.md`
-- 练习：`week03_exercises.md`
-- 答案：`week03_solutions.md`
+- Each course folder is self-contained with its own `node_modules`
+- The `slides.md` file in each course folder is the main template for that course
+- Shared assets can be copied between projects as needed
