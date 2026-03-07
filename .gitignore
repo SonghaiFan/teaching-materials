@@ -9,5 +9,6 @@ package-lock.json
 yarn.lock
 
 # Slidev
-.dist/
 exports/
+**/dist/
+**/node_modules/
