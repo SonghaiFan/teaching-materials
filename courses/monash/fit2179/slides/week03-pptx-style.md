@@ -1,85 +1,75 @@
 ---
 theme: default
 title: FIT2179 Studio Week 3
-css: styles/pptx-theme.css
-class: title-slide
+layout: title-slide-6
+subtitle: Data Visualisation Fundamentals and Tableau Introduction
+date: 09/08/2023
+presenter: Songhai (Frank) Fan
 ---
-
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
 
 # FIT2179 Studio Week 3
 
-<div class="subtitle">
-Data Visualisation Fundamentals & Tableau Introduction
-</div>
-
-<div class="meta">
-Date: 09/08/2023  |  Presenter: Songhai (Frank) Fan
-</div>
-
+---
+layout: section-header
+eyebrow: FIT2179 Studio
+section: Introduction
+lead: This reproduces the PPTX section-header style: large uppercase title, light canvas, restrained grey supporting text, and footer branding.
 ---
 
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
+---
+layout: title-content-side-pic
+eyebrow: Speaker introduction
+image: /images/pptx/image2.jpg
+imageAlt: Songhai (Frank) Fan
+imageFit: contain
+---
 
-## INTRODUCTION
-
-<div class="two-columns-right">
-<div>
+# Introduction
 
 My name is **Songhai (Frank) Fan**.
 
-I'm a PhD candidate in the <span class="highlight">Monash Embodied Visualisation Lab</span>, where we primarily focus on VR and AR data visualisation.
+I'm a PhD candidate in the Monash Embodied Visualisation Lab, where we primarily focus on VR and AR data visualisation.
 
-However, I'm interested in <span class="accent">text visualisation for narratives</span> among news media leveraging LLM.
-
-</div>
-<div>
-
-<img src="/images/pptx/image2.jpg" alt="Avatar" style="border-radius: 8px; max-height: 300px;" />
-
-</div>
-</div>
+However, I'm especially interested in **text visualisation for narratives** among news media leveraging LLM.
 
 ---
+layout: title-content
+eyebrow: Workshop roadmap
+---
 
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
+# Today's Agenda
 
-## TODAY'S AGENDA
-
-<ol class="agenda">
-  <li><strong>Tableau Basics</strong> - Getting started with the interface</li>
-  <li><strong>Data Connection</strong> - Importing and preparing data</li>
-  <li><strong>Visual Encoding</strong> - Marks and channels</li>
-  <li><strong>Hands-on Exercise</strong> - Build your first dashboard</li>
+<ol class="monash-agenda">
+  <li><strong>Tableau Basics</strong>: getting started with the interface</li>
+  <li><strong>Data Connection</strong>: importing and preparing datasets</li>
+  <li><strong>Visual Encoding</strong>: marks and channels</li>
+  <li><strong>Hands-on Exercise</strong>: build your first worksheet</li>
 </ol>
 
 ---
+layout: title-content
+eyebrow: Key concept
+---
 
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
-
-## WHAT IS TABLEAU?
+# What Is Tableau?
 
 Tableau is a powerful data visualisation tool that allows you to:
 
 - **Connect** to various data sources
-- **Explore** data through interactive visualisations  
+- **Explore** data through interactive visualisations
 - **Create** dashboards and stories
 - **Share** insights with others
 
-<div style="margin-top: 2rem; padding: 1rem; background: #f5f7fa; border-radius: 8px; border-left: 4px solid #4472C4;">
-<span class="highlight">No coding required</span> for basic visualisations!
+<div class="monash-callout">
+<strong>No coding required</strong> for basic visualisations, which makes it a strong first tool for studio exercises.
 </div>
 
 ---
+layout: title-content-bottom-graphic
+eyebrow: Footer graphic from PPTX
+---
 
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
-
-## KEY CONCEPTS
+# Key Concepts
 
 ### Dimensions vs Measures
 
@@ -90,23 +80,21 @@ Tableau is a powerful data visualisation tool that allows you to:
 | e.g., Country, Date | e.g., Sales, Temperature |
 
 ---
+layout: vertical-title-text
+eyebrow: Alternative PPTX layout
+verticalTitle: Visual Encoding
+---
 
-<!-- Monash Logo -->
-<img src="/images/pptx/image1.png" class="logo" alt="Monash University" />
+# Marks and Channels
 
-## QUESTIONS?
+- Use this layout when you want the title to live on the right edge, mirroring the PowerPoint `Vertical Title and Text` master.
+- It works well for taxonomy slides, definitions, or dense explanatory notes.
+- The footer and page-number treatment stays consistent with the rest of the deck.
 
-<div style="text-align: center; margin-top: 3rem;">
+---
+layout: thank-you
+speaker: Songhai (Frank) Fan
+contact: songhai.fan@monash.edu
+---
 
-<img src="/images/pptx/image2.jpg" alt="Avatar" style="border-radius: 50%; max-height: 150px; margin-bottom: 1rem;" />
-
-**Songhai (Frank) Fan**
-
-PhD Candidate, Monash University
-
-<span class="accent">songhai.fan@monash.edu</span>
-
-</div>
-
-<!-- Monash Logo at bottom -->
-<img src="/images/pptx/image1.png" class="logo-bottom" alt="Monash University" />
+# Questions?

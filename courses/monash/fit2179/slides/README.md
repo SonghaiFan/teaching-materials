@@ -56,6 +56,54 @@ npm run export
 npm run build
 ```
 
+### Monash Slidev 模版
+
+当前项目已经补了一组可复用的 Monash 风格 layout，放在 [layouts](./layouts)：
+
+- `monash-cover`：黑底封面，右侧 Monash 风格装饰栏
+- `monash-section`：章节切换页
+- `monash-default`：标准内容页
+- `monash-split`：左文右图或左图右文
+- `monash-end`：收尾 / Q&A 页面
+- `monash-bottom-graphic`：带底部图形条的内容页
+- `monash-vertical`：右侧竖排标题页
+
+为了和 `week3_pptx` 的 PowerPoint 母版对齐，也补了更贴近原始母版名的 Slidev layout 别名：
+
+- `title-slide-6` -> `Title Slide 6`
+- `title-content-side-pic` -> `Title and Content Side pic`
+- `title-content` -> `Title and Content`
+- `title-content-bottom-graphic` -> `Title and Content bottom graphic`
+- `vertical-title-text` -> `Vertical Title and Text`
+- `section-header` -> `Section Header`
+- `thank-you` -> `Thank You`
+
+样式入口在 `styles/index.css`，主题定义在 `styles/monash-theme.css`，示例文件在 `week03-pptx-style.md`。
+
+示例：
+
+```md
+---
+layout: title-slide-6
+subtitle: Data Visualisation Fundamentals and Tableau Introduction
+date: 09/08/2023
+presenter: Songhai (Frank) Fan
+---
+
+# FIT2179 Studio Week 3
+
+---
+layout: title-content-side-pic
+eyebrow: Speaker introduction
+image: /images/pptx/image2.jpg
+imageAlt: Songhai (Frank) Fan
+---
+
+# Introduction
+
+Your content here.
+```
+
 ### 每周课件规范
 
 - 文件名：`week{NN}-{topic}.md`

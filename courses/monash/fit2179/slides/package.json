@@ -8,6 +8,7 @@
     "dev:week2": "slidev week02.md",
     "dev:week3": "slidev week03.md",
     "dev:week3-pptx": "slidev week03-pptx-style.md",
+    "dev:week3-opt": "slidev week03-optimized.md",
     "build": "slidev build",
     "build:week1": "slidev build week01.md",
     "build:week2": "slidev build week02.md",
