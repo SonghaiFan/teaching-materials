@@ -12,5 +12,3 @@ yarn.lock
 exports/
 **/dist/
 **/node_modules/
-
-materials/
