@@ -12,88 +12,17 @@ layout: intro
 layout: default
 ---
 
-# 这份课件讲什么
+# 课程安排
 
-1. 前两周到底在学什么
-2. 课程要求、assessment 与时间点
-3. Week 1 的核心概念与工具要求
-4. Week 2 的八大 wrangling 流程
-5. case study 怎么把概念变成真实任务
-6. Jupyter / pandas 实操重点
-7. quiz 易错点与最终 checklist
-
----
-layout: statement
----
-
-前两周的重点不是建模。
-
-重点是先建立一套稳定的 `data wrangling` 思维框架。
-
----
-layout: default
----
-
-# 这两周的学习目标
-
-<v-clicks>
-
-- 知道什么是 `data wrangling`
-- 知道为什么分析前必须先做 wrangling
-- 能按顺序说出 8 个步骤
-- 能判断每个操作属于哪一步
-- 能在 Jupyter 里做最基本的 Python / pandas 操作
-
-</v-clicks>
-
----
-layout: section
----
-
-# 课程概览
-
----
-layout: default
----
-
-# 这门课到底要求你做什么
-
-| 能力 | 说明 |
+| Week | 主题 |
 |------|------|
-| Parse data | 读取并解析不同格式的数据 |
-| Assess quality | 判断数据质量，定位问题 |
-| Resolve issues | 修复缺失、错误、重复、不一致 |
-| Integrate data | 合并多源数据并做 enrichment |
-| Document process | 用 notebook / report 记录过程 |
-| Write scripts | 用 Python 写 wrangling 脚本 |
-
----
-layout: statement
----
-
-这门课默认你已经会基础 Python。
-
-辅导课会帮你补方法和节奏，不会从零开始教编程。
-
----
-layout: default
----
-
-# 你现在至少要会这些
-
-<v-clicks>
-
-- Python 基础：变量、list、dict、for loop、function
-- Jupyter：会创建 / 运行 code cell 和 markdown cell
-- 文件处理：知道 CSV、JSON、HTML/XML 是什么
-- Python 包：至少能 import 并使用基础库
-- 结果展示：会把代码输出保留在 notebook 里
-
-</v-clicks>
-
-<div v-click class="callout text-sm">
-如果这些不熟，Week 6 之后的 quiz 和 group assessment 会明显吃力。
-</div>
+| 1 | Introduction to Data Wrangling |
+| 2 | Data Wrangling Process & Tasks |
+| 3 | Regular Expression |
+| 4-5 | EDA / Data Discovery / Collection |
+| 6 | Data Structuring |
+| 7-11 | Quality, Cleaning, Transformation, Enrichment, Validation |
+| 12 | Advanced Data Wrangling |
 
 ---
 layout: section
@@ -120,9 +49,9 @@ layout: default
 layout: two-cols
 ---
 
-# 每个作业考什么
+# Assessment 1
 
-### Assessment 1 - EDA
+### - EDA
 
 - 读取和提取数据
 - 做基础预处理
@@ -132,12 +61,53 @@ layout: two-cols
 
 ::right::
 
-### Assessment 2 - Parsing, Cleansing, Integrating
+# Assessment 2
+### - Parsing, Cleansing, Integrating
 
 - 检查并审计 parsed data
 - 识别 lexical errors / irregularities
 - 处理 duplication / inconsistency
 - 修复并整合多源数据
+
+
+---
+layout: two-cols
+---
+
+# 上课节奏
+
+- seminar: `Monday 6pm-8pm`
+- seminar 地点：`S7 Lecture Theatre`
+- 每周还有 `2-hour applied session`
+- applied session 时间按 `Allocate+`
+- seminar 讲概念、流程、判断题思路
+- applied session 更偏 notebook / Python / pandas 操作
+- attendance 很重要，尤其 quiz 和 in-class participation 都跟线下节奏强相关
+
+::right::
+
+# 沟通方式
+
+- 讨论优先走 `Ed Forum`
+- 教学团队会定期看 forum
+- 回复可能需要最多 `3 business days`
+- 紧急情况才发邮件
+- 涉及个人情况用 private post 更合适
+
+---
+layout: default
+---
+
+# Quiz 和 Group Assessment 规则
+
+- `Quiz 1` 覆盖 Week 1-6，`Quiz 2` 覆盖 Week 7-12
+- 每次 quiz `30 minutes`
+- 必须 `in-person` 完成 applied session quiz
+- quiz 是个人作业，不允许 collaboration，不应使用 AI
+- quiz 会使用 `Safe Exam Browser`
+- in-class participation 也是跟 seminar 时段绑定的
+- `Assessment 1/2` 是 group work，通常没有 2-day short extension
+- presentation 在 `Week 15`，而且有 hurdle 要求
 
 ---
 layout: default
@@ -145,16 +115,12 @@ layout: default
 
 # 你需要尽早掌握什么
 
-<v-clicks>
-
-1. `pandas` 基础操作
-2. Jupyter Notebook 写报告
-3. 数据清洗思路：缺失、异常、重复、不一致
-4. 基础可视化
-5. Python 函数和循环
-6. 读懂并处理表格 / 文本 / 网页数据
-
-</v-clicks>
+- `Python` 基础：变量、list、dict、for loop、function  
+- `Jupyter Notebook`：写代码、写 markdown、记录分析过程  
+- `pandas` 基础操作：读取、查看和简单处理数据  
+- 数据清洗思路：缺失值、异常值、重复、不一致  
+- 基础数据可视化  
+- 读懂常见数据格式：`CSV`、`JSON`、`HTML/XML`
 
 ---
 layout: default
@@ -217,17 +183,13 @@ layout: default
 
 # 现实中的数据来源
 
-<v-clicks>
-
 - 表格：CSV、Excel、数据库导出
 - 半结构化：JSON、XML、HTML
 - 文本：日志、评论、报告
 - 图像与传感器：医疗影像、wearable devices
 - 开放与平台数据：UCI、Wikipedia、social media
 
-</v-clicks>
-
-<div v-click class="muted mt-4 text-sm">
+<div class="muted mt-4 text-sm">
 重点不是来源越多越好，而是 accessibility、relevance、quality、cost 是否合适。
 </div>
 
@@ -352,7 +314,7 @@ layout: section
 # Week 2
 
 ---
-layout: default
+layout: section
 ---
 
 # 八大任务流程总览
@@ -369,225 +331,185 @@ flowchart LR
 ```
 
 ---
-layout: default
+layout: two-cols
 ---
 
-# 1. Data Discovery
+# 1. Discovery
 
-| 核心问题 | 说明 |
-|----------|------|
-| 数据源在哪里 | 找可用来源 |
-| 能不能拿到 | accessibility |
-| 适不适合目标 | relevance |
-| 质量如何 | quality |
-| 值不值得用 | cost |
+- 先确认要解决什么分析问题
+- 找可能的数据来源，不是立刻下载
+- 评估来源是否可访问、相关、可用
+- 先看 suitability / availability / quality
 
-> Discovery 是 “找什么数据可以用”，不是开始清洗。
+::right::
 
----
-layout: default
----
+# 医疗案例里会找什么
 
-# 2. Data Collection
-
-| 要考虑什么 | 说明 |
-|------------|------|
-| Objectives | 收集目的是什么 |
-| Format | 数据是什么格式 |
-| Volume | 量有多大 |
-| Privacy | 有没有敏感信息 |
-| Budget | 成本能不能承受 |
-| Timeline | 时间是否可行 |
-
-
-> Discovery 是找来源，Collection 是真正收集并规划收集过程。
-
----
-layout: default
----
-
-# 3. Data Pre-processing
-
-| 技术 | 例子 |
-|------|------|
-| Subsetting | 只保留 2000-2010 年记录 |
-| Sampling | 从超大数据中抽样 |
-| Formatting | 日期改成统一格式 |
-| Unit conversion | USD 转 AUD |
-| Text normalization | 大小写、编码、空格统一 |
-
----
-layout: default
----
-
-# 最容易混：Subsetting vs Sampling
-
-| 情况 | 正确术语 |
-|------|----------|
-| 只选某几年、某几列、某一部分记录 | `Subsetting` |
-| 从大量数据中抽一部分代表样本 | `Sampling` |
-
----
-layout: default
----
-
-# 4. Data Cleaning
-
-| 任务 | 说明 |
-|------|------|
-| Missing values | 删除、插补、替换 |
-| Outliers | 识别异常值 |
-| Duplicates | 去重 |
-| Inconsistencies | 统一标签、编码、格式 |
-| Errors | 修正明显错误值 |
-
-> remove duplicates / handle missing values / correct inconsistencies 基本都属于 cleaning。
-
----
-layout: default
----
-
-# 5. Data Transformation
-
-### Numeric
-
-- normalization
-- standardization
-- aggregation
-- discretization
-- binning
-
-### Other structures
-
-- XML to CSV
-- categorical encoding
-- feature engineering
-
----
-layout: default
----
-
-# Transformation 常考对比
-
-| 技术 | 例子 |
-|------|------|
-| Aggregation | 汇总每月消费总额 |
-| Standardization | 均值 0、标准差 1 |
-| Normalization | 缩放到统一范围 |
-| Discretization | `Age -> Youth / Adult / Senior` |
-| Binning | 连续数值分桶 |
-
----
-layout: default
----
-
-# 6-8. Enrichment / Validation / Storing
-
-| 步骤 | 在做什么 | 典型关键词 |
-|------|----------|------------|
-| Enrichment | 给数据补更多上下文 | merge external data, add context |
-| Validation | 检查规则、范围、逻辑 | allowed values, range, uniqueness |
-| Storing | 为后续使用保存和管理 | schema, backup, index, lifecycle |
+- EHR / 电子病历
+- admission / discharge records
+- insurance claims
+- wearable device data
+- patient histories / medications
 
 <div class="muted mt-4 text-sm">
-enrichment 是增加信息；validation 是检查规则；storing 是设计后续可持续使用方式。
-</div>
-
----
-layout: section
----
-
-# Case Study
-
-## 医疗数据：预测病人 30 天内再入院
-
----
-layout: default
----
-
-# 医疗案例中的典型操作归类
-
-| 操作 | 属于哪一步 |
-|------|------------|
-| 找 EHR、医保、wearable data | Discovery |
-| 检查隐私与关键字段是否齐全 | Collection |
-| 统一日期格式、标签格式 | Pre-processing |
-| 删除重复、处理缺失、不一致 | Cleaning |
-| 年龄标准化、分箱 | Transformation |
-| 加 postcode 对应区域 / 收入信息 | Enrichment |
-| 检查年龄范围、ID 唯一性、时间逻辑 | Validation |
-| 设计 schema 与 backup | Storing |
-
----
-layout: section
----
-
-# Pandas 实操
-
----
-layout: default
----
-
-# Week 2 Applied Session 真正在练什么
-
-<v-clicks>
-
-- `import pandas as pd`
-- `pd.DataFrame()`
-- DataFrame 的 index / columns / values
-- `shape`, `dtypes`, `info()`, `describe()`
-- `head()`, `tail()`
-- `read_csv(...)`
-- `isna()`, `dropna()`, `fillna()`
-- 创建新列、合并列
-
-</v-clicks>
-
----
-layout: default
----
-
-# 探索 DataFrame 的最小命令集
-
-```python
-import pandas as pd
-
-df = pd.read_csv("xmart.csv", skiprows=1)
-
-df.shape
-df.columns
-df.dtypes
-df.info()
-df.describe()
-df.head()
-```
-
-<div class="muted mt-4 text-sm">
-目标是先理解“数据长什么样”，再决定后面怎么清洗和处理。
+关键词：identify sources, accessibility, suitability, quality
 </div>
 
 ---
 layout: default
 ---
 
-# 缺失值处理的基础操作
+# 2. Collection
 
-```python
-ufo.isna()
-ufo.isna().sum()
+| 收集前要想清楚 | 为什么 |
+|----------------|--------|
+| objective | 你到底要回答什么问题 |
+| data requirements | 需要哪些字段和粒度 |
+| source / format | 从哪里拿、是什么格式 |
+| quality / volume | 数据够不够、质量稳不稳 |
+| ethics / privacy | 合规、授权、敏感信息处理 |
+| methods / tools | API、database、spreadsheet 还是 web |
+| timeframe / budget | 时间和资源能不能支撑 |
+| documentation | 后面要复现和解释过程 |
 
-ufo1 = ufo.dropna()
-ufo2 = ufo.fillna(value=0)
+---
+layout: default
+---
 
-ufo3 = ufo.copy()
-ufo3["Colors Reported"].fillna("BLUE", inplace=True)
-```
+# 3. Pre-processing
 
-| 关键理解 | 说明 |
+| 常见动作 | 说明 |
 |----------|------|
-| 不是所有缺失值都该删 | 删除可能丢掉太多信息 |
-| 不是所有字段都能填 0 | 要看字段语义 |
-| 处理前最好先复制 | 保留原始版本 |
+| Subsetting | 只保留相关行或列 |
+| Sampling | 数据太大时抽代表性样本 |
+| Date formatting | 统一日期格式 |
+| Numeric formatting | 小数点、千位分隔符统一 |
+| Categorical formatting | `Male/M`、`Female/F` 统一 |
+| Unit / currency conversion | 公里英里、USD/AUD 等统一 |
+| Encoding / timezone | UTF-8、时区对齐 |
+| File conversion | XML 转 CSV，JSON 转结构化表 |
+
+<div class="muted mt-4 text-sm">
+关键词：subset、sample、format、unit、encoding、conversion
+</div>
+
+---
+layout: default
+---
+
+# 4. Cleaning
+
+- 找并修复 `missing values`
+- 检查 `outliers`
+- 删除或合并 `duplicate records`
+- 修正 `consistency issues`
+- 识别 data anomalies
+- 注意 anomaly 不一定只是错误，也可能是新模式或重要信号
+
+<div class="callout text-sm">
+考试里看到 correcting inaccuracies / inconsistencies / duplicates，优先想到 cleaning。
+</div>
+
+---
+layout: two-cols
+---
+
+# 5. Transformation
+
+- 把数据变成更适合分析的结构或表示
+- 常见于 numeric / text / image 三类数据
+- 目标是让后续分析、建模、比较更稳定
+
+::right::
+
+| Numeric 常见操作 | 作用 |
+|------------------|------|
+| Normalization | 缩放到固定范围 |
+| Standardization | 调到均值 0、方差 1 |
+| Aggregation | 求和、均值、分组统计 |
+| Discretization | 连续值切成区间 |
+| Binning / Bucketing | 分桶后变成类别 |
+
+---
+layout: default
+---
+
+# 5. Transformation 还包括什么
+
+| 数据类型 | 常见操作 |
+|----------|----------|
+| Text | tokenization, stemming / lemmatization, vectorization |
+| Image | resize, crop, normalization, colour conversion |
+| Image augmentation | rotation, flipping, translation, noise / brightness / contrast adjustment |
+
+<div class="muted mt-4 text-sm">
+易混点：normalization 和 standardization 不一样；discretization 和 binning 也不要混。
+</div>
+
+---
+layout: default
+---
+
+# 6. Enrichment
+
+| 方式 | 含义 |
+|------|------|
+| Data integration | 合并不同来源数据 |
+| Data augmentation | 给现有记录补更多信息 |
+| Attribute enrichment | 新增特征或属性 |
+| Temporal enrichment | 补充时间维度 |
+| Semantic enrichment | 加 metadata / tag / meaning |
+
+一句话：不是修错，而是让数据“更完整、更有上下文”。
+
+---
+layout: default
+---
+
+# 7. Validation
+
+| 检查项 | 典型问题 |
+|--------|----------|
+| Accuracy | 值是否反映真实世界 |
+| Consistency | 同一字段规则是否统一 |
+| Completeness | 关键值是否缺失 |
+| Logical integrity | 年龄、日期、关系是否讲得通 |
+| Range / constraints | 值域是否超界 |
+| Format validation | 格式是否符合预期 |
+| Uniqueness | 本应唯一的键是否重复 |
+| Cross-validation | 能否用别的数据源交叉验证 |
+
+---
+layout: default
+---
+
+# 8. Storing
+
+| 存储阶段要考虑 | 重点 |
+|----------------|------|
+| Storage solution | database / warehouse / cloud |
+| Schema design | 查询和维护是否方便 |
+| Normalization / denormalization | 完整性 vs 读取效率 |
+| Format / encoding | 存储格式要一致 |
+| Security | 权限、隐私、合规 |
+| Indexing / optimization | 检索速度 |
+| Backup / recovery | 可恢复性 |
+| Metadata / monitoring | 后续治理与维护 |
+
+---
+layout: default
+---
+
+# 用一个例子串起来
+
+1. `Discovery`：找医院再入院预测相关数据源
+2. `Collection`：确认权限、字段、格式、预算、时间
+3. `Pre-processing`：筛时间范围、抽样、统一日期和单位
+4. `Cleaning`：处理缺失、重复、异常和不一致
+5. `Transformation`：聚合、标准化、把文本转成可分析形式
+6. `Enrichment`：补保险、地理、行为或时间信息
+7. `Validation`：检查范围、唯一性、逻辑约束
+8. `Storing`：把结果存进可复用的数据表或仓库
 
 ---
 layout: default
@@ -650,16 +572,12 @@ layout: default
 
 # 典型单选题判断规则
 
-<v-clicks>
-
 - “What is data wrangling?” -> 选把 raw data 变成可分析数据
 - “What is not a goal?” -> 看 increasing complexity / redundancy 这类反项
 - “What comes after discovery?” -> collection
 - “Correcting inconsistencies” -> cleaning
 - “Adding external context” -> enrichment
 - “Checking M/F only” -> validation
-
-</v-clicks>
 
 ---
 layout: section
