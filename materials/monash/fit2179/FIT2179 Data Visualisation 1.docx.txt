@@ -1,0 +1,161 @@
+﻿FIT2179 Data Visualisation, Monash University
+
+
+DATA VISUALISATION 1
+
+
+Semester 1, 2026
+Version history
+* 1.0 (3 March 2026): Initial release
+* 1.1 (3 March 2026): Minor corrections
+Submission
+The submission is due 17 April (Friday of week 6), 11:55 pm. Publish your visualisation with Tableau Public and submit your work on Moodle.
+Introduction
+In this assignment, you design and build an effective data visualisation for a specific domain. This will require you to critically evaluate information in a domain of your choice, develop your own visualization, and tell a story.
+The assignment aims to apply the data visualization methods and techniques discussed during the first six weeks of the semester and demonstrate their use in an innovative context. As such, the visualization should satisfy the following criteria:
+* Why? The visualization addresses a particular need within a specific domain of your choosing.
+* What? It visualises data relevant to the domain.
+* Who? Design your visualisation for the average Australian or Malaysian, depending on whether you are a student at the Clayton or Malaysia campus.
+* The visualisation must transform data into meaningful information and provide insight that would otherwise be difficult or impossible to obtain.
+* It must provide an appropriate level of interactive exploration.
+* It needs to show some innovation. While it does not have to be wholly original, it must not be a replica of an existing visualisation. It could include innovative visualisation idioms, or an innovative exploration of an interesting dataset.
+* The submitted visualisation should adhere to the sketch submitted during the workshop in Week 2.
+* Your submission must demonstrate the use of Munzer’s What/Why/How framework.
+* It must apply design principles discussed throughout the unit, such as data-ink ratio, storytelling, layout, typography and visualisation idioms with appropriate use of marks and channels.
+Task Description
+1. Before the workshop in Week 2, choose a domain that you want to explore. 
+2. Search relevant data that is publicly available.
+3. During the workshop of Week 2, prepare an abstract with a summary of your domain, a list of the datasets (if you have found any), and the sections of the visualisation. Also during the workshop of Week 2, you will sketch your visualisation on an A4 sheet and submit a picture of the sketch and the abstract on Moodle by the end of the Week 2 workshop. Present your abstract and sketch to your tutor in the Week 3 studio to obtain feedback and approval. You may amend your abstract after discussion with your tutor; the abstract will serve as a record of what has been agreed upon. The approval is a hurdle requirement for this assignment: you must obtain formal approval from your tutor before submitting the final visualisation.
+4. Implement your visualisation with Tableau and publish it on the Tableau Public server.
+5. Submit the following on Moodle:
+   1. The public URL to your visualisation[a][b][c][d][e][f] 
+   2. A screenshot of the entire visualisation
+   3. The sketch that was created in the Week 2 workshop.
+   4. A description of the following via a form on the Moodle submission page:
+      1. The domain, the why and the who of the visualisation.
+      2. What: The data (sources, authors, relevance, creation process, etc.).
+      3. How: Give a rationale for choosing the specific idioms and explain how they help users to achieve their tasks. Describe any special features of your visualisation, such as custom-built elements.
+Requirements
+Data: The visualisation must use accurate and reliable real-world data; it must not use fabricated or tampered data. The most recent available dataset should be used. You must combine data from two different sources. Use existing and reasonably clean data; creating datasets or performing data wrangling are not topics covered in this unit and will not result in a higher mark.
+Topic: The topic must be of personal interest to you, such as your hobby, or a topic that you particularly care about and have specialised expertise in. You cannot choose a topic that is unfamiliar to you. The following visualisation topics are not allowed: World happiness, COVID-19, Airbnb, crime in Victoria, road accidents in Victoria, data science salaries, housing prices, university rankings, energy usage, car sales, and electric vehicle sales. In general, the topic must be related to Australia (for students in Australia) or Malaysia (for students in Malaysia). Exceptions to these rules are possible but require approval from your tutor.
+Format: The entire visualisation must be accessible from a single URL on the Tableau Public server. It must be viewable on a single web page that can be scrolled, and the full width of the visualisation must be visible on a small laptop screen without horizontal scrolling. There should be no buttons (or other web links) that swap major sections of the web page, though you may use buttons to show and hide visualisation elements.
+Presentation not exploration: The goal of this assignment is to create a visualisation that communicates interesting information in an easily accessible and graphically engaging way using storytelling elements, layout principles, typography, and graphical design. The goal is not to create an expert tool for exploring and analysing a dataset.
+Audience: The topic must be relevant to and easily understandable by an audience in Malaysia (for students in Malaysia) or Australia (for students in Australia). Avoid jargon and technical terms when possible. If specialised terminology is necessary, introduce and explain these terms. Avoid visualisations that require knowledge of statistics (e.g., understanding standard deviation or confidence intervals), as the general audience is not expected to have such expertise. If statistical concepts are necessary, introduce and explain them.
+Number and complexity of visualisations: Your submission must contain a minimum of ten charts. We are looking for carefully designed and annotated charts. For a D or HD mark, you need to create “creative custom-built idioms”. These are visualisations that cannot be easily created with Tableau with a few clicks, but require creating derived data, or combining various idioms. This Tableau dashboard shows  examples of such visualisations: https://public.tableau.com/app/profile/kevin.flerlage/viz/TheTableauChartCatalog/TableauChartExamples
+Storytelling: The charts combined with text, icons, and pictures should guide the viewer through an interesting story using layout principles, typography, and graphic design principles. Your story needs to be structured in a logical sequence. Avoid pixelated images, unrelated graphical elements, or trivial text. Complement your visualisation with concise, informative, and grammatically correct narrative text that tells a story.
+Interactivity: Interactive features are easy to add in Tableau. Integrate interactivity where it makes sense, but avoid adding interactive elements merely for their own sake.
+Maps: Geographic maps will be required for the second visualisation assignment. For this first visualisation assignment, it is recommended to use non-geographic idioms; geographic maps will be disregarded when marking your submission. 
+Copyright: You are encouraged to use icons and other simple graphical elements where appropriate. As your visualisation will be publicly accessible, it is your responsibility to ensure that you have the right to use data, icons, images, etc. Consult with your tutor if in doubt. You need to indicate the source and URL (if available online) for any external elements you use, such as datasets, photos, articles, academic papers, and other sources of information. There is no need to indicate the source and URL for simple icons, such as emojis, flags, or company logos. The use of AI tools for creating images, text or other elements, must be acknowledged on the submission.
+Authorship: As your visualisation will be publicly accessible, you need to indicate your authorship and date your work. You may choose to release your work under a copyleft license, but this is not a requirement and your choice of license does not influence your mark. 
+Plagiarism: We will follow up on any kind of academic misconduct. For this assignment, you cannot integrate graphics (such as diagrams, charts, information graphics, etc.) created by others. The submission must be your own genuine work. Simply plugging a dataset into an existing Tableau visualisation and making tweaks to layout, typography, colour design, etc. is considered plagiarism.
+Use of Artificial Intelligence
+Generative artificial intelligence (AI) tools can be used for this assignment. Any use of generative AI must be appropriately acknowledged (see Learn HQ). Since grammar and style of text are part of the assessment, you are encouraged to use AI tools to ensure that the text included in the visualisation is grammatically correct and stylistically appropriate. You can also use AI tools to create illustrative figures, get feedback for your layout or any other creative use that helps you build a better visualisation.
+Marking
+This assignment is worth 25% of the final unit mark. A detailed marking rubric is provided on the next page. If the submitted URL does not point to your publicly accessible visualisation, the mark is 0. Remember that maps included in the visualisation will be disregarded when marking. 
+If you change the domain of your visualisation after creating the sketch during the Week 2 workshop, you are required to create another sketch before creating the Tableau visualisation, and submit the new sketch. If your submission does not include a sketch or your sketch is for a different domain, a penalty of -3% is applied.
+Late penalty: 5% per day and a cut-off of seven calendar days.
+________________
+
+
+
+
+
+
+	HD (80–100)
+	D (70–79)
+	C (60–69)
+	P (50–59)
+	N (0–49)
+	Visualisation
+(a) Idioms and complexity
+12%
+	A substantial number of creative custom-built idioms. Demonstrate a high-level of understanding of the use of visual marks and channels.
+	A substantial number of custom-built idioms.
+Demonstrate a good understanding of the use of visual marks and channels.
+	More than 10 idioms (e.g., bar chart, line graph) with one custom-built idiom. Visual marks and channels are applied correctly.
+	10 standard idioms (e.g., bar chart, line graph). Slightly incorrect use of visual marks and channels resulting in difficult to read visualisation.
+	Inappropriate idioms, less than 10 standard idioms, incomplete visualisation. Visual marks and channels not applied correctly (e.g., hue channel for ordered attribute).
+	Visualisation (b) Layout, colour, figure-ground
+4%
+	Balanced and symmetric layout clearly structured in columns/rows with good use of white space. All elements aligned with sight lines. Very clear visual hierarchy by using consistent colour and figure-ground.
+	Balanced and symmetric layout mostly structured in columns/rows with use of white space. Most elements aligned with sight lines. Visual hierarchy by using colour and figure-ground.
+	Somewhat balanced and symmetric layout not consistently structured in columns/rows. Arbitrary use of white space. Some elements aligned with sight lines. Some visual hierarchy.
+	Layout not balanced or not symmetric, no apparent layout structure. Some elements aligned with sight lines. Limited visual hierarchy.
+	Layout not balanced and not symmetric, no apparent layout structure. Most elements are randomly placed. No visual hierarchy by using colour and figure-ground.
+	Visualisation (c) Typography, 3%
+	Advanced typography, (non-standard typeface matching the topic, excellent readability of main text, appropriate line height, size, weight, colour, line length, alignment, spacing of text elements, etc.) 
+	Consistent typography (standard typeface and attention to typography). 
+	Standard typography with minor issues, but still easy to read.
+	Typography with some issues that impact readability of text (e.g., overuse of highlighting, poor or inconsistent spacing of text, centred text blocks, long text lines, etc.) 
+	Inconsistency in fonts, sizes and weights. Typography with poor readability (e.g., inappropriate typeface, poor or inconsistent font size, weight, line lengths, etc.)
+	Visualisation
+(d) Storytelling, annotations, grammar and style 
+5%
+	• Clearly structured and engaging storytelling guides the reader through the visualisation.
+• Extensive use of informative annotations on diagrams and text outside of diagrams.
+• Correct grammar. 
+• Writing is easy to follow and understand. • Metadata (data sources, author, date, etc.) is complete and well formatted.
+	• Storytelling guides the reader through the visualisation. 
+• Use of informative annotations on diagrams and text outside of diagrams. 
+• Correct grammar.
+• Writing is mostly easy to follow and understand. 
+• Metadata is complete and well formatted.
+	• Some guidance of the reader through the visualisation. 
+• Use of coherent annotations on diagrams and text outside of diagrams. 
+• Some grammar issues. • Writing is not always easy to follow and understand, jargon or obscure abbreviations are used.
+• Metadata is complete and well formatted.
+	• Limited guidance of the reader through the visualisation. 
+• Limited amount of annotations on diagrams and text outside of diagrams, with some incoherence. 
+• Grammar issues throughout.
+• Writing is not easy to follow and understand,  jargon or obscure abbreviations are used.
+• Some Metadata is missing or not well formatted.
+
+
+	• No apparent guidance of the reader through the visualisation. 
+• Small number of incoherent annotations on diagrams and text outside of diagrams.
+• Major grammar issues throughout.
+• Writing is difficult to follow and understand,  jargon or obscure abbreviations are used.
+• Metadata is incomplete or poorly formatted.
+
+
+	Description of domain, who, what, why, how 
+2%
+	Domain, who, what, why, how are appropriately and succinctly described. 
+	Domain, who, what, why, how are described with minor issues. 
+	Domain, who, what, why, how are described with major issues.
+	Domain, who, what, why, how are partially described.
+	Substantial aspects of domain, who, what (e.g., data source), why, how are not described. 
+	
+
+
+
+
+
+[a]@bernie.jenny@monash.edu @Pooja.Pancholi@monash.edu Do you think it would be a good idea to add an additional requirement: a screenshot of the entire visualisation? Since students’ Tableau work may display differently on different computers after being published online, our marking would still be based on what appears on the marker’s device, with the screenshot used as a reference.
+_Assigned to bernie.jenny@monash.edu_
+[b]Good point, I added this.
+So students submit 1 URL, 2 images and 1 text in a form.
+Could you please have a look at the Moodle submission page to find out whether any changes are necessary for these four submissions? Is the URL a separate submission box/form or should it be part of the description?
+[c]I just checked Moodle and couldn’t find the form yet. It might be that Pooja hasn’t updated the Moodle submission settings.
+
+
+Alternatively, I wonder if it might be easier to provide a Word template for all students to download. For example:
+Part 1: URL
+Part 2: Domain/What / Why / How
+Part 3: sketch
+Part 4: Final screenshot
+
+
+Students could fill in all the sections, convert the document to a PDF, and submit a single PDF file in the end. Would that work better?
+
+
+I’m not very familiar with how to set up a form in Moodle, so providing a template might be more straightforward. It would also make marking easier, since markers would only need to download one file to review everything.
+[d]@Pooja.Pancholi@monash.edu and @Clair.Pan@monash.edu 
+
+
+Hi Pooja, please see the conversation above. Thanks.
+[e]Hi @Bernie.Jenny@monash.edu @clair.pan@monash.edu 
+
+
+A word template would be a good choice as yes it would make marking easier. I can create a word template with these basic details and upload on Moodle alongside the assignment specs once reviewed. Maybe a page limit would also be good to add here otherwise students may end up taking individual screenshots of each viz separately than the layout as a whole.
+[f]Sounds good! The page limitation is good as well. We can also set the submission type to pdf type only. And any penalty for not using the template?

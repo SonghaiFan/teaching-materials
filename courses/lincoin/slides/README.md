@@ -1,49 +1,47 @@
 # Lincoin Slides
 
-Lincoin tutoring slides using Slidev.
+Lincoin slides follow the same pattern as other institutions in this repo: one Slidev project root per institution, and multiple course decks inside it.
 
-## Structure
+## Directory Structure
 
-```
+```text
 slides/
-├── fit5196/              # FIT5196 Data Visualisation
-│   ├── week1.md          # Week 1: Introduction
-│   ├── week2.md          # Week 2: Data Types and Encodings
-│   └── ...               # Add more weeks as needed
-├── fit5178/              # Other courses
-│   └── week1.md
-└── ...
+├── slides.md              # template / default entry
+├── package.json
+├── public/                # Lincoin shared static assets
+├── styles/                # Lincoin shared styles
+├── fit5196/               # course decks
+│   ├── week1.md
+│   ├── week2.md
+│   └── images/
+└── exports/
 ```
 
-## How to View Slides
+## Structure Rules
 
-Each `.md` file is a complete slide deck. To view:
+- `slides.md` is the institution template or default entry, not the main location for all course content.
+- Real decks live in course folders such as `fit5196/week1.md`.
+- Shared institution branding belongs in `public/` and `styles/`.
+- Course-local figures should stay inside the course folder, for example `fit5196/images/`.
+
+## Development
 
 ```bash
-# Navigate to slides folder
 cd /Users/songhaifan/.openclaw/workspace/teaching/courses/lincoin/slides
 
-# Install dependencies (first time only)
+# install once
 npm install
 
-# Start dev server with specific file
-npm run dev -- week1.md
+# open the template / default entry
+npm run dev
 
-# Or for a specific course week
+# open a specific course deck
 npm run dev -- fit5196/week1.md
 ```
 
-## Creating New Weeks
+## Authoring Guidance
 
-1. Create a new `.md` file in the course folder
-2. Copy the frontmatter from an existing week
-3. Write your slides using Slidev syntax
-4. Run `npm run dev -- <path-to-file>`
-
-## Slidev Commands
-
-```bash
-npm run dev -- <file>      # Start dev server
-npm run build -- <file>    # Build for production
-npm run export -- <file>   # Export to PDF
-```
+- Prefer built-in Slidev layouts first.
+- Keep the institution style in shared files under `styles/`.
+- Keep course-only screenshots and diagrams in the course directory.
+- If multiple Lincoin courses reuse the same asset, then move it to `public/`.
