@@ -114,7 +114,7 @@ layout: two-cols
 
 - is the chart choice sensible for the stated task
 - can the student identify What, Why, and How correctly
-- is there a real critique, not just description
+- is there a real story, not just description
 - is the takeaway specific rather than generic
 
 </VClicks>
@@ -436,32 +436,6 @@ layout: default
 
 <div class="mt-6 border border-slate-300 bg-white/60 p-4 text-sm">
 Use these to discuss scope, storytelling, topic distinctiveness, and how text supports interpretation.
-</div>
-
----
-layout: two-cols
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Week 2 forum task</p>
-
-# Forum Posting For Week 2
-
-<div class="text-sm">
-  <p><strong>Explain in class</strong></p>
-  <ul class="mt-3">
-    <li>what students need to submit</li>
-    <li>where to post it</li>
-    <li>when it is due</li>
-    <li>how it connects to the What, Why, How framework</li>
-  </ul>
-</div>
-
-::right::
-
-<div class="border border-slate-300 bg-white/60 p-4 text-sm">
-  <p><strong>Reminder</strong></p>
-  <p class="mt-3">Forum Posting Week 2 is due Sunday of Week 2.</p>
-  <p class="mt-3">Students should not leave both the forum post and proposal until the same evening.</p>
 </div>
 
 ---
