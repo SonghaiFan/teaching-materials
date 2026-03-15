@@ -64,6 +64,54 @@ mdc: true
 layout: default
 ---
 
+# 符号读法 Symbol Names
+
+- `'`: `single quote` / 单引号
+- `"`: `double quote` / 双引号
+- `` ` ``: `backtick` / 反引号
+- `/`: `slash` / 正斜杠
+- `\`: `backslash` / 反斜杠
+
+补一个很常用的区分：
+
+- 路径 `a/b` 里的是 `slash`
+- 正则里的 `\d`、`\n` 里的是 `backslash`
+
+---
+layout: default
+---
+
+# 常见标点读法 Common Punctuation Names
+
+- `.`: `dot` / 点
+- `,`: `comma` / 逗号
+- `*`: `asterisk` / 星号
+- `^`: `caret` / 脱字符
+- `!`: `exclamation mark` / 感叹号
+- `<`: `less than` / 小于号
+- `>`: `greater than` / 大于号
+- `...`: `ellipsis` / 省略号
+
+---
+layout: default
+---
+
+# 课堂常用说法 Classroom-Friendly Symbol Names
+
+- `?`: `question mark` / 问号
+- `+`: `plus` / 加号
+- `-`: `hyphen` / 连字符
+- `_`: `underscore` / 下划线
+- `:`: `colon` / 冒号
+- `;`: `semicolon` / 分号
+- `()`: `parentheses` / 圆括号
+- `[]`: `square brackets` / 方括号
+- `{}`: `curly braces` / 花括号
+
+---
+layout: default
+---
+
 # 基础匹配 Basic Matchers
 
 <div class="regex-example regex-swap">
