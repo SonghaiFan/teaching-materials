@@ -50,7 +50,7 @@ mdc: true
 }
 </style>
 
-# 正则表达式（Regex）速学与练习
+# 正则表达式（Regex）速学
 
 ## 东亚小孩版本
 
@@ -346,6 +346,30 @@ layout: default
 
 
 `\2` 表示引用第 2 个捕获分组的内容；分组编号按左括号出现的顺序从左到右计算。
+
+---
+layout: default
+---
+
+# Python 示例 Python Example for Backreference `\2`
+
+```python
+import re
+
+text = "ha-ha,haa-haa"
+pattern = r"(ha)-\1,(haa)-\2"
+
+match = re.search(pattern, text)
+
+print(match.group(0))  # ha-ha,haa-haa
+print(match.group(1))  # ha
+print(match.group(2))  # haa
+```
+
+- 第 1 对括号 `(ha)` 是 group 1，所以 `\1` 要求后面再出现一次 `ha`
+- 第 2 对括号 `(haa)` 是 group 2，所以 `\2` 要求后面再出现一次 `haa`
+
+在 Python 的 `re` 里，最好把模式写成 raw string，也就是 `r"..."`；这样 `\1` 和 `\2` 会按正则里的反向引用来解释，而不是被 Python 字符串先处理掉。
 
 ---
 layout: default
@@ -755,6 +779,32 @@ layout: default
 
 
 懒惰匹配会在满足整体匹配成功的前提下，尽可能少地吞掉字符，所以 `.*?` 会优先取最短结果。
+
+---
+layout: default
+---
+
+# Cheat Sheet
+
+- 字面匹配 Literal Match: `abc` 就匹配 `abc`
+- 通配符 Wildcard: `.` 匹配任意单个字符，通常不含换行
+- 字符集 Character Set: `[abc]` 选一个，`[^abc]` 选“不在里面”的一个
+- 范围 Range: `[a-z]`、`[0-9]`
+- 量词 Quantifiers: `*` 0 次或多次，`+` 1 次或多次，`?` 0 次或 1 次，`{m,n}` 重复区间
+- 分组 Grouping: `()` 用来打包、捕获、控制优先级
+- 反向引用 Backreference: `\1`、`\2` 引用前面第 1、2 个捕获分组
+- 选择 Alternation: `a|b` 表示二选一
+- 转义 Escaping: `\.` 匹配句点本身，`\*` 匹配星号本身
+- 锚点 Anchors: `^` 行首，`$` 行尾
+- 简写字符 Classes: `\w` 单词字符，`\d` 数字，`\s` 空白；大写版 `\W \D \S` 表示相反
+- 断言 Lookaround: `(?=...)` 向前看，`(?!...)` 向前不看，`(?<=...)` 向后看，`(?<!...)` 向后不看
+- Flags: `g` 找全部，`m` 让 `^ $` 按多行工作，`i` 忽略大小写
+- 贪婪 / 懒惰 Greedy / Lazy: `.*` 尽量多吃，`.*?` 尽量少吃
+
+记忆提醒：
+- 方括号 `[]` 管“单个字符”的选择，圆括号 `()` 管“一整段模式”的打包
+- `|` 是在模式和模式之间做选择，不是字符集
+- 写 Python 时优先用 `r"..."`，避免反斜杠被字符串先吃掉
 
 ---
 layout: end
