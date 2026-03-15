@@ -1,9 +1,7 @@
 ---
-theme: apple-basic
+theme: excali-slide
 title: FIT5196 Quiz 1 全题真题解析
 layout: intro
-transition: slide-left
-mdc: true
 ---
 
 # FIT5196 Quiz 1
@@ -49,7 +47,7 @@ layout: section
 Jupyter Notebook、Markdown、Python basics
 
 ---
-layout: statement
+layout: intro
 ---
 
 Markdown 格式题不难，但很容易因为粗体 / 斜体 / 列表符号混淆而丢分。
@@ -1232,10 +1230,10 @@ layout: default
 
 For matching IPv4 addresses, which regex is accurate and avoids matching numbers beyond the valid range of 0-255?
 
-- a. \b(0-255){1,3}\.(0-255){1,3}\.(0-255){1,3}\.(0-255){1,3}\b
-- b. [0-9]{1,3}\.([0-9]{1,3}){3}
-- c. \b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b
-- d. \b(\d{1,3}\.){3}\d{1,3}\b
+- a. `\b(0-255){1,3}\.(0-255){1,3}\.(0-255){1,3}\.(0-255){1,3}\b`
+- b. `[0-9]{1,3}\.([0-9]{1,3}){3}`
+- c. `\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b`
+- d. `\b(\d{1,3}\.){3}\d{1,3}\b`
 <v-click>
 
 **参考答案**
@@ -1286,11 +1284,11 @@ layout: default
 
 # Q11
 
-In the regex (?:foo)(foo), what is the difference between (?:foo) and (foo)?
+In the regex `(?:foo)(foo)`, what is the difference between `(?:foo)` and `(foo)`?
 
-- a. (?:foo) matches and captures "foo"; (foo) only matches "foo"
+- a. `(?:foo)` matches and captures "foo"; (foo) only matches "foo"
 - b. Neither captures "foo"; they only match
-- c. (?:foo) only matches "foo"; (foo) matches and captures "foo"
+- c. `(?:foo)` only matches "foo"; `(foo)` matches and captures "foo"
 - d. Both capture "foo" for future use
 <v-click>
 
@@ -1396,7 +1394,7 @@ layout: default
 
 # Q19
 
-What will the regex (?&lt;=\b20)[0-9]{2}\b match in "Graduating in 2025"?
+What will the regex `(?&lt;=\b20)[0-9]{2}\b` match in "Graduating in 2025"?
 
 - a. 2025
 - b. 25
@@ -1426,10 +1424,10 @@ layout: default
 
 Which character escapes special characters in regular expressions?
 
-- a. ^
-- b. $
-- c. |
-- d. \
+- a. `^`
+- b. `$`
+- c. `|`
+- d. `\`
 <v-click>
 
 **参考答案**
@@ -1442,9 +1440,10 @@ Which character escapes special characters in regular expressions?
 
 **解析**
 
-正确项是 `d`: \。它最符合这道题在课程里的定义。
+正确项是 `d`: `\`。它最符合这道题在课程里的定义。
 
 </v-click>
+
 ---
 layout: default
 ---
@@ -1453,10 +1452,10 @@ layout: default
 
 Which of the following is a valid way to match either 'color' or 'colour'?
 
-- a. colo(u|r)
-- b. colou|r
-- c. colou?r
-- d. (color|colour)
+- a. `colo(u|r)`
+- b. `colou|r`
+- c. `colou?r`
+- d. `(color|colour)`
 <v-click>
 
 **参考答案**
