@@ -2,13 +2,6 @@
 theme: default
 title: Data Visualisation Studio 3
 layout: cover
-info: |
-  ## FIT2179 Week 3
-  Marks and channels quiz, forum discussion, and proposal approval
-highlighter: shiki
-drawings:
-  persist: false
-transition: slide-left
 ---
 
 # FIT2179 Data Visualisation Week 3
@@ -60,26 +53,28 @@ layout: fact
 4. Give one strength and one improvement.
 
 ---
-layout: two-cols
+layout: fact
 ---
 
-# Stronger forum posts
+# Stronger Forum Posts
 
-- identify the idiom correctly
-- connect the encoding choice to the task
-- explain a concrete takeaway
-- critique limitations without staying vague
+- Clearly explain **what**, **why**, and **how** using appropriate visualisation terminology.
 
-> Move beyond “looks good” or “easy to understand”.
+- Provide a **critical evaluation** of the chosen visualisation (e.g., effectiveness, limitations, and design choices).
 
-::right::
+> Focus on **professional vocabulary** and **critical thinking**.
 
-# Prompt bank
+---
+layout: fact
+---
 
-1. What is the main comparison or relationship?
-2. Which mark is doing the work?
-3. Which channel is doing the work?
-4. What would make the story clearer?
+# Stronger Forum Posts
+
+- Clearly explain `what`, `why`, and `how` using appropriate visualisation terminology.
+
+- Provide a **critical evaluation** of the chosen visualisation (e.g., effectiveness, limitations, and design choices).
+
+> Focus on `professional vocabulary` and **critical thinking**.
 
 ---
 layout: fact
@@ -378,6 +373,48 @@ layout: two-cols
 4. What is the likely story?
 
 > If the topic is still broad, narrow it before approval.
+
+---
+layout: two-cols
+---
+
+# Common rejected topics
+
+- World happiness
+- COVID-19
+- Airbnb
+- crime in Victoria
+- road accidents in Victoria
+
+::right::
+
+- data science salaries
+- housing prices
+- university rankings
+- energy usage
+- car sales
+- electric vehicle sales
+
+> Exceptions are possible, but they need tutor approval.
+
+---
+layout: two-cols
+---
+
+# Common reasons for rejection
+
+- topic is not tied to average Australia audience
+- only one data source
+- not enough rows or columns to build a strong visualisation
+
+::right::
+
+- map-heavy geographic topic: maps are not marked
+- topic feels too scientific or too expert-facing
+- data quality is weak or unclear
+- no initial data search
+
+> Topic must relate to Australia for Australian students.
 
 ---
 layout: two-cols
