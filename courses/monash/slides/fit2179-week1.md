@@ -42,25 +42,25 @@ class: text-center
 layout: center
 ---
 
-<img src="./images/my_project.png" alt="Research project screenshot page 1" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
+<img src="/images/my_project.png" alt="Research project screenshot page 1" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
 
 ---
 layout: center
 ---
 
-<img src="./images/my_project2.png" alt="Research project screenshot page 2" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
+<img src="/images/my_project2.png" alt="Research project screenshot page 2" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
 
 ---
 layout: center
 ---
 
-<img src="./images/my_project3.png" alt="Research project screenshot page 3" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
+<img src="/images/my_project3.png" alt="Research project screenshot page 3" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
 
 ---
 layout: center
 ---
 
-<img src="./images/my_project4.png" alt="Research project screenshot page 4" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
+<img src="/images/my_project4.png" alt="Research project screenshot page 4" class="mx-auto max-h-[76vh] border border-slate-300 bg-white/70 object-contain" />
 
 ---
 layout: two-cols
@@ -263,7 +263,7 @@ Munzner’s What, Why, How model gives us a clean way to analyse visualisations 
 
 ---
 layout: image-right
-image: ./images/what-why-how.png
+image: /images/what-why-how.png
 ---
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Visualisation theory</p>
@@ -355,7 +355,7 @@ layout: two-cols
 
 ---
 layout: image-right
-image: ./images/marks-channels.png
+image: /images/marks-channels.png
 ---
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Framework 3</p>
@@ -444,13 +444,13 @@ layout: two-cols
 
 <div class="border border-slate-300 bg-white/60 p-4 text-sm">
   <p><strong>Why position wins</strong></p>
-  <img src="./images/cleveland-mcgill.png" alt="Cleveland and McGill graphical perception results" class="mt-3 max-h-[44vh] border border-slate-300 object-contain" />
+  <img src="/images/cleveland-mcgill.png" alt="Cleveland and McGill graphical perception results" class="mt-3 max-h-[44vh] border border-slate-300 object-contain" />
   <p class="mt-3">Cleveland and McGill showed that position and length generally produce the lowest comparison error.</p>
 </div>
 
 ---
 layout: image-right
-image: ./images/viz-25.png
+image: /images/viz-25.png
 ---
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Case study</p>
@@ -844,7 +844,6 @@ layout: two-cols
 Discussion question 5: when does this design help, and when does it get in the way?
 </div>
 
----
 layout: two-cols
 ---
 
@@ -934,7 +933,6 @@ layout: two-cols
 
 # Marks and Channels in Tableau
 
-<div class="grid grid-cols-[1.4fr_1fr] gap-6 items-start">
   <div class="border border-slate-300 bg-white/60 p-4 text-sm">
     <p><strong>Common mappings</strong></p>
     <ul class="mt-3">
@@ -946,6 +944,8 @@ layout: two-cols
     </ul>
   </div>
 
+::right::
+
   <div class="border border-slate-300 bg-white/60 p-4 text-sm">
     <p><strong>Key takeaway</strong></p>
     <p class="mt-2">Tableau operationalises the <strong>How</strong> in visualisation design.</p>
@@ -954,7 +954,6 @@ layout: two-cols
       <li>Channels become position, colour, size, and labels.</li>
     </ul>
   </div>
-</div>
 
 ---
 layout: two-cols

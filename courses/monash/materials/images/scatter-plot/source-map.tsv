@@ -1,0 +1,14 @@
+line_in_material|local_file|url
+3|images/scatter-plot/scatter-plot-intro.png|http://www.tuzhidian.com:3001/upload/images/2019/%E6%95%A3%E7%82%B9%E5%9B%BE_c42dce03d41002ef34ae673a289300b9.png
+32|images/scatter-plot/scatter-plot-elemental-composition.jpeg|http://139.224.62.3:3001/upload/images/network/1549115131755-e413e71d-b74f-4ef8-a9da-dedc4c030de2.jpeg
+40|images/scatter-plot/scatter-plot-applicable-correlation-types.jpeg|http://139.224.62.3:3001/upload/images/network/1549178073202-b0afb938-4300-4cc3-bc27-a9471bd7a42b.jpeg
+44|images/scatter-plot/scatter-plot-applicable-correlation-strength.jpeg|http://139.224.62.3:3001/upload/images/network/1549178097623-3f06978f-a501-41e5-aa0a-86f6a5a58dc0.jpeg
+48|images/scatter-plot/scatter-plot-applicable-many-points.png|http://139.224.62.3:3001/upload/images/network/1549178430668-e2677cb4-c8e2-401e-aed9-49db4c8638bb.png
+54|images/scatter-plot/scatter-plot-inapplicable-too-few-points.png|http://139.224.62.3:3001/upload/images/network/1549178521365-c79153a0-7084-4eb7-ae42-d87fe63dae79.png
+58|images/scatter-plot/scatter-plot-inapplicable-overplotting.png|http://139.224.62.3:3001/upload/images/network/1549178569154-1ddd376b-dc47-4ba0-ac2f-9986ec19c2f6.png
+62|images/scatter-plot/scatter-plot-inapplicable-too-many-categories.png|http://139.224.62.3:3001/upload/images/network/1549178614928-c6fe7393-80c0-471f-a685-ea465162c802.png
+67|images/scatter-plot/bubble-plot-intro.png|http://www.tuzhidian.com:3001/upload/images/2019/%E6%B0%94%E6%B3%A1%E5%9B%BE_8008101a536d0ee7bdcf62ca871d5ac0.png
+81|images/scatter-plot/bubble-plot-elemental-composition.jpeg|http://139.224.62.3:3001/upload/images/network/1549010842091-2d01d504-c815-4f2b-9cd4-9b45aa5aeb5f.jpeg
+87|images/scatter-plot/bubble-plot-applicable-2d-encoding.jpeg|http://139.224.62.3:3001/upload/images/network/1548922046518-ab5702e5-adb9-451c-8b8e-d2e05eeda235.jpeg
+93|images/scatter-plot/bubble-plot-inapplicable-too-many-bubbles-no-interaction.png|http://139.224.62.3:3001/upload/images/network/1545555397940-89596666-8d17-4cd8-b00a-569225ecb317.png
+97|images/scatter-plot/bubble-plot-area-not-radius-warning.png|http://139.224.62.3:3001/upload/images/network/1548836347980-6d965412-ad77-4b20-98f6-3b887cdc3ab2.png

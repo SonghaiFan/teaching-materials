@@ -8,6 +8,7 @@
   --monash-border: rgba(15, 23, 42, 0.14);
   --monash-rule: rgba(15, 23, 42, 0.08);
   --monash-primary: #006dae;
+  --monash-callout: #0369a1;
   --monash-code-bg: #f6f8fa;
   --monash-code-fg: #24292f;
   --monash-code-border: #d0d7de;
@@ -18,9 +19,12 @@
   --monash-logo-white: url("/images/logo/monash-logo-white.png");
   --monash-logo-width: 7.1rem;
   --monash-logo-height: 2rem;
-  --monash-logo-top: 1.15rem;
+  --monash-logo-top: 0.8rem;
   --monash-space-x: 2.8rem;
   --monash-space-y: 2.2rem;
+  --monash-content-top-gap: 0.38rem;
+  --monash-column-gap: 1.6rem;
+  --monash-block-gap: 0.52rem;
   --slidev-code-background: var(--monash-code-bg);
   --slidev-code-foreground: var(--monash-code-fg);
   --slidev-code-border-color: var(--monash-code-border);
@@ -38,7 +42,7 @@
   position: relative;
   box-sizing: border-box;
   padding:
-    calc(var(--monash-logo-top) + var(--monash-logo-height) + 1.35rem)
+    calc(var(--monash-logo-top) + var(--monash-logo-height) + 1.08rem)
     var(--monash-space-x)
     var(--monash-space-y);
   color: var(--monash-text);
@@ -97,7 +101,7 @@
   font-weight: 700;
   letter-spacing: -0.035em;
   color: var(--monash-text);
-  margin-bottom: 0.72rem;
+  margin-bottom: 0.54rem;
 }
 
 .slidev-layout h2 {
@@ -126,7 +130,7 @@
 .slidev-layout h2 + div,
 .slidev-layout h2 + ul,
 .slidev-layout h2 + ol {
-  margin-top: 0.72rem;
+  margin-top: var(--monash-block-gap);
 }
 
 .slidev-layout p,
@@ -144,7 +148,7 @@
 }
 
 .slidev-layout p + p {
-  margin-top: 0.88rem;
+  margin-top: 0.72rem;
 }
 
 .slidev-layout ul,
@@ -179,14 +183,14 @@
 
 .slidev-layout table {
   width: 100%;
-  margin-top: 1rem;
+  margin-top: 0.78rem;
   border-collapse: collapse;
   background: rgba(255, 255, 255, 0.32);
 }
 
 .slidev-layout th,
 .slidev-layout td {
-  padding: 0.3rem 0.7rem;
+  padding: 0.28rem 0.68rem;
   border: 1px solid var(--monash-border);
   text-align: left;
 }
@@ -198,9 +202,21 @@
 }
 
 .slidev-layout blockquote {
-  margin: 1rem 0;
+  margin: 1.25rem 0 0;
   padding-left: 1rem;
-  border-left: 2px solid var(--monash-primary);
+  border-left: 2px solid var(--monash-callout);
+  border-radius: 0;
+  background: transparent;
+  color: #475569;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  box-shadow: none;
+}
+
+.slidev-layout blockquote p,
+.slidev-layout blockquote li,
+.slidev-layout blockquote strong {
+  color: inherit;
 }
 
 .slidev-layout pre {
@@ -442,7 +458,7 @@ html:not(.dark) .slidev-layout .shiki span {
 
 .slidev-layout.default,
 .slidev-layout.center,
-.slidev-layout.two-cols,
+.slidev-layout.two-columns,
 .slidev-layout.two-cols-header,
 .slidev-layout.image-right,
 .slidev-layout.image-left,
@@ -450,11 +466,58 @@ html:not(.dark) .slidev-layout .shiki span {
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
     var(--monash-bg);
+  padding-top: calc(var(--monash-logo-top) + var(--monash-logo-height) + var(--monash-content-top-gap));
+  padding-bottom: 1.7rem;
+  align-content: start;
+}
+
+.slidev-layout.default > :first-child,
+.slidev-layout.center > :first-child,
+.slidev-layout.image-right > :first-child,
+.slidev-layout.image-left > :first-child,
+.slidev-layout.image > :first-child,
+.slidev-layout.two-columns > .col-left > :first-child,
+.slidev-layout.two-columns > .col-right > :first-child,
+.slidev-layout.two-cols-header > .col-header > :first-child,
+.slidev-layout.two-cols-header > .col-left > :first-child,
+.slidev-layout.two-cols-header > .col-right > :first-child,
+.slidev-layout.two-cols-header > .col-bottom > :first-child {
+  margin-top: 0 !important;
+}
+
+.slidev-layout.default > p.text-xs:first-child,
+.slidev-layout.center > p.text-xs:first-child,
+.slidev-layout.image-right > p.text-xs:first-child,
+.slidev-layout.image-left > p.text-xs:first-child,
+.slidev-layout.image > p.text-xs:first-child,
+.slidev-layout.two-columns > .col-left > p.text-xs:first-child,
+.slidev-layout.two-columns > .col-right > p.text-xs:first-child,
+.slidev-layout.two-cols-header > .col-header > p.text-xs:first-child,
+.slidev-layout.two-cols-header > .col-left > p.text-xs:first-child,
+.slidev-layout.two-cols-header > .col-right > p.text-xs:first-child,
+.slidev-layout.two-cols-header > .col-bottom > p.text-xs:first-child {
+  margin-bottom: 0.18rem !important;
+  line-height: 1;
+}
+
+.slidev-layout.default > p.text-xs:first-child + h1,
+.slidev-layout.center > p.text-xs:first-child + h1,
+.slidev-layout.image-right > p.text-xs:first-child + h1,
+.slidev-layout.image-left > p.text-xs:first-child + h1,
+.slidev-layout.image > p.text-xs:first-child + h1,
+.slidev-layout.two-columns > .col-left > p.text-xs:first-child + h1,
+.slidev-layout.two-columns > .col-right > p.text-xs:first-child + h1,
+.slidev-layout.two-cols-header > .col-header > p.text-xs:first-child + h1,
+.slidev-layout.two-cols-header > .col-left > p.text-xs:first-child + h1,
+.slidev-layout.two-cols-header > .col-right > p.text-xs:first-child + h1,
+.slidev-layout.two-cols-header > .col-bottom > p.text-xs:first-child + h1 {
+  margin-top: 0;
+  margin-bottom: 0.44rem;
 }
 
 .slidev-layout.default h1,
 .slidev-layout.center h1,
-.slidev-layout.two-cols h1,
+.slidev-layout.two-columns h1,
 .slidev-layout.two-cols-header h1,
 .slidev-layout.image-right h1,
 .slidev-layout.image-left h1,
@@ -462,16 +525,43 @@ html:not(.dark) .slidev-layout .shiki span {
   max-width: none;
 }
 
-.slidev-layout.two-cols,
+.slidev-layout.two-columns,
 .slidev-layout.two-cols-header {
-  column-gap: 1.45rem;
+  column-gap: var(--monash-column-gap);
 }
 
-.slidev-layout.two-cols .col-left,
-.slidev-layout.two-cols .col-right,
+.slidev-layout.two-columns .col-left,
+.slidev-layout.two-columns .col-right,
 .slidev-layout.two-cols-header .col-left,
 .slidev-layout.two-cols-header .col-right {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.slidev-layout.two-columns > .col-left > :first-child,
+.slidev-layout.two-columns > .col-right > :first-child,
+.slidev-layout.two-cols-header > .col-header > :first-child,
+.slidev-layout.two-cols-header > .col-left > :first-child,
+.slidev-layout.two-cols-header > .col-right > :first-child,
+.slidev-layout.two-cols-header > .col-bottom > :first-child {
+  margin-top: 0 !important;
+}
+
+.slidev-layout.two-columns > .col-left > * + *,
+.slidev-layout.two-columns > .col-right > * + *,
+.slidev-layout.two-cols-header > .col-header > * + *,
+.slidev-layout.two-cols-header > .col-left > * + *,
+.slidev-layout.two-cols-header > .col-right > * + *,
+.slidev-layout.two-cols-header > .col-bottom > * + * {
+  margin-top: 0.72rem;
+}
+
+.slidev-layout.two-columns > .col-left,
+.slidev-layout.two-columns > .col-right {
+  align-self: start;
 }
 
 .slidev-layout.image-right img,
@@ -485,9 +575,11 @@ html:not(.dark) .slidev-layout .shiki span {
   :root {
     --monash-logo-width: 5.8rem;
     --monash-logo-height: 1.6rem;
-    --monash-logo-top: 0.95rem;
+    --monash-logo-top: 0.68rem;
     --monash-space-x: 1.5rem;
     --monash-space-y: 1.45rem;
+    --monash-content-top-gap: 0.3rem;
+    --monash-column-gap: 1rem;
   }
 
   .slidev-layout:not(.none):not(.full)::before {

@@ -351,10 +351,7 @@ layout: default
 <div class="regex-pattern"><code>(\d{4})-(\d{2})-(\d{2})</code></div>
 
 匹配 `2025-08-10` 时会捕获：
-
-1. `2025`
-2. `08`
-3. `10`
+`2025`,`08`,`10`
 
 替换时可以写成：
 
@@ -488,7 +485,7 @@ layout: default
 
 <div class="regex-example regex-swap">
   <div v-click.hide>(\*) Asterisk.</div>
-  <div v-after>(<span class="match">\*</span>) Asterisk<span class="match">.</span></div>
+  <div v-after>(\<span class="match">*</span>) Asterisk<span class="match">.</span></div>
 </div>
 
 <div class="regex-pattern"><code>(\*|\.)</code></div>
@@ -829,7 +826,7 @@ layout: default
 懒惰匹配会在满足整体匹配成功的前提下，尽可能少地吞掉字符，所以 `.*?` 会优先取最短结果。
 
 ---
-layout: default
+layout: two-cols
 ---
 
 # Cheat Sheet
@@ -839,6 +836,12 @@ layout: default
 - 字符集 Character Set: `[abc]` 选一个，`[^abc]` 选“不在里面”的一个
 - 范围 Range: `[a-z]`、`[0-9]`
 - 量词 Quantifiers: `*` 0 次或多次，`+` 1 次或多次，`?` 0 次或 1 次，`{m,n}` 重复区间
+- 方括号 `[]` 管“单个字符”的选择，圆括号 `()` 管“一整段模式”的打包
+- `|` 是在模式和模式之间做选择，不是字符集
+- 写 Python 时优先用 `r"..."`，避免反斜杠被字符串先吃掉
+
+::right::
+
 - 分组 Grouping: `()` 用来打包、捕获、控制优先级
 - 反向引用 Backreference: `\1`、`\2` 引用前面第 1、2 个捕获分组
 - 选择 Alternation: `a|b` 表示二选一
@@ -848,11 +851,6 @@ layout: default
 - 断言 Lookaround: `(?=...)` 向前看，`(?!...)` 向前不看，`(?<=...)` 向后看，`(?<!...)` 向后不看
 - Flags: `g` 找全部，`m` 让 `^ $` 按多行工作，`i` 忽略大小写
 - 贪婪 / 懒惰 Greedy / Lazy: `.*` 尽量多吃，`.*?` 尽量少吃
-
-记忆提醒：
-- 方括号 `[]` 管“单个字符”的选择，圆括号 `()` 管“一整段模式”的打包
-- `|` 是在模式和模式之间做选择，不是字符集
-- 写 Python 时优先用 `r"..."`，避免反斜杠被字符串先吃掉
 
 ---
 layout: end
