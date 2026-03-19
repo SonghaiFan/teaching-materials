@@ -32,14 +32,19 @@ layout: section
 
 
 ---
-layout: quote
+layout: image-left
+image: /images/what-why-how.png
 ---
 
-Why do you keep asking us to analyse visualisations based on the What-Why-How framework?
+
+# Why do you keep asking us to analyse visualisations based on the What-Why-How framework?
+
+
 
 <v-click>
 To move beyond intuition and make design decisions systematic, explainable, and defensible.
 </v-click>
+
 ---
 layout: default
 ---
@@ -59,10 +64,13 @@ layout: default
 />
 
 ---
-layout: fact
+layout: default
 ---
 
-`What` determines the `How`
+<img
+  src="/images/what.png"
+  class="mx-auto w-[50%] max-h-[50vh] object-contain"
+/>
 
 ---
 layout: statement
@@ -109,11 +117,13 @@ layout: section
 ---
 
 ---
-layout: fact
+layout: default
 ---
 
-`Why` determines the `How`
-
+<img
+  src="/images/why.png"
+  class="mx-auto w-[65%] max-h-[50vh] object-contain"
+/>
 
 ---
 layout: two-cols
