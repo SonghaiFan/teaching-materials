@@ -18,84 +18,101 @@ layout: default
 
 | Time | Focus |
 |---|---|
-| 0-30 min | Forum posting discussion |
-| 30-60 min | Visualisation Refinement |
-| 60-120 min | Proposal approval and 1-on-1 discussions |
+| 10 min | Framework Recap |
+| 40 min | Forum posting discussion |
+| 60 min | Proposal approval and 1-on-1 discussions |
 
 > Keep your abstract, sketch, and source links ready for the second half.
 
+---
+layout: section
+---
+
+# Framework Recap
+
+
+---
+layout: quote
+---
+
+Why do you keep asking us to analyse visualisations based on the What-Why-How framework?
+
+<v-click>
+To move beyond intuition and make design decisions systematic, explainable, and defensible.
+</v-click>
+---
+layout: default
+---
+
+<img
+  src="/images/cleveland-mcgill.png"
+  class="mx-auto w-[65%] max-h-[50vh] object-contain"
+/>
+
+---
+layout: default
+---
+
+<img
+  src="/images/channels-ranking.png"
+  class="mx-auto w-[80%] max-h-[50vh] object-contain"
+/>
 
 ---
 layout: fact
 ---
 
-![Ranking of visual channels by perceptual accuracy](/images/visual-ranking.png)
+`What` determines the `How`
 
-> Position and length are usually strongest for precise comparison. Area, volume, and colour-based judgments are weaker, so use them more cautiously.
+---
+layout: statement
+---
+
+An ordinal variable only indicates order, but the distance between values is not meaningful or assumed equal.
+
+- School grades: HD,D,P
+- Educational level: Bachelor's, Master's, PhD
+- Seniority level: Junior, Mid, Senior
+- **NOT** Year: 1990, 1994, 2000 (Note: One could also argue that this is in some cases, but not in most of the case)
+
+---
+layout: default
+---
+
+<img
+  src="/images/visual-attribute-ranking.png"
+  class="mx-auto w-[90%] max-h-[50vh] object-contain"
+/>
+
+---
+layout: default
+---
+
+<img
+  src="/images/visual-ranking.png"
+  class="mx-auto w-[95%] max-h-[50vh] object-contain"
+/>
+
+
+---
+layout: fact
+---
+
+# Rule of thumb:
+- `Position` separation always ranks highly.
+- For **quantitative** data, use `position` and `size`
+- For **ordered** data, use `position` and `brightness` (and maybe `texture` and `saturation`)
+- For **categoric** data, use `position`, `hue`, `texture` and `shape`.
 
 ---
 layout: section
 ---
 
-# Forum Discussion
-
-Use critique to make better design choices.
-
 ---
 layout: fact
 ---
 
-# How should we will review posts
-
-1. Look at the chart first.
-2. Identify the likely What, Why, and How.
-3. Judge whether the idiom fits the task.
-4. Give one strength and one improvement.
-
----
-layout: fact
----
-
-# Stronger Forum Posts
-
-- Clearly explain **what**, **why**, and **how** using appropriate visualisation terminology.
-
-- Provide a **critical evaluation** of the chosen visualisation (e.g., effectiveness, limitations, and design choices).
-
-> Focus on **professional vocabulary** and **critical thinking**.
-
----
-layout: fact
----
-
-# Stronger Forum Posts
-
-- Clearly explain `what`, `why`, and `how` using appropriate visualisation terminology.
-
-- Provide a **critical evaluation** of the chosen visualisation (e.g., effectiveness, limitations, and design choices).
-
-> Focus on `professional vocabulary` and **critical thinking**.
-
----
-layout: fact
----
-
-# From critique to improvement
-
-- confirm the current `What`
-- restate the `Why`
-- suggest a stronger `How`
-- change the idiom if the current one fights the message
-
-> The best improvement is often a better idiom, not prettier styling.
-
----
-layout: section
----
-
-# Improvement Examples
-
-Examples drawn from common chart refinements.
+`Why` determines the `How`
 
 
 ---
@@ -104,12 +121,7 @@ layout: two-cols
 
 # Bar chart fixes
 
-<img src="/images/bar-chart/truncated-baseline-deceptive-comparison.png" alt="Compare truncated and zero-baseline bar charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
-> Check the zero-baseline version before trusting the message.
-
-::right::
-# ​
 <img src="/images/bar-chart/truncated-baseline-alternative-dot-plot.png" alt="Dot plot as an alternative to bars" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
 > Switch to dots when values are close and precision matters.
@@ -136,11 +148,7 @@ layout: two-cols
 
 # Stacked bar fixes
 
-<img src="/images/bar-chart/stacked-column-guidance-37-equal-intervals.png" alt="Stacked columns for equal intervals only" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
-> Use stacked columns sparingly for time, and only with equal intervals.
-
-::right::
 # ​
 <img src="/images/bar-chart/stacked-column-guidance-38-overtake-line.png" alt="Switch to line when shares overtake" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
@@ -168,12 +176,7 @@ layout: two-cols
 
 # Final stacked bar fixes
 
-<img src="/images/bar-chart/stacked-column-refinement-43-only-parts.png" alt="Only show parts of a whole in stacked bars" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
-> Show parts of a whole, not totals plus parts in the same stack.
-
-::right::
-# ​
 <img src="/images/bar-chart/stacked-column-refinement-45-group-others.png" alt="Group tiny categories into others" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
 > Group tiny categories into `Others` to reduce clutter.
@@ -188,44 +191,6 @@ layout: two-cols
 
 > Choose bar or line based on whether the x-axis is categorical or ordered.
 
-::right::
-# ​
-<img src="/images/line-chart/line-chart-line-vs-area-sum-important.png" alt="Choosing between line and area charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Choose line or area based on whether total accumulation matters.
-
----
-layout: two-cols
----
-
-# More line chart fixes
-
-<img src="/images/line-chart/line-chart-add-comparison-context.png" alt="Add comparison context to a line chart" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Add context with benchmarks, averages, or peer series.
-
-::right::
-# ​
-<img src="/images/line-chart/line-chart-emphasis-by-style.png" alt="Emphasize the key series in a line chart" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Emphasize the key series and mute the rest.
-
----
-layout: two-cols
----
-
-# Final line chart fixes
-
-<img src="/images/line-chart/line-chart-direct-labeling.png" alt="Direct labeling in line charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Label directly when possible.
-
-::right::
-# ​
-<img src="/images/line-chart/line-chart-smoothing-caution.png" alt="Be careful with smoothing" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Use smoothing carefully because curves can invent turning points.
-
 ---
 layout: two-cols
 ---
@@ -235,44 +200,6 @@ layout: two-cols
 <img src="/images/pie-chart/pie-chart-not-best-for-share-comparison.png" alt="Pie charts are weak for precise comparison" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
 
 > Switch away from pie when precise comparison is the real task.
-
-::right::
-# ​
-<img src="/images/pie-chart/pie-chart-inapplicable-too-many-categories.png" alt="Too many categories in a pie chart" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Keep category count low.
-
----
-layout: two-cols
----
-
-# More pie chart fixes
-
-<img src="/images/pie-chart/pie-chart-use-color-to-highlight.png" alt="Use one accent colour in a pie chart" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Use one accent colour to focus the key slice.
-
-::right::
-# ​
-<img src="/images/pie-chart/pie-chart-label-small-slices-outside.png" alt="Place labels outside small pie slices" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Move labels outside when slices are small or text is long.
-
----
-layout: two-cols
----
-
-# Final pie chart fixes
-
-<img src="/images/pie-chart/pie-chart-group-small-slices-others.png" alt="Group small pie slices into others" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Group tiny slices into `Others`.
-
-::right::
-# ​
-<img src="/images/pie-chart/pie-chart-margin-or-sidebar-placement.png" alt="Place pie charts in the sidebar" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Use side placement when a pie wastes too much page space.
 
 ---
 layout: two-cols
@@ -300,27 +227,50 @@ layout: two-cols
 
 > Put the important layer near the baseline.
 
-::right::
-# ​
-<img src="/images/area-chart/area-chart-direct-labeling.png" alt="Direct labeling in area charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
-
-> Use direct labels when the layers are distinct enough.
-
 ---
-layout: two-cols
+layout: section
 ---
 
-# Final area chart fixes
+# Forum Discussion
 
-<img src="/images/area-chart/area-chart-annotations-highlight-ranges.png" alt="Annotated ranges in area charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
+Use critique to make better design choices.
 
-> Annotate structural changes when events explain visible shifts.
+---
+layout: fact
+---
 
-::right::
-# ​
-<img src="/images/area-chart/area-chart-group-small-values.png" alt="Group small values into others in area charts" class="p-3 mx-auto max-h-[34vh] w-auto object-contain border border-slate-300 bg-white/60" />
+# How should we will review posts
 
-> Group tiny layers into `Others`.
+1. Look at the chart first.
+2. Identify the likely What, Why, and How.
+3. Judge whether the idiom fits the task.
+4. Give one strength and one improvement.
+
+---
+layout: fact
+---
+
+# Stronger Forum Posts
+
+- Clearly explain `what`, `why`, and `how` using appropriate visualisation terminology.
+
+- Provide a **critical evaluation** of the chosen visualisation (e.g., effectiveness, limitations, and design choices).
+
+> Focus on `professional vocabulary` and **critical thinking**.
+
+---
+layout: fact
+---
+
+# From critique to improvement
+
+- confirm the current `What`
+- restate the `Why`
+- suggest a stronger `How`
+- change the idiom if the current one fights the message
+
+> The best improvement is often a better idiom, not prettier styling.
+
 
 ---
 layout: two-cols
@@ -350,29 +300,6 @@ layout: section
 # Proposal Approval
 
 The second half is about scope, feasibility, and readiness.
-
----
-layout: two-cols
----
-
-# Bring these to the discussion
-
-- a clear topic title or question
-- your draft abstract
-- your Week 2 sketch
-- at least two candidate data sources
-- a likely story or message
-
-::right::
-
-# Be ready to answer
-
-1. Who is the audience?
-2. Why is the topic specific enough?
-3. How will the datasets connect?
-4. What is the likely story?
-
-> If the topic is still broad, narrow it before approval.
 
 ---
 layout: two-cols
@@ -442,9 +369,29 @@ layout: two-cols
 
 > Approval is a hurdle step. Update the sketch if the topic changes later.
 
+
 ---
 layout: two-cols
 ---
+
+# Bring these to the discussion
+
+- a clear topic title or question
+- your draft abstract
+- your Week 2 sketch
+- at least two candidate data sources
+- a likely story or message
+
+# Be ready to answer
+
+1. Who is the audience?
+2. Why is the topic specific enough?
+3. How will the datasets connect?
+4. What is the likely story?
+
+
+::right::
+
 
 # Use your queue time well
 
@@ -453,7 +400,6 @@ layout: two-cols
 - list the main comparisons or messages
 - tighten the sketch if the story still feels broad
 
-::right::
 
 # Do not wait passively
 
