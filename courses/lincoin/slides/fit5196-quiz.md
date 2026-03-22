@@ -778,7 +778,7 @@ layout: intro
 - b. Harmonise data formats
 - c. Data anonymisation
 - d. Data cleaning
-e. Ensuring consistency
+- e. Ensuring consistency
 
 <v-click>
 
@@ -787,6 +787,7 @@ e. Ensuring consistency
 解析： integration / consolidation 要合并来源、统一格式、清洗并保证一致性。
 
 </v-click>
+
 ---
 
 ## Question 103
@@ -993,7 +994,7 @@ e. Ensuring consistency
 
 
 
-**Which is not a challenge in data wrangling?**
+**Which is NOT a challenge in data wrangling?**
 
 - a. Handling large volumes of data
 - b. Ensuring data privacy and security
@@ -1007,6 +1008,7 @@ e. Ensuring consistency
 解析： 前三项都是挑战；“decreasing analytical efficiency” 不是挑战表述，而是负面结果说法。
 
 </v-click>
+
 ---
 
 ## Question 130
@@ -1446,7 +1448,7 @@ h e l l o | 1 2 3
 
 
 
-**What does the + quantifier do?**
+**What does the `+` quantifier do?**
 
 - a. Matches exactly one occurrence
 - b. Matches zero or more occurrences
@@ -1460,6 +1462,7 @@ h e l l o | 1 2 3
 解析： `+` 表示前一项出现 1 次或多次。
 
 </v-click>
+
 ---
 
 ## Question 73
@@ -1651,7 +1654,7 @@ h e l l o | 1 2 3
 
 
 
-**What does the regex `(?<!cat)`dog ensure?**
+**What does the regex `(?<!cat)dog` ensure?**
 
 - a. "dog" is preceded by "cat"
 - b. "dog" is not preceded by "cat"
@@ -1761,7 +1764,7 @@ abc abc abc abc
 
 
 
-**What does `(?<=>)\d+(?=<\/?)` match in a string like "<div>123</div>"?**
+**What does `(?<=>)\d+(?=<\/?)` match in a string like `"<div>123</div>"`?**
 
 - a. The entire string including the tags
 - b. Any digits followed by "</"
@@ -1773,7 +1776,7 @@ abc abc abc abc
 参考答案： `d`
 
 解析： 这个模式会把 HTML 标签之间的数字内容 `123` 抠出来。
-
+兼容（不使用 lookbehind）的等价重写`>(\d+)(?=<\/?)`
 </v-click>
 
 ---
@@ -1791,11 +1794,12 @@ abc abc abc abc
 
 <v-click>
 
-参考答案： `c`
+参考答案： `d`
 
 解析： 在给出的选项里，`"(.*?)"` 最接近“抓取双引号之间内容”的写法；但这题选项本身不够严谨。
 
 </v-click>
+
 ---
 
 ## Question 146
@@ -1884,10 +1888,10 @@ abc abc abc abc
 
 **How would you match any line that does not contain the exact phrase "regex"?**
 
-- a. ^(?=.*\bregex\b).*$
-- b. ^(?!.*\bregex\b).*
-- c. .*\bregex\- b.*
-- d. ^.*(regex).*
+- a. `^(?=.*\bregex\b).*$`
+- b. `^(?!.*\bregex\b).*`
+- c. `.*\bregex\- b.*`
+- d. `^.*(regex).*`
 
 <v-click>
 
@@ -1896,6 +1900,7 @@ abc abc abc abc
 解析： 负向前瞻 `^(?!.*\bregex\b).*` 用来排除包含 `regex` 的整行。
 
 </v-click>
+
 ---
 
 ## Question 157
