@@ -24,12 +24,7 @@ function barchart() {
     }
   };
 
-  vegaEmbed('#viz1', spec, { actions: false }).then(function(result) {
-    // Recompute chart layout when viewport/container changes.
-    window.addEventListener('resize', function() {
-      result.view.resize().runAsync();
-    });
-  }).catch(console.error);
+  vegaEmbed('#viz1', spec);
 }
 
 export { barchart };
