@@ -20,13 +20,7 @@ Songhai Fan · Monash University
 
 # Forum Posting 3
 
-## Activity (30 min)
 
-- Discuss your forum posting in small groups
-- Reflect on:
-  - What–Why–How clarity
-  - Marks & Channels usage
-  - Strength of critique
 
 ## Reminder
 
@@ -55,10 +49,7 @@ Songhai Fan · Monash University
   - Build **dual-axis visualisation**
 
 - Key idea:
-  - Combine multiple measures meaningfully  
-  - Avoid redundant charts
-
- [oai_citation:0‡FIT2179 Week 4 Tableau Exercise.pdf](sediment://file_000000005920720ba6acbdb1ea9c4444)
+  - Combine multiple measures meaningfully
 
 ---
 
@@ -166,15 +157,5 @@ Songhai Fan · Monash University
 ## Other
 
 - Consultation hours → Moodle
-- Tableau exercises:
-  - Not marked
-  - Highly recommended
-
 ---
-
-# Final Note
-
-- Focus on:
-  - Clear thinking (What–Why–How)
-  - Clean visual design
-  - Consistent progress
+w
