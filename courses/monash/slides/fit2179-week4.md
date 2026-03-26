@@ -296,6 +296,7 @@ This lab is the bridge into `Data Vis 2`.
 
 - `VS Code` gives you a place to write and preview files
 - `HTML` gives your page structure
+- `Bootstrap` helps you create a responsive layout faster
 - `GitHub` stores and publishes your work
 
 By the end of this part, you should have a basic webpage online.
@@ -329,6 +330,59 @@ This is the minimum structure every page needs:
 layout: default
 ---
 
+# Add Bootstrap CSS
+
+To use Bootstrap, place this line inside the `head` of your page:
+
+```html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+```
+
+- Bootstrap gives you ready-made layout classes
+- It is useful for building a clean page structure quickly
+
+---
+layout: default
+---
+
+# Bootstrap Grid Basics
+
+Bootstrap layout usually follows this pattern:
+
+```html
+<div class="container">
+  <div class="row g-3">
+    <div class="col-lg-8">Main content</div>
+    <div class="col-lg-4">Sidebar</div>
+  </div>
+</div>
+```
+
+- `container` keeps the page aligned
+- `row` creates a horizontal layout
+- `col-*` controls how much width each section gets
+
+---
+layout: fact
+---
+
+# How to use the grid docs
+
+Bootstrap grid reference:
+
+`https://getbootstrap.com/docs/5.3/layout/grid/`
+
+When you read the docs, focus on:
+
+1. the 12-column system
+2. breakpoint classes like `col-md-*` and `col-lg-*`
+3. gutters using `g-*`
+4. how content stacks on smaller screens
+
+---
+layout: default
+---
+
 # Core HTML elements introduced
 
 | Element | Purpose |
@@ -338,12 +392,68 @@ layout: default
 | `table`, `tr`, `th`, `td` | Tables |
 | `img` | Images with a `src` path |
 | `a` | Hyperlinks using `href` |
-| `div` | Grouping content into sections |
+| `div` and `section` | Grouping content into sections |
+| `ul` and `li` | Bullet lists |
 
 > HTML gives structure first. Styling and interactivity come later with CSS and JavaScript.
 
 ---
 layout: two-cols
+---
+
+# Split your files
+
+For this week, we will keep the project in separate files:
+
+- `index.html` for structure
+- `style.css` for styling
+- `main.js` for page-level JavaScript
+- `barchart.js` for the Vega-Lite chart
+
+::right::
+
+# Why split them?
+
+- easier to read
+- easier to debug
+- easier to reuse code
+- closer to how you will build your assignments
+
+---
+layout: default
+---
+
+# Minimum Vega-Lite project structure
+
+```text
+project-folder/
+  index.html
+  style.css
+  main.js
+  barchart.js
+```
+
+- `index.html` links the CSS and JS files
+- `main.js` calls the chart function
+- `barchart.js` stores the chart spec
+
+---
+layout: default
+---
+
+# What the demo page includes
+
+Our simple Bootstrap demo page now shows:
+
+1. text with headings and paragraphs
+2. a `section` with a title
+3. an `img` element
+4. a `ul` list
+5. a simple `table`
+6. one Vega-Lite bar chart
+
+---
+layout: default
 ---
 
 # VS Code setup
@@ -366,9 +476,30 @@ layout: two-cols
 1. Create a project folder
 2. Open the folder in VS Code
 3. Create `index.html`
-4. Use `html:5` shortcut
-5. Save often
-6. Preview with Live Server
+4. Add `style.css`, `main.js`, and `barchart.js`
+5. Use `html:5` shortcut
+6. Link Bootstrap CSS and your own `style.css`
+7. Build the layout with `container`, `row`, and `col-*`
+8. Add text, image, list, and table elements
+9. Render the chart with JavaScript
+10. Save often and preview with Live Server
+
+---
+layout: default
+---
+
+# Demo for today
+
+We will open the Bootstrap example in:
+
+`materials/fit2179/week4/Web layout for data visualisation (bootstrap)/index.html`
+
+What to notice:
+
+- how the grid separates summary cards, main content, and side content
+- how HTML, CSS, and JS are split into separate files
+- how the page stays simple for a first web visualisation
+- how charts are added into a normal `div`
 
 ---
 layout: default

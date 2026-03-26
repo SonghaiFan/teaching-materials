@@ -1,8 +1,3 @@
-import { barchart } from "./barchart.js";
+import { drawBarChart } from "./barchart.js";
 
-var init = function () {
-  console.log("hi");
-  barchart();
-};
-
-window.onload = init();
+drawBarChart();

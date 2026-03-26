@@ -1,30 +1,27 @@
-function barchart() {
-  var spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "description": "A simple bar chart with embedded data.",
-    "autosize": { "type": "fit-x", "contains": "padding" },
-    "width": "container",
-    "height": 400,
-    "background": "white",
-    "data": {
-      "url": "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv"
+function drawBarChart() {
+  const spec = {
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+    width: 500,
+    height: 300,
+    data: {
+      values: [
+        { day: "Mon", count: 1820 },
+        { day: "Tue", count: 1760 },
+        { day: "Wed", count: 1940 },
+        { day: "Thu", count: 2010 },
+        { day: "Fri", count: 2280 },
+        { day: "Sat", count: 1560 },
+        { day: "Sun", count: 1320 }
+      ]
     },
-    "mark": "bar",
-    "encoding": {
-      "x": {
-        "field": "Country",
-        "type": "nominal",
-        "axis": { "labelAngle": -45 }
-      },
-      "y": {
-        "field": "Value",
-        "type": "quantitative"
-      },
-      "color": { "value": "#69b3a2" }
+    mark: "bar",
+    encoding: {
+      x: { field: "day", type: "ordinal", title: "Day" },
+      y: { field: "count", type: "quantitative", title: "Average hourly counts" }
     }
   };
 
-  vegaEmbed('#viz1', spec);
+  vegaEmbed("#vis", spec, { actions: false });
 }
 
-export { barchart };
+export { drawBarChart };
