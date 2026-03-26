@@ -2,8 +2,10 @@ function barchart() {
   var spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "description": "A simple bar chart with embedded data.",
+    "autosize": { "type": "fit-x", "contains": "padding" },
     "width": "container",
     "height": 400,
+    "background": "white",
     "data": {
       "url": "https://raw.githubusercontent.com/holtzy/data_to_viz/master/Example_dataset/7_OneCatOneNum_header.csv"
     },
@@ -22,8 +24,11 @@ function barchart() {
     }
   };
 
-  vegaEmbed('#viz1', spec).then(function(result) {
-    // Access the Vega view instance as result.view
+  vegaEmbed('#viz1', spec, { actions: false }).then(function(result) {
+    // Recompute chart layout when viewport/container changes.
+    window.addEventListener('resize', function() {
+      result.view.resize().runAsync();
+    });
   }).catch(console.error);
 }
 
