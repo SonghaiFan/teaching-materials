@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
+        min-height: 100vh;
+      }
+
+      h1 {
+        text-align: center;
+        margin: 2rem 0 1.5rem;
+        color: #1f2937;
+        font-weight: 700;
+      }
+
+      h2 {
+        color: #1d4ed8;
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+      }
+
+      .container-fluid.text-start > p {
+        margin: 1.25rem 0 0.75rem;
+        color: #1d4ed8;
+        font-size: 1.05rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+
+      .cell {
+        border: 1px solid #cbd5e1;
+        min-height: 30vh;
+        border-radius: 12px;
+        background: #ffffff;
+        box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+        color: #0f172a;
+        font-weight: 600;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 1rem;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+      }
+
+      .cell:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 20px rgba(15, 23, 42, 0.12);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>If you have finished this task, you can leave. And have a good break!</h1>
+    <h1>Or any questions?</h1>
+    <hr class="my-4" />
+    <div class="container-fluid text-start pb-5 px-4">
+      <h2>Subtitle: Global Profile</h2>
+      <!-- Stack the columns on mobile by making one full-width and the other half-width -->
+      <div class="row">
+        <div class="cell col-md-8">
+          see you the week after next!;)
+        </div>
+        <div class="col-6 col-md-4">
+          Monash University is one of Australia's leading research universities,
+          known for strong global partnerships and an international student
+          community.
+          Campuses in Australia and overseas support a diverse, connected
+          learning experience.
+        </div>
+      </div>
+      <!-- horizontal rule -->
+      <hr class="my-4" />
+      <h2>Subtitle: Learning and Support</h2>
+      <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+      <div class="row">
+        <div class="cell col-6 col-md-4">
+          
+        </div>
+        <div class="col-6 col-md-4">
+          Students can access modern libraries, study spaces, and academic skill
+          services across campus.
+          Industry projects and internships help students apply data and
+          technology skills in real-world contexts.
+           Clubs, societies, and wellbeing programs support a balanced and active
+          university life.
+        </div>
+        <div class="cell col-6 col-md-4">
+         
+        </div>
+      </div>
+      <hr class="my-4" />
+      <h2>Subtitle: Why Students Choose Monash</h2>
+      <!-- Columns are always 50% wide, on mobile and desktop -->
+      <div class="row">
+        <div class="cell col-6">
+          Monash combines research excellence with practical teaching to prepare
+          graduates for global careers.
+        </div>
+        <div class="cell col-6">
+          The university's multicultural environment encourages collaboration,
+          innovation, and inclusive learning.
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="container-fluid text-center py-3">
+        <p>&copy; 2026 Monash University Bootstrap Demo. All rights reserved.</p>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

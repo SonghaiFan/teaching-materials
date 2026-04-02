@@ -87,8 +87,8 @@ layout: default
 The sample test asks you to inspect a visualisation and answer short analysis questions such as:
 
 1. identify the `idiom`
-2. note the major issue or issues, if any
-3. explain how to fix the issue or issues
+2. note the major issue if any
+3. explain how to fix the issue
 4. identify attributes, attribute types, marks, and channels used
 
 > Revise the What-Why-How framework, common chart problems, and marks/channels from Weeks `1` to `4`.
@@ -197,8 +197,6 @@ layout: section
 ---
 
 # Introduction to CSS
-
-Last week we built structure with HTML. This week we first recap what `CSS` is, then move to `CSS frameworks` such as `Bootstrap`.
 
 ---
 layout: two-cols
