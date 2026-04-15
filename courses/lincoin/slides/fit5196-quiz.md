@@ -1938,7 +1938,7 @@ abc abc abc abc
 - b. Data sparsity
 - c. Ambiguity in language
 - d. High dimensionality
-e. High computational costs
+- e. High computational costs
 
 <v-click>
 
@@ -1947,6 +1947,7 @@ e. High computational costs
 解析： 正确项是 `a`: Variability in text formats, `b`: Data sparsity, `c`: Ambiguity in language, `d`: High dimensionality, `e`: High computational costs。这些选项共同对应课程里的正确定义。
 
 </v-click>
+
 ---
 
 ## Question 4
@@ -1959,7 +1960,7 @@ e. High computational costs
 - b. Data quantity
 - c. Data integrity
 - d. Visualisation needs
-e. Data type
+- e. Data type
 
 <v-click>
 
@@ -1968,6 +1969,7 @@ e. Data type
 解析： 正确项是 `a`: Algorithm requirements, `b`: Data quantity, `c`: Data integrity, `d`: Visualisation needs, `e`: Data type。这些选项共同对应课程里的正确定义。
 
 </v-click>
+
 ---
 
 ## Question 5
@@ -1980,7 +1982,7 @@ e. Data type
 - b. Variance
 - c. Mode
 - d. Standard Deviation
-e. Mean
+- e. Mean
 
 <v-click>
 
@@ -1989,6 +1991,7 @@ e. Mean
 解析： 中心趋势看的是数据“中心”在哪里，常见是 mean / median / mode；variance 和 standard deviation 属于离散程度。
 
 </v-click>
+
 ---
 
 ## Question 16
@@ -2022,7 +2025,7 @@ e. Mean
 - b. In information retrieval tasks
 - c. For graphical data representation
 - d. When performing named entity recognition
-e. In audio data processing
+- e. In audio data processing
 
 <v-click>
 
@@ -2031,6 +2034,7 @@ e. In audio data processing
 解析： case normalisation 并不总是必须；像 named entity recognition 或需要保留原大小写信息时，大小写本身就有语义。
 
 </v-click>
+
 ---
 
 ## Question 24
@@ -2043,7 +2047,7 @@ e. In audio data processing
 - b. In information retrieval tasks
 - c. For graphical data representation
 - d. When performing named entity recognition
-e. In audio data processing
+- e. In audio data processing
 
 <v-click>
 
@@ -2052,6 +2056,7 @@ e. In audio data processing
 解析： 这题和 Q23 同义，核心也是“某些任务里大小写信息本身有用，所以不一定统一转小写”。
 
 </v-click>
+
 ---
 
 ## Question 25
@@ -2084,7 +2089,7 @@ e. In audio data processing
 - b. It supports the understanding of grammar rules
 - c. It assists in analysing sentence structure
 - d. It aids in constructing well-formed sentences and paragraphs
-e. It helps in hardware optimisation
+- e. It helps in hardware optimisation
 
 <v-click>
 
@@ -2093,6 +2098,7 @@ e. It helps in hardware optimisation
 解析： syntax 关注语言结构与语法规则，有助于分析句子结构并生成/识别 well-formed text。
 
 </v-click>
+
 ---
 
 ## Question 28
@@ -2205,7 +2211,7 @@ e. It helps in hardware optimisation
 - a. Finalizing data collection methods
 - b. Reducing the volume of data
 - c. Uncovering patterns, trends, and anomalies
-- d. Reducing the volume of data
+- d. Reducing the variety of data
 
 <v-click>
 
@@ -2214,6 +2220,7 @@ e. It helps in hardware optimisation
 解析： EDA 的目标是发现模式、趋势和异常，不是定稿数据采集方案。
 
 </v-click>
+
 ---
 
 ## Question 55
@@ -2226,7 +2233,7 @@ e. It helps in hardware optimisation
 - b. To prevent skew in analysis results
 - c. To add more complexity to the model
 - d. To increase data set size
-e. To reduce computational load
+- e. To reduce computational load
 
 <v-click>
 
@@ -2235,6 +2242,7 @@ e. To reduce computational load
 解析： 去停用词是为了突出更有信息量的词、减少噪声并降低计算负担。
 
 </v-click>
+
 ---
 
 ## Question 57
@@ -2307,7 +2315,7 @@ e. To reduce computational load
 - b. Encoding
 - c. Tokenisation
 - d. Vectorisation
-e. Normalisation
+- e. Normalisation
 
 <v-click>
 
@@ -2316,6 +2324,7 @@ e. Normalisation
 解析： 数值型 EDA 常用 descriptive statistics，也可能做 normalisation；encoding / tokenisation / vectorisation 不是数值数据核心方法。
 
 </v-click>
+
 ---
 
 ## Question 75
@@ -2430,7 +2439,7 @@ e. Normalisation
 - b. In audio data processing
 - c. For graphical data representation
 - d. When performing named entity recognition
-e. To maintain the original meaning of words
+- e. To maintain the original meaning of words
 
 <v-click>
 
@@ -2439,6 +2448,7 @@ e. To maintain the original meaning of words
 解析： 和 Q23/Q24 同理，IR、NER、保留原义等场景不一定要统一大小写。
 
 </v-click>
+
 ---
 
 ## Question 105
@@ -2471,7 +2481,7 @@ e. To maintain the original meaning of words
 - b. Categorical Data
 - c. Numerical Data
 - d. Text Data
-e. Image Data
+- e. Image Data
 
 <v-click>
 
@@ -2480,6 +2490,7 @@ e. Image Data
 解析： 课程中的 EDA 主要看 categorical、numerical、text 三类。
 
 </v-click>
+
 ---
 
 ## Question 111
@@ -2492,7 +2503,7 @@ e. Image Data
 - b. Application of morphological analysis
 - c. Conversion of words to their base or dictionary form
 - d. Use of part-of-speech tags
-e. Use of context surrounding the words
+- e. Use of context surrounding the words
 
 <v-click>
 
@@ -2501,6 +2512,7 @@ e. Use of context surrounding the words
 解析： lemmatisation 依赖词形分析、词性和上下文，把词还原成 dictionary form；“stem” 不是它的核心定义。
 
 </v-click>
+
 ---
 
 ## Question 120
@@ -2635,7 +2647,7 @@ e. Use of context surrounding the words
 - b. Enables effective visualisation
 - c. Determines the color scheme of visualisations
 - d. Assists in feature engineering
-e. Allows for appropriate analysis
+- e. Allows for appropriate analysis
 
 <v-click>
 
@@ -2644,6 +2656,7 @@ e. Allows for appropriate analysis
 解析： 正确识别数据类型能指导清洗、可视化、特征工程和后续分析。
 
 </v-click>
+
 ---
 
 ## Question 149
@@ -2656,7 +2669,7 @@ e. Allows for appropriate analysis
 - b. Data sparsity
 - c. Ambiguity in language
 - d. High dimensionality
-e. High computational costs
+- e. High computational costs
 
 <v-click>
 
@@ -2665,6 +2678,7 @@ e. High computational costs
 解析： 和 Q2 同义，文本常见难点包括格式多变、稀疏、高维、歧义和计算成本。
 
 </v-click>
+
 ---
 
 ## Question 151
@@ -2677,7 +2691,7 @@ e. High computational costs
 - b. Normalisation
 - c. Count Calculation
 - d. Encoding
-e. Tokenisation
+- e. Tokenisation
 
 <v-click>
 
@@ -2686,6 +2700,7 @@ e. Tokenisation
 解析： count vectorisation 通常先 tokenise、建立词表，再统计每个词出现次数。
 
 </v-click>
+
 ---
 
 ## Question 153
@@ -2698,7 +2713,7 @@ e. Tokenisation
 - b. To explore and summarise the main characteristics of the data visually
 - c. To use statistical graphics, plots, and information tables
 - d. To perform complex predictive modeling
-e. To manipulate the data set
+- e. To manipulate the data set
 
 <v-click>
 
@@ -2707,6 +2722,7 @@ e. To manipulate the data set
 解析： EDA 目标是理解数据并做可视化总结，不是直接做复杂预测建模。
 
 </v-click>
+
 ---
 
 ## Question 158
@@ -2719,7 +2735,7 @@ e. To manipulate the data set
 - b. When performing named entity recognition
 - c. For graphical data representation
 - d. In audio data processing
-e. To maintain the original meaning of words
+- e. To maintain the original meaning of words
 
 <v-click>
 
@@ -2728,6 +2744,7 @@ e. To maintain the original meaning of words
 解析： 和 Q23/Q24/Q96 同理，IR、NER、保留原始含义时不一定要大小写归一化。
 
 </v-click>
+
 ---
 
 ## Question 163
@@ -2784,7 +2801,7 @@ e. To maintain the original meaning of words
 - b. Data anonymisation
 - c. Metadata collection
 - d. Data lineage documentation
-e. Catalog creation
+- e. Catalog creation
 
 <v-click>
 
@@ -2793,6 +2810,7 @@ e. Catalog creation
 解析： cataloging / metadata management 关注 metadata collection、lineage、catalog 本身，也会包含 usage metadata；anonymisation 属于隐私保护，不是 cataloging 核心内容。
 
 </v-click>
+
 ---
 
 ## Question 31
@@ -2905,7 +2923,7 @@ e. Catalog creation
 - b. Experiments
 - c. Industry reports
 - d. Surveys
-e. Government publications
+- e. Government publications
 
 <v-click>
 
@@ -2914,6 +2932,7 @@ e. Government publications
 解析： primary source 是直接采集的数据，如 observations、experiments、surveys；industry reports / government publications 更像二手资料。
 
 </v-click>
+
 ---
 
 ## Question 84
@@ -3006,7 +3025,7 @@ e. Government publications
 - b. Compliance monitoring
 - c. Understanding customer behaviour
 - d. Enhancing product quality
-e. Operational efficiency
+- e. Operational efficiency
 
 <v-click>
 
@@ -3015,6 +3034,7 @@ e. Operational efficiency
 解析： 数据在决策里能支持风险、合规、客户洞察、产品和运营优化，所以五项都对。
 
 </v-click>
+
 ---
 
 ## Question 107
@@ -3027,7 +3047,7 @@ e. Operational efficiency
 - b. Informed consent
 - c. Data retention and disposal
 - d. Data beautification
-e. Compliance with laws and regulations
+- e. Compliance with laws and regulations
 
 <v-click>
 
@@ -3036,6 +3056,7 @@ e. Compliance with laws and regulations
 解析： 伦理采集通常包括隐私、知情同意、保留/销毁规范和法律合规。
 
 </v-click>
+
 ---
 
 ## Question 127
@@ -3208,7 +3229,7 @@ e. Compliance with laws and regulations
 - b. Enhancing product quality
 - c. Compliance monitoring
 - d. Understanding customer behaviour
-e. Performance Optimisation
+- e. Performance Optimisation
 
 <v-click>
 
@@ -3217,6 +3238,7 @@ e. Performance Optimisation
 解析： 这题列出的 risk、quality、compliance、customer、performance 都是数据支撑决策的典型作用。
 
 </v-click>
+
 ---
 
 ## Question 159
@@ -3334,7 +3356,7 @@ e. Performance Optimisation
 - b. Time-series data
 - c. Structured data
 - d. Unstructured data
-e. Graph data
+- e. Graph data
 
 <v-click>
 
@@ -3343,6 +3365,7 @@ e. Graph data
 解析： profiling / assessment 需要先看数据是什么结构，因此 time-series、structured、unstructured、graph 都要识别。
 
 </v-click>
+
 ---
 
 ## Question 65
@@ -3355,7 +3378,7 @@ e. Graph data
 - b. Multimedia data
 - c. Graph data models
 - d. Time-series data
-e. Data warehouses
+- e. Data warehouses
 
 <v-click>
 
@@ -3364,6 +3387,7 @@ e. Data warehouses
 解析： 这题把“数据结构”和“数据来源/类型”混在一起了；按课程复习时先把这几类都记住。
 
 </v-click>
+
 ---
 
 ## Question 140

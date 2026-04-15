@@ -1,7 +1,8 @@
-# FIT5196 Week 1 Quiz - Gemini 自动转录版
+# 林肯教育FIT5196 Week 1 Quiz
 
-> 使用 Google Gemini Flash 自动转录
-> 总题数: 164
+总题数: 164
+
+Frank老师整理
 
 ---
 
