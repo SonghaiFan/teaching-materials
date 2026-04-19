@@ -10,39 +10,39 @@ mdc: true
 ## Week 6: Data Structuring
 
 ---
-layout: default
----
+
+## layout: default
 
 # 本周目标
 
-| Learning Outcome | 你要会什么 |
-|------|------|
-| Explain data structuring | 能解释 data structuring 的定义与价值 |
-| Distinguish structure types | 能区分 primitive / non-primitive / complex |
-| Choose structure by scenario | 能按场景判断用 array/list/map/tree/heap |
-| Understand BST core ops | 会解释 insertion / search / deletion / traversal |
-| Explain hashing basics | 会讲 hash function 与 collision resolution |
-| Explain heap use cases | 会说 priority queue 与 heapsort 的关系 |
+| Learning Outcome             | 你要会什么                                       |
+| ---------------------------- | ------------------------------------------------ |
+| Explain data structuring     | 能解释 data structuring 的定义与价值             |
+| Distinguish structure types  | 能区分 primitive / non-primitive / complex       |
+| Choose structure by scenario | 能按场景判断用 array/list/map/tree/heap          |
+| Understand BST core ops      | 会解释 insertion / search / deletion / traversal |
+| Explain hashing basics       | 会讲 hash function 与 collision resolution       |
+| Explain heap use cases       | 会说 priority queue 与 heapsort 的关系           |
 
 ---
-layout: section
----
+
+## layout: section
 
 # Part 1
 
 # Data Structuring 基础
 
 ---
-layout: statement
----
+
+## layout: statement
 
 ## Data structuring 决定数据是否“可处理、可扩展、可维护”。
 
 原始数据不经过结构化，后续 cleaning / transformation / analysis 成本会显著升高。
 
 ---
-layout: default
----
+
+## layout: default
 
 # Data Wrangling Tasks (Recap)
 
@@ -60,8 +60,8 @@ Week 6 聚焦在“structuring”这一步，为后续 quality/cleansing 奠定�
 </div>
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # 什么是 Data Structuring
 
@@ -78,19 +78,19 @@ layout: two-cols
 - Scalability：数据量增长时仍可用
 
 ---
-layout: default
----
+
+## layout: default
 
 # 真题演练
 
 **In data wrangling, data structuring is important because it primarily improves:**
 
-| 选项 | 内容 |
-|------|------|
-| a | visual color themes |
-| b | processing efficiency and accessibility |
-| c | social media engagement |
-| d | randomization of records |
+| 选项 | 内容                                    |
+| ---- | --------------------------------------- |
+| a    | visual color themes                     |
+| b    | processing efficiency and accessibility |
+| c    | social media engagement                 |
+| d    | randomization of records                |
 
 <div v-click class="callout mt-4 text-sm">
 <strong>答案：</strong><code>b</code><br>
@@ -98,29 +98,29 @@ layout: default
 </div>
 
 ---
-layout: section
----
+
+## layout: section
 
 # Part 2
 
 # Primitive vs Non-Primitive
 
 ---
-layout: default
----
+
+## layout: default
 
 # Primitive Data Types
 
-| Type | Description | Typical Usage |
-|------|------|------|
-| Integer | 整数 | counting / indexing |
-| Floating point | 小数和实数 | scientific calculations |
-| Character | 单字符 | text processing |
-| Boolean | true/false | control flow |
+| Type           | Description | Typical Usage           |
+| -------------- | ----------- | ----------------------- |
+| Integer        | 整数        | counting / indexing     |
+| Floating point | 小数和实数  | scientific calculations |
+| Character      | 单字符      | text processing         |
+| Boolean        | true/false  | control flow            |
 
 ---
-layout: default
----
+
+## layout: default
 
 # Primitive 类型特点
 
@@ -133,33 +133,33 @@ Primitive 是更复杂结构的构建块。
 </div>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Non-Primitive Data Types
 
-| Type | 结构特征 | 常见场景 |
-|------|------|------|
-| Array | 连续内存、同类元素 | 快速索引访问 |
-| String | 字符序列 | 文本处理 |
-| List/Linked List | 动态增删方便 | 插入删除频繁 |
-| Queue | FIFO | 调度、排队任务 |
-| Dictionary/Map | key-value 映射 | 查找、缓存、计数 |
+| Type             | 结构特征           | 常见场景         |
+| ---------------- | ------------------ | ---------------- |
+| Array            | 连续内存、同类元素 | 快速索引访问     |
+| String           | 字符序列           | 文本处理         |
+| List/Linked List | 动态增删方便       | 插入删除频繁     |
+| Queue            | FIFO               | 调度、排队任务   |
+| Dictionary/Map   | key-value 映射     | 查找、缓存、计数 |
 
 ---
-layout: default
----
+
+## layout: default
 
 # 真题演练
 
 **Which of the following is a non-primitive data structure?**
 
-| 选项 | 内容 |
-|------|------|
-| a | Boolean |
-| b | Integer |
-| c | Dictionary |
-| d | Character |
+| 选项 | 内容       |
+| ---- | ---------- |
+| a    | Boolean    |
+| b    | Integer    |
+| c    | Dictionary |
+| d    | Character  |
 
 <div v-click class="callout mt-4 text-sm">
 <strong>答案：</strong><code>c</code><br>
@@ -167,16 +167,16 @@ layout: default
 </div>
 
 ---
-layout: section
----
+
+## layout: section
 
 # Part 3
 
 # Complex Data Structures
 
 ---
-layout: default
----
+
+## layout: default
 
 # Complex Structures Overview
 
@@ -188,8 +188,8 @@ layout: default
 这些结构面向更复杂的数据组织与操作优化问题。
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Graphs
 
@@ -206,8 +206,8 @@ layout: two-cols
 - 通信网络拓扑
 
 ---
-layout: default
----
+
+## layout: default
 
 # Trees
 
@@ -223,8 +223,8 @@ layout: default
 - AVL / Red-Black / Trie 等
 
 ---
-layout: default
----
+
+## layout: default
 
 # Binary Search Tree (BST)
 
@@ -241,19 +241,19 @@ BST 规则：
 - Traversal (Inorder / Preorder / Postorder)
 
 ---
-layout: default
----
+
+## layout: default
 
 # BST 优劣
 
-| 维度 | 说明 |
-|------|------|
+| 维度 | 说明                                   |
+| ---- | -------------------------------------- |
 | 优势 | 平均搜索效率高、支持动态增删、保持有序 |
-| 局限 | 不平衡时性能退化、指针有内存开销 |
+| 局限 | 不平衡时性能退化、指针有内存开销       |
 
 ---
-layout: default
----
+
+## layout: default
 
 # B-Tree（为什么数据库喜欢它）
 
@@ -262,8 +262,8 @@ layout: default
 - 常用于数据库索引与文件系统
 
 ---
-layout: default
----
+
+## layout: default
 
 # Hash Tables
 
@@ -277,8 +277,8 @@ layout: default
 - Collision resolution（chaining / open addressing）
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # Hash Table 应用
 
@@ -297,8 +297,8 @@ layout: two-cols
 - 冲突处理会带来额外内存开销
 
 ---
-layout: default
----
+
+## layout: default
 
 # Heaps
 
@@ -313,16 +313,16 @@ layout: default
 - Heapify
 
 ---
-layout: section
----
+
+## layout: section
 
 # BST vs Heap
 
 # 图解对比
 
 ---
-layout: default
----
+
+## layout: default
 
 # 普通 Binary Tree（无统一大小规则）
 
@@ -339,8 +339,8 @@ graph TD
 结论：这是树，但既不是 BST，也不是 Heap。
 
 ---
-layout: default
----
+
+## layout: default
 
 # BST（查找导向）
 
@@ -358,8 +358,8 @@ graph TD
 - 适合查找特定值和范围查询
 
 ---
-layout: default
----
+
+## layout: default
 
 # Max-Heap（优先级导向）
 
@@ -377,8 +377,8 @@ graph TD
 - 适合反复取最大值（或最小值）
 
 ---
-layout: two-cols
----
+
+## layout: two-cols
 
 # 同一组数据：BST vs Heap
 
@@ -394,9 +394,10 @@ flowchart LR
 	end
 
 ```
+
 ::right::
 
-# ‎ 
+# ‎
 
 ```mermaid
 flowchart LR
@@ -415,8 +416,8 @@ flowchart LR
 </div>
 
 ---
-layout: default
----
+
+## layout: default
 
 # Heaps 的应用
 
@@ -425,19 +426,19 @@ layout: default
 - 图算法（Dijkstra / Prim）
 
 ---
-layout: default
----
+
+## layout: default
 
 # 真题演练
 
 **Which data structure is most directly used to implement a priority queue?**
 
-| 选项 | 内容 |
-|------|------|
-| a | Array |
-| b | Heap |
-| c | String |
-| d | Stack |
+| 选项 | 内容   |
+| ---- | ------ |
+| a    | Array  |
+| b    | Heap   |
+| c    | String |
+| d    | Stack  |
 
 <div v-click class="callout mt-4 text-sm">
 <strong>答案：</strong><code>b</code><br>
@@ -445,16 +446,16 @@ layout: default
 </div>
 
 ---
-layout: section
----
+
+## layout: section
 
 # Part 4
 
 # Week 6 收束
 
 ---
-layout: default
----
+
+## layout: default
 
 # Week 6 Checklist
 
@@ -465,8 +466,8 @@ layout: default
 5. 能说出 heap 在 priority queue 的作用
 
 ---
-layout: default
----
+
+## layout: default
 
 # Summary & To-do
 
@@ -476,8 +477,8 @@ layout: default
 - 下周进入 Week 7：Data Quality and Anomalies
 
 ---
-layout: end
----
+
+## layout: end
 
 # Next Week
 

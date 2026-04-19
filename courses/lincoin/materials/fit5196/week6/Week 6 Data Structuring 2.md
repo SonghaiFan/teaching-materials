@@ -58,12 +58,12 @@ Data structuring is the process of organizing data into systematic formats that 
 
 ## Primitive Data Types Summary
 
-| Type | Description | Common Usage |
-| --- | --- | --- |
-| Integer | Whole numbers | Counting, indexing |
+| Type           | Description                | Common Usage                        |
+| -------------- | -------------------------- | ----------------------------------- |
+| Integer        | Whole numbers              | Counting, indexing                  |
 | Floating point | Real numbers with decimals | Scientific and numeric calculations |
-| Character | Single text symbol | Text processing |
-| Boolean | True/False | Conditions, control flow |
+| Character      | Single text symbol         | Text processing                     |
+| Boolean        | True/False                 | Conditions, control flow            |
 
 ### Primitive Type Notes
 
@@ -73,13 +73,13 @@ Data structuring is the process of organizing data into systematic formats that 
 
 ## Non-Primitive Data Types Summary
 
-| Type | Description | Typical Scenario |
-| --- | --- | --- |
-| Array | Same-type elements in contiguous memory | Fast indexed access |
-| String | Sequence of characters | Text storage and manipulation |
-| List/Linked List | Dynamically linked elements | Frequent insert/delete |
-| Queue | FIFO structure | Scheduling and buffered processing |
-| Dictionary/Map | Key-value pairs | Fast lookup and caching |
+| Type             | Description                             | Typical Scenario                   |
+| ---------------- | --------------------------------------- | ---------------------------------- |
+| Array            | Same-type elements in contiguous memory | Fast indexed access                |
+| String           | Sequence of characters                  | Text storage and manipulation      |
+| List/Linked List | Dynamically linked elements             | Frequent insert/delete             |
+| Queue            | FIFO structure                          | Scheduling and buffered processing |
+| Dictionary/Map   | Key-value pairs                         | Fast lookup and caching            |
 
 ## Complex Data Structures
 
