@@ -133,7 +133,7 @@ layout: default
 
 # What happens in topic approval
 
-During studio, talk to your tutor about:
+During studio, talk about:
 
 - whether the topic is appropriate
 - whether the data direction is realistic
@@ -151,7 +151,7 @@ layout: default
 # A good DV2 topic should be
 
 - clearly different from your `DV1` domain
-- relevant to Australia or Malaysia unless approved otherwise
+- relevant to Australia unless approved otherwise
 - personally meaningful to you
 - understandable to a general audience
 - feasible with public data and `Vega-Lite`
