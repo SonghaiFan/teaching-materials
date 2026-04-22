@@ -391,6 +391,46 @@ layout: default
 
 ---
 layout: default
+zoom: 0.82
+---
+
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Live demo</p>
+
+# Edit The Spec, See The Chart
+
+<VegaLitePlayground
+  title="Starter Vega-Lite demo"
+  :height="300"
+  :initial-spec="{
+    $schema: 'https://vega.github.io/schema/vega-lite/v6.json',
+    data: {
+      values: [
+        { a: 'C', b: 2 },
+        { a: 'C', b: 7 },
+        { a: 'C', b: 4 },
+        { a: 'D', b: 1 },
+        { a: 'D', b: 2 },
+        { a: 'D', b: 6 },
+        { a: 'E', b: 8 },
+        { a: 'E', b: 4 },
+        { a: 'E', b: 7 },
+      ],
+    },
+    mark: 'bar',
+    encoding: {
+      y: { field: 'a', type: 'nominal' },
+      x: {
+        aggregate: 'average',
+        field: 'b',
+        type: 'quantitative',
+        title: 'Mean of b',
+      },
+    },
+  }"
+/>
+
+---
+layout: default
 ---
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Timeline</p>
