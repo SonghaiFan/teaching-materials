@@ -353,12 +353,6 @@ const vlSpec = {
 }
 ```
 
-This is a useful pattern:
-
-- start with raw data
-- then decide whether you need an aggregate such as `average`
-- then choose a mark that fits the task
-
 ---
 layout: default
 ---
