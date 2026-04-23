@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 320,
+  "data": {
+    "values": [
+      { "stage": "Awareness", "count": 120 },
+      { "stage": "Interest", "count": 92 },
+      { "stage": "Consideration", "count": 61 },
+      { "stage": "Action", "count": 34 }
+    ]
+  },
+  "mark": { "type": "bar", "cornerRadiusEnd": 6 },
+  "encoding": {
+    "x": { "field": "count", "type": "quantitative", "title": "Users" },
+    "y": { "field": "stage", "type": "ordinal", "sort": "-x", "title": null },
+    "color": { "field": "stage", "type": "nominal", "legend": null },
+    "tooltip": [
+      { "field": "stage", "type": "nominal" },
+      { "field": "count", "type": "quantitative" }
+    ]
+  }
+}

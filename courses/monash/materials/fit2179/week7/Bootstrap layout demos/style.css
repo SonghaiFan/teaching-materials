@@ -6,10 +6,9 @@ body {
 
 .placeholder-box {
   border: 1px solid currentColor;
-  display: grid;
-  place-items: center;
+  display: block;
   min-height: 360px;
-  overflow: hidden;
+  overflow: visible;
   padding: 1rem;
   width: 100%;
 }
@@ -19,62 +18,7 @@ body {
   width: 100%;
 }
 
-.timeline-demo {
-  position: relative;
-  min-height: 640px;
-}
-
-.timeline-line {
-  bottom: 0;
-  left: 50%;
-  position: absolute;
-  top: 0;
-  transform: translateX(-50%);
-  width: 1px;
-  background: currentColor;
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  margin-bottom: 2rem;
-}
-
-.timeline-item-left {
-  padding-right: 3rem;
-}
-
-.timeline-item-right {
-  margin-left: 50%;
-  padding-left: 3rem;
-}
-
-.timeline-content {
-  display: flex;
-  align-items: center;
-  min-height: 96px;
-  position: relative;
-}
-
-.timeline-item-left .timeline-content {
-  justify-content: flex-end;
-  text-align: right;
-}
-
-.timeline-item-right .timeline-content {
-  justify-content: flex-start;
-  text-align: left;
-}
-
-.timeline-box {
-  background: #fff;
-  border: 1px solid currentColor;
-  min-height: 360px;
-  padding: 1rem;
-  width: 100%;
-}
-
-.timeline-item-left::after,
-.timeline-item-right::after {
-  content: none;
+.placeholder-box svg,
+.placeholder-box canvas {
+  max-width: 100%;
 }

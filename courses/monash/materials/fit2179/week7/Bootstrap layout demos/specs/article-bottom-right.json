@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 220,
+  "data": {
+    "values": [
+      { "band": "Low", "count": 12 },
+      { "band": "Medium", "count": 26 },
+      { "band": "High", "count": 18 }
+    ]
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 5,
+    "cornerRadiusTopRight": 5,
+    "color": "#6610f2"
+  },
+  "encoding": {
+    "x": {
+      "field": "band",
+      "type": "nominal",
+      "title": null,
+      "axis": { "labelAngle": 0 }
+    },
+    "y": { "field": "count", "type": "quantitative", "title": "Count" },
+    "tooltip": [
+      { "field": "band", "type": "nominal" },
+      { "field": "count", "type": "quantitative" }
+    ]
+  }
+}

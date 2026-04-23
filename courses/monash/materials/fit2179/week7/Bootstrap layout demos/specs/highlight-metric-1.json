@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 160,
+  "data": {
+    "values": [
+      { "status": "Completed", "value": 78 },
+      { "status": "Remaining", "value": 22 }
+    ]
+  },
+  "mark": { "type": "arc", "innerRadius": 48 },
+  "encoding": {
+    "theta": { "field": "value", "type": "quantitative" },
+    "color": {
+      "field": "status",
+      "type": "nominal",
+      "scale": { "range": ["#198754", "#e9ecef"] },
+      "legend": null
+    },
+    "tooltip": [
+      { "field": "status", "type": "nominal" },
+      { "field": "value", "type": "quantitative", "title": "Completion %" }
+    ]
+  }
+}

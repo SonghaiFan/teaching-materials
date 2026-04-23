@@ -1,46 +1,56 @@
-async function embedChart(selector, spec, options = {}) {
-  const element = document.querySelector(selector);
-  if (!element || typeof vegaEmbed === "undefined") return;
+const visContainers = document.querySelectorAll("[data-vega-spec]");
 
-  element.innerHTML = "";
+function normaliseSpec(rawSpec) {
+  const existingConfig = rawSpec.config ?? {};
+  const existingLegend = existingConfig.legend ?? {};
 
-  await vegaEmbed(selector, spec, {
-    actions: false,
-    renderer: "svg",
-    ...options,
-  });
+  return {
+    ...rawSpec,
+    width: rawSpec.width ?? "container",
+    padding: rawSpec.padding ?? { top: 12, right: 20, bottom: 36, left: 44 },
+    autosize: rawSpec.autosize ?? {
+      type: "fit-x",
+      contains: "padding",
+      resize: true,
+    },
+    config: {
+      ...existingConfig,
+      legend: {
+        orient: "bottom",
+        direction: "horizontal",
+        title: null,
+        labelLimit: 120,
+        ...existingLegend,
+      },
+    },
+  };
 }
 
-const storyBarSpec = {
-  $schema: "https://vega.github.io/schema/vega-lite/v6.json",
-  width: "container",
-  height: 300,
-  data: {
-    values: [
-      { category: "Asia", value: 42 },
-      { category: "Europe", value: 35 },
-      { category: "Africa", value: 28 },
-      { category: "Americas", value: 31 },
-      { category: "Oceania", value: 18 },
-    ],
-  },
-  mark: "bar",
-  encoding: {
-    x: {
-      field: "category",
-      type: "nominal",
-      axis: { labelAngle: 0, title: null },
-    },
-    y: {
-      field: "value",
-      type: "quantitative",
-      title: "Value",
-    },
-    tooltip: [
-      { field: "category", type: "nominal" },
-      { field: "value", type: "quantitative" },
-    ],
-  },
-};
+async function renderVisualisations() {
+  if (typeof vegaEmbed === "undefined") {
+    return;
+  }
 
-embedChart("#vis-main", storyBarSpec);
+  for (const container of visContainers) {
+    const specPath = container.getAttribute("data-vega-spec");
+
+    if (!specPath) {
+      continue;
+    }
+
+    try {
+      const response = await fetch(specPath);
+      const spec = await response.json();
+
+      await vegaEmbed(container, normaliseSpec(spec), {
+        actions: false,
+        renderer: "svg",
+      });
+    } catch (error) {
+      container.textContent = "Unable to load visualisation.";
+      console.error(`Failed to render ${specPath}`, error);
+    }
+  }
+}
+
+renderVisualisations();

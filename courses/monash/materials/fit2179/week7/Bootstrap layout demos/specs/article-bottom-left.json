@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 220,
+  "data": {
+    "values": [
+      { "week": "W1", "value": 45 },
+      { "week": "W2", "value": 47 },
+      { "week": "W3", "value": 52 },
+      { "week": "W4", "value": 55 },
+      { "week": "W5", "value": 59 }
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 3,
+    "color": "#20c997"
+  },
+  "encoding": {
+    "x": { "field": "week", "type": "ordinal", "title": "Week" },
+    "y": { "field": "value", "type": "quantitative", "title": "Index" },
+    "tooltip": [
+      { "field": "week", "type": "ordinal" },
+      { "field": "value", "type": "quantitative" }
+    ]
+  }
+}

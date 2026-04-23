@@ -1,0 +1,27 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 260,
+  "data": {
+    "values": [
+      { "quarter": "Q1", "value": 18 },
+      { "quarter": "Q2", "value": 24 },
+      { "quarter": "Q3", "value": 29 },
+      { "quarter": "Q4", "value": 35 }
+    ]
+  },
+  "mark": {
+    "type": "line",
+    "point": true,
+    "strokeWidth": 3,
+    "color": "#d62728"
+  },
+  "encoding": {
+    "x": { "field": "quarter", "type": "ordinal", "title": null },
+    "y": { "field": "value", "type": "quantitative", "title": "Value" },
+    "tooltip": [
+      { "field": "quarter", "type": "ordinal" },
+      { "field": "value", "type": "quantitative" }
+    ]
+  }
+}

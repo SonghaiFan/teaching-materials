@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "values": [
+      { "x": 10, "y": 23, "segment": "Urban" },
+      { "x": 14, "y": 26, "segment": "Urban" },
+      { "x": 18, "y": 29, "segment": "Urban" },
+      { "x": 9, "y": 16, "segment": "Regional" },
+      { "x": 12, "y": 19, "segment": "Regional" },
+      { "x": 16, "y": 22, "segment": "Regional" }
+    ]
+  },
+  "mark": { "type": "point", "filled": true, "size": 120 },
+  "encoding": {
+    "x": { "field": "x", "type": "quantitative", "title": "Input" },
+    "y": { "field": "y", "type": "quantitative", "title": "Outcome" },
+    "color": { "field": "segment", "type": "nominal" },
+    "tooltip": [
+      { "field": "segment", "type": "nominal" },
+      { "field": "x", "type": "quantitative" },
+      { "field": "y", "type": "quantitative" }
+    ]
+  }
+}

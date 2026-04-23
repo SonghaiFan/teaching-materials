@@ -1,0 +1,28 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 300,
+  "data": {
+    "values": [
+      { "month": "Jan", "segment": "Urban", "value": 34 },
+      { "month": "Feb", "segment": "Urban", "value": 36 },
+      { "month": "Mar", "segment": "Urban", "value": 39 },
+      { "month": "Apr", "segment": "Urban", "value": 41 },
+      { "month": "Jan", "segment": "Regional", "value": 25 },
+      { "month": "Feb", "segment": "Regional", "value": 27 },
+      { "month": "Mar", "segment": "Regional", "value": 29 },
+      { "month": "Apr", "segment": "Regional", "value": 31 }
+    ]
+  },
+  "mark": { "type": "line", "point": true, "strokeWidth": 3 },
+  "encoding": {
+    "x": { "field": "month", "type": "ordinal", "title": "Month" },
+    "y": { "field": "value", "type": "quantitative", "title": "Index" },
+    "color": { "field": "segment", "type": "nominal" },
+    "tooltip": [
+      { "field": "month", "type": "ordinal" },
+      { "field": "segment", "type": "nominal" },
+      { "field": "value", "type": "quantitative" }
+    ]
+  }
+}

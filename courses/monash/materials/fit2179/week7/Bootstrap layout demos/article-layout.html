@@ -28,7 +28,10 @@
       <section class="border-bottom">
         <div class="row g-0">
           <div class="col-12 p-4">
-          <div class="placeholder-box">Headline visual</div>
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/article-headline.json"
+            ></div>
           </div>
         </div>
       </section>
@@ -51,7 +54,10 @@
             </p>
           </div>
           <div class="col-lg-6 p-4">
-            <div class="placeholder-box">Side visual</div>
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/article-side.json"
+            ></div>
           </div>
         </div>
       </section>
@@ -59,13 +65,24 @@
       <section>
         <div class="row g-0">
           <div class="col-md-6 p-4">
-            <div class="placeholder-box">Chart or image</div>
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/article-bottom-left.json"
+            ></div>
           </div>
           <div class="col-md-6 p-4">
-            <div class="placeholder-box">Chart or image</div>
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/article-bottom-right.json"
+            ></div>
           </div>
         </div>
       </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script type="module" src="main.js"></script>
   </body>
 </html>

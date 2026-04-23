@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": "container",
+  "height": 260,
+  "data": {
+    "values": [
+      { "channel": "Email", "share": 28 },
+      { "channel": "Search", "share": 24 },
+      { "channel": "Social", "share": 18 },
+      { "channel": "Referral", "share": 16 },
+      { "channel": "Direct", "share": 14 }
+    ]
+  },
+  "mark": { "type": "arc", "innerRadius": 50 },
+  "encoding": {
+    "theta": { "field": "share", "type": "quantitative" },
+    "color": { "field": "channel", "type": "nominal" },
+    "tooltip": [
+      { "field": "channel", "type": "nominal" },
+      { "field": "share", "type": "quantitative", "title": "Share %" }
+    ]
+  }
+}

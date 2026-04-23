@@ -1,81 +1,99 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Standard Story Layout</title>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Standard Story Layout</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <body>
+    <main class="container-fluid px-0">
+      <section class="border-bottom">
+        <div class="row g-0">
+          <div class="col-12 p-4">
+            <h1 class="mb-1">Standard Story Layout</h1>
+            <p class="mb-0">A basic narrative visualisation page.</p>
+          </div>
+        </div>
+      </section>
 
-<body>
-  <main class="container-fluid px-0">
-    <section class="border-bottom">
-      <div class="row g-0">
-        <div class="col-12 p-4">
-          <h1 class="mb-1">Standard Story Layout</h1>
-          <p class="mb-0">A basic narrative visualisation page.</p>
+      <section class="border-bottom">
+        <div class="row g-0">
+          <div class="col-lg-4 p-4">
+            <h2 class="h5">Introduction</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p class="mb-0">
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </div>
+          <div class="col-lg-8 p-4">
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/story-main-bar.json"
+            ></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="border-bottom">
-      <div class="row g-0">
-        <div class="col-lg-4 p-4">
-          <h2 class="h5">Introduction</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
-            et dolore magna aliqua.
-          </p>
-          <p class="mb-0">
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-          </p>
+      <section class="border-bottom">
+        <div class="row g-0">
+          <div class="col-md-4 p-4">
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/story-support-line.json"
+            ></div>
+          </div>
+          <div class="col-md-4 p-4">
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/story-support-dot.json"
+            ></div>
+          </div>
+          <div class="col-md-4 p-4">
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/story-support-area.json"
+            ></div>
+          </div>
         </div>
-        <div class="col-lg-8 p-4">
-          <div id="vis-main" class="placeholder-box"></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="border-bottom">
-      <div class="row g-0">
-        <div class="col-md-4 p-4">
-          <div class="placeholder-box">Visual 1</div>
+      <section>
+        <div class="row g-0">
+          <div class="col-lg-7 p-4">
+            <h2 class="h5">Explanation</h2>
+            <p>
+              Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur.
+            </p>
+            <p class="mb-0">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+          </div>
+          <div class="col-lg-5 p-4">
+            <div
+              class="placeholder-box"
+              data-vega-spec="specs/story-side-scatter.json"
+            ></div>
+          </div>
         </div>
-        <div class="col-md-4 p-4">
-          <div class="placeholder-box">Visual 2</div>
-        </div>
-        <div class="col-md-4 p-4">
-          <div class="placeholder-box">Visual 3</div>
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <section>
-      <div class="row g-0">
-        <div class="col-lg-7 p-4">
-          <h2 class="h5">Explanation</h2>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-          <p class="mb-0">
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-            laborum.
-          </p>
-        </div>
-        <div class="col-lg-5 p-4">
-          <div class="placeholder-box">Supporting visual</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <script type="module" src="main.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <script type="module" src="main.js"></script>
+  </body>
 </html>
