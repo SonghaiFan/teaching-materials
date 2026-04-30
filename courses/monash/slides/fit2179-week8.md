@@ -252,7 +252,7 @@ layout: default
 Source folder:
 
 ```txt
-materials/fit2179/week8/Week 8 Studio Source Code/2_symbol_map
+Week 8 Studio Source Code/2_symbol_map
 ```
 
 Try:
@@ -346,7 +346,7 @@ layout: default
 Source folder:
 
 ```txt
-materials/fit2179/week8/Week 8 Studio Source Code/3_choropleth_map
+Week 8 Studio Source Code/3_choropleth_map
 ```
 
 Try:
@@ -402,4 +402,3 @@ layout: default
 - find public data from at least two sources
 - test one Vega-Lite map example locally
 - bring data questions to consultation or Ed early
-
