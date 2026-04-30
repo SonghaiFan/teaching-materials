@@ -5,23 +5,29 @@
 ### What Could Cause This?
 
 #### **1. Country Name Mismatch (Most Common Cause)**
+
 The TopoJSON file (geographic boundaries) and the CSV data file use different country names:
 
 **Example:** Congo appears blank on the map
+
 - **TopoJSON might contain:** "Democratic Republic of the Congo" or "Congo"
-- **CSV contains:** "Congo (Kinshasa)" 
+- **CSV contains:** "Congo (Kinshasa)"
 - **Lookup fails** → No match → Country appears white/blank
 
 When Vega-Lite performs a `lookup` transform with `properties.NAME`, it tries to match:
+
 ```
 properties.NAME (from TopoJSON) == Country (from CSV)
 ```
+
 If these don't match exactly, the lookup returns `null`, and no color is assigned.
 
 #### **2. Missing Data**
+
 Some countries might not have COVID-19 data recorded in the CSV file at all.
 
 #### **3. No Data vs. Zero Cases**
+
 - A blank country could mean "no data available"
 - But we don't distinguish between "0 cases" and "no data" visually
 
@@ -32,15 +38,17 @@ Some countries might not have COVID-19 data recorded in the CSV file at all.
 #### **Solution 1: Fix the Country Name Mismatch (Recommended)**
 
 **Step 1:** Identify which countries are blank
+
 - Compare TopoJSON country names with CSV country names
 - Create a mapping file for mismatches
 
 **Step 2:** Create a name mapping/matching strategy
+
 ```json
 {
   "lookup": "properties.NAME",
   "from": {
-    "data": {"url": "...covid_10_10_2020.csv"},
+    "data": { "url": "...covid_10_10_2020.csv" },
     "key": "Country",
     "fields": ["Active"]
   }
@@ -48,6 +56,7 @@ Some countries might not have COVID-19 data recorded in the CSV file at all.
 ```
 
 **Step 3:** Use data transformation to standardize names
+
 - Option A: Clean the CSV before loading
 - Option B: Use a lookup table with name mappings
 - Option C: Modify the data on-the-fly with `transform`
@@ -69,6 +78,7 @@ Distinguish between "no data" and "data available":
 ```
 
 This shows:
+
 - **Light gray** = No data available
 - **Blue gradient** = Data available
 
@@ -131,11 +141,13 @@ Make borders darker or colored to separate regions:
 ```
 
 **Pros:**
+
 - Simple to implement
 - Works immediately
 - Doesn't change data encoding
 
 **Cons:**
+
 - Borders can be distracting
 - Small countries might be hidden by thick borders
 
@@ -152,6 +164,7 @@ Switch from a single hue (blue) to a **diverging color scale**:
 ```
 
 **Better color schemes:**
+
 - `viridis` - Perceptually uniform, colorblind-friendly
 - `turbo` - More color variety
 - `diverging` - Shows positive/negative values
@@ -173,6 +186,7 @@ Instead of a continuous scale, use discrete bins:
 ```
 
 Or manually define bins:
+
 ```json
 "color": {
   "field": "Active Cases",
@@ -185,11 +199,13 @@ Or manually define bins:
 ```
 
 **Pros:**
+
 - Clear visual separation between bins
 - Easier to distinguish neighboring countries
 - Reduces perceived "smoothness" that hides boundaries
 
 **Cons:**
+
 - Loses granularity of data
 - Must choose appropriate bin sizes
 
@@ -243,25 +259,27 @@ Create a base map with strong borders, then overlay choropleth:
 
 ## Comparison of Solutions
 
-| Solution | Effort | Effectiveness | Drawbacks |
-|----------|--------|----------------|-----------|
-| Add borders | ⭐ Easy | ⭐⭐ Moderate | Can be distracting |
-| Better color scheme | ⭐⭐ Easy | ⭐⭐⭐ Good | Limited by data |
-| Binned colors | ⭐⭐ Medium | ⭐⭐⭐⭐ Very good | Loses precision |
-| Contour lines | ⭐⭐⭐ Hard | ⭐⭐⭐ Good | Complex to implement |
-| Small multiples | ⭐⭐⭐ Hard | ⭐⭐⭐⭐ Excellent | Takes more space |
-| Layered outlines | ⭐⭐ Medium | ⭐⭐⭐⭐ Excellent | Slightly more data |
+| Solution            | Effort      | Effectiveness      | Drawbacks            |
+| ------------------- | ----------- | ------------------ | -------------------- |
+| Add borders         | ⭐ Easy     | ⭐⭐ Moderate      | Can be distracting   |
+| Better color scheme | ⭐⭐ Easy   | ⭐⭐⭐ Good        | Limited by data      |
+| Binned colors       | ⭐⭐ Medium | ⭐⭐⭐⭐ Very good | Loses precision      |
+| Contour lines       | ⭐⭐⭐ Hard | ⭐⭐⭐ Good        | Complex to implement |
+| Small multiples     | ⭐⭐⭐ Hard | ⭐⭐⭐⭐ Excellent | Takes more space     |
+| Layered outlines    | ⭐⭐ Medium | ⭐⭐⭐⭐ Excellent | Slightly more data   |
 
 ---
 
 ## Recommended Implementation
 
 ### **For Blank Countries:**
+
 1. **First:** Use conditional coloring to show "no data" in light gray
 2. **Second:** Add tooltips explaining missing data
 3. **Third:** Fix the data source if possible
 
 ### **For Same-Color Neighbors:**
+
 1. **Quick fix:** Increase stroke width: `"strokeWidth": 1.5`
 2. **Better fix:** Use viridis color scale: `"scheme": "viridis"`
 3. **Best fix:** Combine binned colors with strong borders
@@ -274,7 +292,7 @@ Here's how to combine both solutions:
 
 ```json
 {
-  "mark": {"type": "geoshape", "stroke": "#333", "strokeWidth": 1.5},
+  "mark": { "type": "geoshape", "stroke": "#333", "strokeWidth": 1.5 },
   "encoding": {
     "color": {
       "condition": {
@@ -289,14 +307,15 @@ Here's how to combine both solutions:
       }
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "Active", "type": "quantitative", "title": "Active Cases"}
+      { "field": "properties.NAME", "type": "nominal", "title": "Country" },
+      { "field": "Active", "type": "quantitative", "title": "Active Cases" }
     ]
   }
 }
 ```
 
 This:
+
 - ✅ Shows no-data countries in light gray
 - ✅ Uses perceptually uniform "viridis" colors
 - ✅ Adds dark borders to separate countries

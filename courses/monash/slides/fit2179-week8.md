@@ -250,6 +250,28 @@ layout: default
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">If time</p>
 
+---
+layout: section
+---
+
+# Student Tasks
+
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Tasks for today</p>
+
+- **Task 1 — Symbol map encodings**
+  - Change `color` → `mag`, `size` → `dmin`, add `shape` = `locationSource`.
+  - Use a `point` mark; if there are many categories, provide an explicit `shape` scale.
+
+- **Task 2 — Choropleth issues & fixes**
+  - Find mismatched country names (e.g., Congo) between TopoJSON and CSV; list them.
+  - Short-term: add conditional color for missing data (light gray). Long-term: normalize names.
+  - Improve neighbor distinction: add borders, use `viridis`, or bin into discrete categories.
+
+---
+layout: default
+
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">If time</p>
+
 # Map refinements
 
 Explore these files after the basic examples work:

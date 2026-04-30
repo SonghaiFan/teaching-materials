@@ -3,11 +3,13 @@
 ## Summary of Changes
 
 ### Original Encodings
+
 - **color**: `depth` (quantitative) - Depth in km
 - **size**: `mag` (quantitative) - Magnitude
 
 ### Modified Encodings
-- **color**: `mag` (quantitative) - Magnitude  
+
+- **color**: `mag` (quantitative) - Magnitude
 - **size**: `dmin` (quantitative) - Minimum Distance
 - **shape**: `locationSource` (nominal) - Location Source (NEW)
 
@@ -16,6 +18,7 @@
 ## Visualization Results
 
 ### ✅ What Works
+
 1. **Color encoding for magnitude**: The red color scale effectively shows earthquake magnitude, with darker/redder points indicating higher magnitudes.
 2. **Size encoding for dmin**: Points vary in size according to the minimum distance value.
 3. **Shape encoding display**: Points are rendered with different shapes (circles and crosses) for different location sources.
@@ -39,7 +42,7 @@ When you add the `shape` encoding for `locationSource`, you may encounter implic
 2. **Data Constraint**: In the earthquake dataset, there are only 2 location sources:
    - `us` (USGS - United States Geological Survey)
    - `ak` (Alaska Earthquake Center)
-   
+
    This fits within the available shapes, so it works without explicit errors.
 
 3. **Shape Effectiveness**: However, the shape channel is **less effective** for encoding categorical data compared to other channels:
@@ -53,7 +56,9 @@ When you add the `shape` encoding for `locationSource`, you may encounter implic
 ## The Fix
 
 ### Problem
+
 If there were **more than ~5-8** unique values in `locationSource`, Vega-Lite would either:
+
 - Recycle shapes (same shape for multiple categories)
 - Issue a warning about insufficient shapes
 - Create visual ambiguity
@@ -75,6 +80,7 @@ Add a `scale` definition to control which shapes map to which categories:
 ```
 
 This explicitly maps:
+
 - `us` → circle
 - `ak` → cross
 
@@ -83,6 +89,7 @@ This explicitly maps:
 If you had many location sources, consider:
 
 1. **Use Color instead** (more perceptually distinct):
+
 ```json
 "color": {
   "field": "locationSource",
@@ -92,6 +99,7 @@ If you had many location sources, consider:
 ```
 
 2. **Use a legend with filtering**:
+
 ```json
 "opacity": {
   "field": "locationSource",
@@ -127,12 +135,14 @@ Note: The `shape` channel requires the mark type to be **`point`** rather than *
 ## Recommendations
 
 ✅ **Keep this encoding because**:
+
 - Only 2 location sources (fits shape channel well)
 - Visual distinction is clear
 - Complements the magnitude (color) and distance (size) encodings
 - Provides third dimension of information
 
 ⚠️ **If you had many location sources**:
+
 - Switch `shape` to `opacity` or secondary `color` scale
 - Or use `facet` to create separate maps per location source
 

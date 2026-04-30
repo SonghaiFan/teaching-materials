@@ -3,10 +3,10 @@
   "title": "COVID-19 Active Cases - Binned Colors (Maximum Clarity)",
   "width": 800,
   "height": 400,
-  "projection": {"type": "equalEarth"},
+  "projection": { "type": "equalEarth" },
   "data": {
     "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
-    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+    "format": { "type": "topojson", "feature": "ne_110m_admin_0_countries" }
   },
   "transform": [
     {
@@ -24,19 +24,26 @@
       "as": "Cases_Bin"
     }
   ],
-  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1.5},
+  "mark": { "type": "geoshape", "stroke": "white", "strokeWidth": 1.5 },
   "encoding": {
     "color": {
       "field": "Cases_Bin",
       "type": "nominal",
       "scale": {
         "domain": ["No Data", "0-1K", "1K-5K", "5K-20K", "20K-100K", "100K+"],
-        "range": ["#efefef", "#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08519c"]
+        "range": [
+          "#efefef",
+          "#f7fbff",
+          "#c6dbef",
+          "#6baed6",
+          "#2171b5",
+          "#08519c"
+        ]
       },
-      "legend": {"title": "Active Cases"}
+      "legend": { "title": "Active Cases" }
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      { "field": "properties.NAME", "type": "nominal", "title": "Country" },
       {
         "condition": {
           "test": "datum.Active == null",
