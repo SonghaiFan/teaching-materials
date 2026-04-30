@@ -248,42 +248,22 @@ layout: default
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">If time</p>
-
----
-layout: section
----
-
 # Student Tasks
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Tasks for today</p>
 
+<VClicks>
+
 - **Task 1 — Symbol map encodings**
-  - Change `color` → `mag`, `size` → `dmin`, add `shape` = `locationSource`.
-  - Use a `point` mark; if there are many categories, provide an explicit `shape` scale.
+- Change `color` → `mag`, `size` → `dmin`, add `shape` = `locationSource`.
+- Use a `point` mark; if there are many categories, provide an explicit `shape` scale.
 
 - **Task 2 — Choropleth issues & fixes**
-  - Find mismatched country names (e.g., Congo) between TopoJSON and CSV; list them.
-  - Short-term: add conditional color for missing data (light gray). Long-term: normalize names.
-  - Improve neighbor distinction: add borders, use `viridis`, or bin into discrete categories.
+- Find mismatched country names (e.g., Congo) between TopoJSON and CSV; list them.
+- Short-term: add conditional color for missing data (light gray). Long-term: normalize names.
+- Improve neighbor distinction: add borders, use `viridis`, or bin into discrete categories.
 
----
-layout: default
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">If time</p>
-
-# Map refinements
-
-Explore these files after the basic examples work:
-
-- `mapWithGraticules.html`
-- `emptyCountries.html`
-- `choroplethMapWithOcean.html`
-- `choroplethMapWithCountryName.html`
-
-Use refinements only when they support the story and improve readability.
-
-See detailed guides in `ISSUES_AND_SOLUTIONS.md` and `IMPLEMENTATION_GUIDE.md`.
+</VClicks>
 
 ---
 layout: default
@@ -304,25 +284,6 @@ layout: default
 layout: default
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice reflection</p>
-
-# Map design trade-offs
-
-When designing a choropleth, ask yourself:
-
-- **Precision vs clarity**: Is accurate color better than distinguishable colors?
-- **Data quality**: Are all countries matched correctly?
-- **Simplicity**: Can viewers understand the color scheme quickly?
-- **Accessibility**: Does it work for colorblind users?
-
-Good choro maps trade minor precision for significant clarity.
-
-See the interactive comparison in `analysis.html` for all solutions.
-
----
-layout: default
----
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Before you leave</p>
 
 # Week 8 checklist
@@ -331,8 +292,4 @@ layout: default
 - confirm the map idiom for your DV2 story
 - find public data from at least two sources
 - test one Vega-Lite map example locally
-- check our detailed guides:
-  - `ISSUES_AND_SOLUTIONS.md` for deep explanations
-  - `IMPLEMENTATION_GUIDE.md` for step-by-step code
-  - `analysis.html` for interactive examples
 - bring data questions to consultation or Ed early
