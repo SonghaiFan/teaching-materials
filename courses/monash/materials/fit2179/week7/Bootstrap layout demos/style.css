@@ -11,6 +11,7 @@ body {
   overflow: visible;
   padding: 1rem;
   width: 100%;
+  background: #f8f9fa;
 }
 
 .placeholder-box > .vega-embed,
