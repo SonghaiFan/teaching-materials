@@ -34,7 +34,11 @@
         "shape": {
           "field": "locationSource",
           "type": "nominal",
-          "title": "Location Source"
+          "title": "Location Source",
+          "scale": {
+            "domain": ["us", "ak"],
+            "range": ["circle", "cross"]
+          }
         }
       }
     }

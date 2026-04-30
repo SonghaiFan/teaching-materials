@@ -213,6 +213,8 @@ layout: default
 
 # Layer a basemap and points
 
+<div style="max-height: 350px; overflow-y: auto; font-size: 0.85em;">
+
 ```json
 {
   "projection": {"type": "equalEarth"},
@@ -240,122 +242,7 @@ layout: default
   ]
 }
 ```
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Activity</p>
-
-# Open the symbol map example
-
-Source folder:
-
-```txt
-Week 8 Studio Source Code/2_symbol_map
-```
-
-Try:
-
-- open `index.html`
-- inspect `js/symbol_map.vg.json`
-- find the `longitude` and `latitude` encodings
-- change the `size` or `color` field and refresh
-
----
-layout: section
----
-
-# Choropleth Map
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Pattern</p>
-
-# Choropleth map structure
-
-1. Start with boundary shapes, such as countries or states.
-2. Join table data to the boundary data.
-3. Colour each region by a quantitative value.
-4. Add tooltips to make values readable.
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Key idea</p>
-
-# Join data with `lookup`
-
-```json
-"transform": [
-  {
-    "lookup": "properties.NAME",
-    "from": {
-      "data": {"url": "data/covid_10_10_2020.csv"},
-      "key": "Country",
-      "fields": ["Active"]
-    }
-  },
-  {
-    "calculate": "datum.Active + 0.1",
-    "as": "Active Cases"
-  }
-]
-```
-
-- `lookup` matches the map's country name to the CSV country name
-- `fields` selects the values to bring into the map
-- `calculate` creates a new field for encoding
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Colour regions</p>
-
-# Encode the joined value
-
-```json
-"mark": {"type": "geoshape"},
-"encoding": {
-  "color": {
-    "field": "Active Cases",
-    "type": "quantitative",
-    "scale": {"type": "log"}
-  },
-  "tooltip": [
-    {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-    {"field": "Active", "type": "quantitative"}
-  ]
-}
-```
-
-> Check your join carefully. A choropleth can look valid even when many regions have missing data.
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Activity</p>
-
-# Open the choropleth example
-
-Source folder:
-
-```txt
-Week 8 Studio Source Code/3_choropleth_map
-```
-
-Try:
-
-- open `index.html`
-- inspect `js/choropleth_map.vg.json`
-- identify the boundary file and CSV file
-- find the join key on both sides
-- inspect what happens when a country name does not match
+</div>
 
 ---
 layout: default
@@ -373,6 +260,8 @@ Explore these files after the basic examples work:
 - `choroplethMapWithCountryName.html`
 
 Use refinements only when they support the story and improve readability.
+
+See detailed guides in `ISSUES_AND_SOLUTIONS.md` and `IMPLEMENTATION_GUIDE.md`.
 
 ---
 layout: default
@@ -393,6 +282,25 @@ layout: default
 layout: default
 ---
 
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice reflection</p>
+
+# Map design trade-offs
+
+When designing a choropleth, ask yourself:
+
+- **Precision vs clarity**: Is accurate color better than distinguishable colors?
+- **Data quality**: Are all countries matched correctly?
+- **Simplicity**: Can viewers understand the color scheme quickly?
+- **Accessibility**: Does it work for colorblind users?
+
+Good choro maps trade minor precision for significant clarity.
+
+See the interactive comparison in `analysis.html` for all solutions.
+
+---
+layout: default
+---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Before you leave</p>
 
 # Week 8 checklist
@@ -401,4 +309,8 @@ layout: default
 - confirm the map idiom for your DV2 story
 - find public data from at least two sources
 - test one Vega-Lite map example locally
+- check our detailed guides:
+  - `ISSUES_AND_SOLUTIONS.md` for deep explanations
+  - `IMPLEMENTATION_GUIDE.md` for step-by-step code
+  - `analysis.html` for interactive examples
 - bring data questions to consultation or Ed early

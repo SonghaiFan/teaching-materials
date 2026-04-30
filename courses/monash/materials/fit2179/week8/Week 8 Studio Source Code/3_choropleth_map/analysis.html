@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Choropleth Map Issues & Solutions</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 30px 20px;
+      min-height: 100vh;
+    }
+    .container { max-width: 1900px; margin: 0 auto; }
+    h1 { 
+      text-align: center; 
+      color: white; 
+      margin-bottom: 10px;
+      font-size: 32px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .subtitle {
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 15px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .card-title {
+      margin-bottom: 5px;
+    }
+    .card-subtitle {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .viz-container {
+      padding: 10px;
+      min-height: 450px;
+    }
+    .issue-box {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .issue-box h2 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    .issue-box h3 {
+      color: #764ba2;
+      margin-top: 15px;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+    .issue-box p, .issue-box li {
+      line-height: 1.8;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .issue-box ul, .issue-box ol {
+      margin-left: 20px;
+    }
+    .code-block {
+      background: #f5f5f5;
+      border-left: 4px solid #667eea;
+      padding: 12px;
+      margin: 12px 0;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      overflow-x: auto;
+      border-radius: 4px;
+    }
+    .pro {
+      background: #d4edda;
+      border-left: 4px solid #28a745;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+    .con {
+      background: #f8d7da;
+      border-left: 4px solid #dc3545;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 4px;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .comparison-table th {
+      background: #667eea;
+      color: white;
+      padding: 12px;
+      text-align: left;
+      font-weight: bold;
+    }
+    .comparison-table td {
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    .comparison-table tr:hover {
+      background: #f5f5f5;
+    }
+    .recommendation {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .recommendation h3 {
+      color: #ffd700;
+      margin-bottom: 10px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .summary-item {
+      background: #f5f5f5;
+      padding: 15px;
+      border-radius: 8px;
+      border-left: 4px solid #667eea;
+    }
+    .summary-item strong {
+      color: #764ba2;
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #e0e0e0;
+    }
+    .tab-button {
+      background: none;
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      color: #999;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .tab-button.active {
+      color: #667eea;
+      border-bottom-color: #667eea;
+    }
+    .tab-button:hover {
+      color: #667eea;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h1>🗺️ Choropleth Map: Issues & Solutions</h1>
+  <p class="subtitle">Understanding and fixing common choropleth visualization problems</p>
+
+  <!-- Visualizations Grid -->
+  <div class="grid">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Original Version</div>
+        <div class="card-subtitle">Shows the problem clearly</div>
+      </div>
+      <div class="viz-container" id="original"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Solution 1: Better Borders</div>
+        <div class="card-subtitle">Add strokes + no-data highlighting</div>
+      </div>
+      <div class="viz-container" id="improved"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Solution 2: Viridis Scale</div>
+        <div class="card-subtitle">Better color distinction</div>
+      </div>
+      <div class="viz-container" id="viridis"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">Solution 3: Binned Colors</div>
+        <div class="card-subtitle">Maximum clarity and simplicity</div>
+      </div>
+      <div class="viz-container" id="binned"></div>
+    </div>
+  </div>
+
+  <!-- Issue 1 Discussion -->
+  <div class="issue-box">
+    <h2>❓ Issue 1: Why Are Some Countries Blank?</h2>
+    
+    <h3>🔍 Root Causes</h3>
+    <ol>
+      <li><strong>Country Name Mismatch (MOST COMMON)</strong>
+        <p>The TopoJSON file and CSV data use different country names:</p>
+        <ul>
+          <li>TopoJSON: "Congo" or "Democratic Republic of the Congo"</li>
+          <li>CSV: "Congo (Kinshasa)"</li>
+          <li>Result: <code>lookup</code> fails → no color assigned → appears white</li>
+        </ul>
+      </li>
+      <li><strong>Missing Data</strong>
+        <p>The country exists in TopoJSON but has no matching record in the CSV file.</p>
+      </li>
+      <li><strong>Null Values</strong>
+        <p>The data exists but the value field is empty/null.</p>
+      </li>
+    </ol>
+
+    <div class="pro">
+      <strong>The Lookup Transform:</strong><br>
+      Vega-Lite tries to match: properties.NAME (TopoJSON) = Country (CSV)<br>
+      When there's no match, the field returns null → color encoding skips it
+    </div>
+
+    <h3>✅ Best Solutions</h3>
+
+    <div class="summary-grid">
+      <div class="summary-item">
+        <strong>1. Fix Data Mapping</strong><br>
+        Create a name matching table to resolve mismatches
+      </div>
+      <div class="summary-item">
+        <strong>2. Highlight Missing Data</strong><br>
+        Use conditional coloring (light gray for null)
+      </div>
+      <div class="summary-item">
+        <strong>3. Add Tooltips</strong><br>
+        Explain why data is missing
+      </div>
+      <div class="summary-item">
+        <strong>4. Use Color Condition</strong><br>
+        Different color for "no data" vs "zero cases"
+      </div>
+    </div>
+
+    <h3>Implementation Example</h3>
+    <div class="code-block">
+"color": {
+  "condition": {
+    "test": "datum.Active == null",
+    "value": "#d3d3d3"  // Light gray
+  },
+  "field": "Active Cases",
+  "type": "quantitative",
+  "scale": {"type": "log"}
+}
+    </div>
+
+    <div class="pro">
+      <strong>✅ See the improved version above!</strong><br>
+      Gray countries now clearly indicate "No data available"
+    </div>
+  </div>
+
+  <!-- Issue 2 Discussion -->
+  <div class="issue-box">
+    <h2>❓ Issue 2: Same Color for Neighboring Countries</h2>
+    
+    <h3>🎨 Why Is This a Problem?</h3>
+    <ul>
+      <li><strong>Visual Confusion:</strong> Impossible to see boundaries between similar-colored regions</li>
+      <li><strong>Geographic Loss:</strong> Countries blend together; borders disappear visually</li>
+      <li><strong>Analytical Difficulty:</strong> Hard to identify specific regions or compare neighbors</li>
+      <li><strong>Choropleth Limitation:</strong> Continuous scales naturally produce similar colors for similar values</li>
+    </ul>
+
+    <p style="margin-top: 15px; padding: 12px; background: #fff3cd; border-radius: 4px;">
+      <strong>Why it happens:</strong> When adjacent countries have COVID cases in the same range (e.g., both have 5,000-10,000 cases), they get the same color shade, making it impossible to visually separate them on the map.
+    </p>
+
+    <h3>🔧 Solutions & Trade-offs</h3>
+
+    <table class="comparison-table">
+      <tr>
+        <th>Solution</th>
+        <th>Effort</th>
+        <th>Effectiveness</th>
+        <th>Best For</th>
+      </tr>
+      <tr>
+        <td><strong>Add Darker Borders</strong><br>(strokeWidth: 1.5)</td>
+        <td>⭐ Very Easy</td>
+        <td>⭐⭐ Moderate</td>
+        <td>Quick fix; preserves data</td>
+      </tr>
+      <tr>
+        <td><strong>Change Color Scheme</strong><br>(viridis, turbo, etc.)</td>
+        <td>⭐ Very Easy</td>
+        <td>⭐⭐⭐ Good</td>
+        <td>Better distinction; colorblind-friendly</td>
+      </tr>
+      <tr>
+        <td><strong>Bin/Discretize Colors</strong><br>(5-7 categories)</td>
+        <td>⭐⭐ Easy</td>
+        <td>⭐⭐⭐⭐ Excellent</td>
+        <td>Maximum clarity; best balance</td>
+      </tr>
+      <tr>
+        <td><strong>Add Contour Lines</strong><br>(advanced)</td>
+        <td>⭐⭐⭐ Hard</td>
+        <td>⭐⭐⭐ Good</td>
+        <td>Scientific/technical data</td>
+      </tr>
+      <tr>
+        <td><strong>Small Multiples</strong><br>(by region)</td>
+        <td>⭐⭐⭐ Hard</td>
+        <td>⭐⭐⭐⭐⭐ Excellent</td>
+        <td>Detailed regional analysis</td>
+      </tr>
+    </table>
+
+    <h3>🏆 Recommended: Binned Colors (Solution 3)</h3>
+    <p>The binned version above uses discrete categories instead of continuous color:</p>
+    <ul>
+      <li>✅ Clear visual separation between neighboring countries</li>
+      <li>✅ Easy to understand (0-1K, 1K-5K, 5K-20K, etc.)</li>
+      <li>✅ Still shows meaningful patterns</li>
+      <li>✅ Only loses minor precision</li>
+      <li>✅ Works well for categorical data</li>
+    </ul>
+
+    <h3>Implementation Comparison</h3>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 10px;">Continuous Colors (Original)</h4>
+        <div class="code-block" style="font-size: 11px;">
+"scale": {"type": "log"}
+        </div>
+        <div class="con">
+          <strong>Problems:</strong><br>
+          • Too many similar shades<br>
+          • Hard to distinguish neighbors<br>
+          • Precise but unclear
+        </div>
+      </div>
+
+      <div>
+        <h4 style="color: #667eea; margin-bottom: 10px;">Binned Colors (Solution 3)</h4>
+        <div class="code-block" style="font-size: 11px;">
+"type": "nominal",
+"domain": ["0-1K", "1K-5K", ...],
+"range": ["#f7fbff", "#c6dbef", ...]
+        </div>
+        <div class="pro">
+          <strong>Benefits:</strong><br>
+          • Distinct color for each bin<br>
+          • Clear country boundaries<br>
+          • Easy to read and understand
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary & Recommendations -->
+  <div class="issue-box">
+    <h2>📋 Summary: Which Solution to Use?</h2>
+
+    <div class="recommendation">
+      <h3>🎯 For Your COVID-19 Choropleth Map</h3>
+      <p><strong>Best Approach (Recommended):</strong></p>
+      <ol style="margin-top: 10px;">
+        <li>Use <strong>binned colors</strong> (Solution 3) to fix the neighboring countries problem</li>
+        <li>Add <strong>conditional gray coloring</strong> for missing data (from Solution 1)</li>
+        <li>Combine with <strong>white borders</strong> to enhance clarity</li>
+        <li>Add informative <strong>tooltips</strong> explaining no-data countries</li>
+      </ol>
+      <p style="margin-top: 15px; font-style: italic;">This gives you the best balance of clarity, accuracy, and insight.</p>
+    </div>
+
+    <h3>Teaching Points to Discuss</h3>
+    <ul>
+      <li><strong>Data Quality:</strong> Always check if country names match between datasets</li>
+      <li><strong>Visual Encoding:</strong> Color is powerful but has limitations with continuous data</li>
+      <li><strong>Design Trade-offs:</strong> Binning loses precision but gains clarity</li>
+      <li><strong>Accessibility:</strong> Consider colorblind users (viridis is better than blues)</li>
+      <li><strong>Cognitive Load:</strong> Viewers can distinguish ~5-7 colors easily, not 50+</li>
+    </ul>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+
+const specOriginal = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+        },
+        "key": "Country",
+        "fields": ["Active"]
+      }
+    },
+    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Active Cases",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      {"field": "Active", "type": "quantitative"}
+    ]
+  }
+};
+
+const specImproved = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+        },
+        "key": "Country",
+        "fields": ["Active"]
+      }
+    },
+    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+  ],
+  "mark": {"type": "geoshape", "stroke": "#333", "strokeWidth": 1.5},
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "datum.Active == null",
+        "value": "#d3d3d3"
+      },
+      "field": "Active Cases",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      {
+        "condition": {
+          "test": "datum.Active == null",
+          "value": "No data available"
+        },
+        "field": "Active",
+        "type": "quantitative",
+        "title": "Active Cases"
+      }
+    ]
+  }
+};
+
+const specViridis = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+        },
+        "key": "Country",
+        "fields": ["Active"]
+      }
+    },
+    {"calculate": "datum.Active + 0.1", "as": "Active Cases"}
+  ],
+  "mark": {"type": "geoshape", "stroke": "#999", "strokeWidth": 0.5},
+  "encoding": {
+    "color": {
+      "condition": {
+        "test": "datum.Active == null",
+        "value": "#efefef"
+      },
+      "field": "Active Cases",
+      "type": "quantitative",
+      "scale": {"type": "log", "scheme": "viridis"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      {"field": "Active", "type": "quantitative", "title": "Active Cases"}
+    ]
+  }
+};
+
+const specBinned = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "",
+  "width": 600,
+  "height": 400,
+  "projection": {"type": "equalEarth"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/js/ne_110m_admin_0_countries.topojson",
+    "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.NAME",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+        },
+        "key": "Country",
+        "fields": ["Active"]
+      }
+    },
+    {
+      "calculate": "datum.Active == null ? 'No Data' : datum.Active < 1000 ? '0-1K' : datum.Active < 5000 ? '1K-5K' : datum.Active < 20000 ? '5K-20K' : datum.Active < 100000 ? '20K-100K' : '100K+'",
+      "as": "Cases_Bin"
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 1.5},
+  "encoding": {
+    "color": {
+      "field": "Cases_Bin",
+      "type": "nominal",
+      "scale": {
+        "domain": ["No Data", "0-1K", "1K-5K", "5K-20K", "20K-100K", "100K+"],
+        "range": ["#efefef", "#f7fbff", "#c6dbef", "#6baed6", "#2171b5", "#08519c"]
+      },
+      "legend": {"title": "Active Cases"}
+    },
+    "tooltip": [
+      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
+      {
+        "condition": {
+          "test": "datum.Active == null",
+          "value": "No data available"
+        },
+        "field": "Active",
+        "type": "quantitative",
+        "title": "Active Cases"
+      }
+    ]
+  }
+};
+
+vegaEmbed('#original', specOriginal).catch(console.error);
+vegaEmbed('#improved', specImproved).catch(console.error);
+vegaEmbed('#viridis', specViridis).catch(console.error);
+vegaEmbed('#binned', specBinned).catch(console.error);
+
+</script>
+
+</body>
+</html>
