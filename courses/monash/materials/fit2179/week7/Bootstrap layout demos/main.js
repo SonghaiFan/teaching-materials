@@ -43,7 +43,7 @@ async function renderVisualisations() {
       const spec = await response.json();
 
       await vegaEmbed(container, normaliseSpec(spec), {
-        actions: false,
+        // actions: false,
         renderer: "svg",
       });
     } catch (error) {
