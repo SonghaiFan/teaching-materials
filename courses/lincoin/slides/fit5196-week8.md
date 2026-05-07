@@ -54,14 +54,6 @@ layout: default
 | Choose practical actions | 能按场景判断何时删、补、保留、复核 |
 
 ---
-layout: statement
----
-
-## Data cleansing 的目标，不是把数据“修漂亮”，而是让数据“可分析、可信、可复现”。
-
-脏数据如果直接进入统计分析、BI 报表或机器学习模型，错误会被放大，而不是自动消失。
-
----
 layout: default
 ---
 
@@ -180,7 +172,7 @@ layout: default
 
 <div class="compact-table">
 
-| 官方强调的目标 | 要检查的内容 |
+| 学校强调的目标 | 要检查的内容 |
 |------|------|
 | Identify data quality issues | inaccuracies / inconsistencies / duplicates / missing values / anomalies |
 | Assess data completeness | 关键字段是否缺失或不完整 |
@@ -209,7 +201,7 @@ layout: default
 
 # Defining Cleansing Goals
 
-官方课件把这一步单独展开，重点包括：
+学校课件把这一步单独展开，重点包括：
 
 - Understanding business requirements
 - Identifying data quality dimensions
@@ -249,7 +241,7 @@ layout: default
 
 # Verification 不只是“看起来变干净了”
 
-官方课件强调 verification 至少包括：
+学校课件强调 verification 至少包括：
 
 - Accuracy check：修改是否正确落地
 - Consistency validation：数据集内外是否一致
@@ -290,7 +282,7 @@ layout: default
 
 # Missing values 为什么会出现
 
-官方给出的典型原因包括：
+学校给出的典型原因包括：
 
 - Equipment errors
 - Absence of survey participants
@@ -391,7 +383,7 @@ layout: default
 
 # Pairwise deletion 的额外风险
 
-官方课件特别提醒：
+学校课件特别提醒：
 
 - 它依赖 MCAR 假设
 - 会受变量间相关性影响
@@ -422,7 +414,7 @@ layout: default
 
 # Single imputation 的共性问题
 
-官方课件把 mean / regression / stochastic regression 放在 single imputation 下面讨论，并提醒：
+学校课件把 mean / regression / stochastic regression 放在 single imputation 下面讨论，并提醒：
 
 - 它们都会生成完整数据集
 - 但很多 single imputation 方法仍会带来 biased estimates
@@ -460,7 +452,7 @@ $$
 layout: default
 ---
 
-# 关于 stochastic regression 的官方结论
+# 关于 stochastic regression 的学校结论
 
 课件里有一个很重要的判断：
 
@@ -522,7 +514,7 @@ layout: default
 
 # Outliers 的价值不只是“脏”
 
-官方课件强调：异常值常常包含关于系统异常行为的有用信息。
+学校课件强调：异常值常常包含关于系统异常行为的有用信息。
 
 典型场景：
 
@@ -570,7 +562,7 @@ layout: default
 
 # Univariate detection 的通用模板
 
-给定参考值 $x_0$、波动尺度 $\zeta$ 和阈值 $t$，官方写法是：
+给定参考值 $x_0$、波动尺度 $\zeta$ 和阈值 $t$，学校写法是：
 
 $$
 |x_k - x_0| > t\zeta
@@ -599,7 +591,7 @@ layout: default
 </div>
 
 <div class="muted mt-4 text-sm">
-官方这一页的重点是：方法差异，本质上来自参考值和尺度估计方式的不同。
+学校这一页的重点是：方法差异，本质上来自参考值和尺度估计方式的不同。
 </div>
 
 ---
@@ -709,7 +701,7 @@ layout: default
 
 # Multivariate Outlier Detection
 
-官方课件后半段还补充了多变量检测思路：
+学校课件后半段还补充了多变量检测思路：
 
 - **Linear models**
   - 看点到拟合超平面的 residual
@@ -733,7 +725,7 @@ layout: default
 - 目标是找到那些在某个低维子空间里行为明显不同的点
 
 <div class="muted mt-4 text-sm">
-这是官方最后几页的核心意思，不要求复杂推导，但要知道 residual 可以作为 outlier score。
+这是学校最后几页的核心意思，不要求复杂推导，但要知道 residual 可以作为 outlier score。
 </div>
 
 ---
@@ -762,7 +754,7 @@ layout: default
 layout: default
 ---
 
-# Removing Duplicates: 官方列出的办法
+# Removing Duplicates: 学校列出的办法
 
 - Manual review and removal
 - Sorting and sequential check
