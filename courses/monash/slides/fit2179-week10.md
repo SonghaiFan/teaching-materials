@@ -206,32 +206,46 @@ zoom: 0.78
 # Overview + detail solution preview
 
 <VegaLitePlayground
-  title="Brush the lower chart to zoom the upper chart"
-  :height="300"
+  title="Earthquake overview + detail solution preview"
+  :height="340"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
-      url: 'https://raw.githubusercontent.com/vega/vega-datasets/next/data/sp500.csv',
+      url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/earthquake_lite.csv',
     },
     vconcat: [
       {
         width: 480,
-        height: 220,
+        height: 230,
+        transform: [
+          {
+            bin: { step: 0.5, extent: [5, 7] },
+            field: 'mag',
+            as: 'magnitude',
+          },
+        ],
         mark: 'area',
         encoding: {
           x: {
-            field: 'date',
+            field: 'time',
             type: 'temporal',
+            timeUnit: 'yearmonth',
             scale: { domain: { param: 'brush' } },
             axis: { title: '' },
           },
-          y: { field: 'price', type: 'quantitative' },
+          y: { aggregate: 'count', title: 'Count of Earthquakes' },
+          color: {
+            field: 'magnitude',
+            scale: { range: ['#fdbe85', '#fd8d3c', '#e6550d', '#bd0026', '#7f0000'] },
+            title: 'Magnitude',
+          },
         },
       },
       {
         width: 480,
         height: 60,
-        mark: 'area',
+        mark: 'line',
+        title: 'Brush here to select a time period',
         params: [
           {
             name: 'brush',
@@ -239,11 +253,16 @@ zoom: 0.78
           },
         ],
         encoding: {
-          x: { field: 'date', type: 'temporal' },
+          x: {
+            field: 'time',
+            type: 'temporal',
+            timeUnit: 'yearmonth',
+            axis: { title: '', format: '%Y' },
+          },
           y: {
-            field: 'price',
-            type: 'quantitative',
+            aggregate: 'count',
             axis: { tickCount: 3, grid: false },
+            title: 'Count',
           },
         },
       },
@@ -264,8 +283,8 @@ layout: default
 # Coordinated earthquake views demo
 
 <VegaLitePlayground
-  title="Brush the line chart to filter the map and zoom the area chart"
-  :height="320"
+  title="Coordinated earthquake views demo"
+  :height="360"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -528,7 +547,7 @@ layout: default
 ## Practice 1: greatest earthquake mark
 
 - change the size and shape of the mark for the greatest earthquake
-- example: use a `point` mark with `shape: "star"`
+- example: use a `point` mark with a custom star-shaped SVG path
 - hint: check the `shape` property for Vega-Lite point marks
 
 ## Practice 2: layout
@@ -554,44 +573,105 @@ zoom: 0.73
     },
     vconcat: [
       {
-        width: 450,
-        height: 230,
-        projection: { type: 'equalEarth', rotate: [-150, 0, 0] },
-        layer: [
+        hconcat: [
           {
-            data: {
-              url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson',
-              format: { type: 'topojson', feature: 'ne_110m_admin_0_countries' },
-            },
-            mark: { type: 'geoshape', fill: 'lightgray', stroke: 'white' },
-          },
-          {
-            transform: [{ filter: { param: 'time_brush' } }],
-            mark: { type: 'circle', opacity: 0.45, size: 18 },
-            encoding: {
-              longitude: { field: 'longitude', type: 'quantitative' },
-              latitude: { field: 'latitude', type: 'quantitative' },
-              color: {
-                field: 'mag',
-                type: 'quantitative',
-                title: 'Magnitude',
-                scale: {
-                  type: 'threshold',
-                  domain: [5.5, 6, 6.5, 7],
-                  range: ['#fdbe85', '#fd8d3c', '#e6550d', '#bd0026', '#7f0000'],
+            width: 330,
+            height: 230,
+            title: 'Earthquakes above a magnitude of 5',
+            projection: { type: 'equalEarth', rotate: [-150, 0, 0] },
+            layer: [
+              {
+                data: {
+                  url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson',
+                  format: { type: 'topojson', feature: 'ne_110m_admin_0_countries' },
+                },
+                mark: { type: 'geoshape', fill: 'lightgray', stroke: 'white' },
+              },
+              {
+                transform: [{ filter: { param: 'time_brush' } }],
+                mark: { type: 'circle', opacity: 0.35, size: 12 },
+                encoding: {
+                  longitude: { field: 'longitude', type: 'quantitative' },
+                  latitude: { field: 'latitude', type: 'quantitative' },
+                  color: {
+                    field: 'mag',
+                    type: 'quantitative',
+                    title: 'Magnitude',
+                    scale: {
+                      type: 'threshold',
+                      domain: [5.5, 6, 6.5, 7],
+                      range: ['#fdbe85', '#fd8d3c', '#e6550d', '#bd0026', '#7f0000'],
+                    },
+                  },
+                  tooltip: [
+                    { field: 'time', type: 'temporal' },
+                    { field: 'mag', type: 'quantitative' },
+                    { field: 'place', type: 'nominal' },
+                  ],
                 },
               },
-              tooltip: [
-                { field: 'time', type: 'temporal' },
-                { field: 'mag', type: 'quantitative' },
-                { field: 'place', type: 'nominal' },
-              ],
+              {
+                transform: [
+                  { filter: { param: 'time_brush' } },
+                  {
+                    window: [{ op: 'rank', as: 'ranking' }],
+                    sort: [{ field: 'mag', order: 'descending' }],
+                  },
+                  { filter: 'datum.ranking == 1' },
+                ],
+                mark: {
+                  type: 'point',
+                  shape: 'M0,-1 L0.224,-0.309 L0.951,-0.309 L0.363,0.118 L0.588,0.809 L0,0.382 L-0.588,0.809 L-0.363,0.118 L-0.951,-0.309 L-0.224,-0.309 Z',
+                  filled: true,
+                  size: 220,
+                  color: '#111827',
+                  stroke: 'white',
+                  strokeWidth: 1.5,
+                },
+                encoding: {
+                  longitude: { field: 'longitude', type: 'quantitative' },
+                  latitude: { field: 'latitude', type: 'quantitative' },
+                  tooltip: [
+                    { field: 'place', type: 'nominal', title: 'Greatest earthquake' },
+                    { field: 'mag', type: 'quantitative', title: 'Magnitude' },
+                    { field: 'time', type: 'temporal' },
+                  ],
+                },
+              },
+            ],
+          },
+          {
+            width: 260,
+            height: 230,
+            transform: [
+              {
+                bin: { step: 0.5, extent: [5, 7] },
+                field: 'mag',
+                as: 'magnitude',
+              },
+            ],
+            mark: 'area',
+            encoding: {
+              x: {
+                field: 'time',
+                type: 'temporal',
+                timeUnit: 'yearmonth',
+                scale: { domain: { param: 'time_brush', encoding: 'x' } },
+                axis: { title: '', tickCount: 5, grid: false },
+              },
+              y: { aggregate: 'count', type: 'quantitative', title: 'Count of Earthquakes' },
+              color: {
+                field: 'magnitude',
+                type: 'ordinal',
+                scale: { range: ['#fdbe85', '#fd8d3c', '#e6550d', '#bd0026', '#7f0000'] },
+                legend: null,
+              },
             },
           },
         ],
       },
       {
-        width: 480,
+        width: 630,
         height: 60,
         mark: 'line',
         title: 'Brush here to select a time period',
@@ -604,39 +684,15 @@ zoom: 0.73
         encoding: {
           x: {
             field: 'time',
+            type: 'temporal',
             timeUnit: 'yearmonth',
             axis: { title: '', format: '%Y' },
           },
           y: {
             aggregate: 'count',
+            type: 'quantitative',
             axis: { tickCount: 3, grid: false },
             title: 'Count',
-          },
-        },
-      },
-      {
-        width: 480,
-        height: 110,
-        transform: [
-          {
-            bin: { step: 0.5, extent: [5, 7] },
-            field: 'mag',
-            as: 'magnitude',
-          },
-        ],
-        mark: 'area',
-        encoding: {
-          x: {
-            field: 'time',
-            timeUnit: 'yearmonth',
-            scale: { domain: { param: 'time_brush' } },
-            axis: { title: '', tickCount: 5, grid: false },
-          },
-          y: { aggregate: 'count', title: 'Count' },
-          color: {
-            field: 'magnitude',
-            scale: { range: ['#fdbe85', '#fd8d3c', '#e6550d', '#bd0026', '#7f0000'] },
-            legend: null,
           },
         },
       },
@@ -1185,6 +1241,37 @@ zoom: 0.86
 - Lines `87-93`: draw a text mark in the top-right of each repeated view.
 - Line `94`: choose the correct label using the current repeated field.
 - This workaround is needed because repeated view titles are not easy to set dynamically.
+
+::right::
+
+<div style="overflow-y: auto; max-height: 460px;">
+
+```json {75-86|87-93|94|all} {lines:true,startLine:74}
+{
+  "data": {
+    "values": [
+      {
+        "2010": "Year: 2010",
+        "2012": "Year: 2012",
+        "2014": "Year: 2014",
+        "2016": "Year: 2016",
+        "2018": "Year: 2018",
+        "2020": "Year: 2020"
+      }
+    ]
+  },
+  "mark": {
+    "type": "text",
+    "align": "right",
+    "baseline": "bottom",
+    "x": "width",
+    "y": 0
+  },
+  "encoding": {"text": {"field": {"repeat": "repeat"}}}
+}
+```
+
+</div>
 ---
 layout: default
 ---
@@ -1207,21 +1294,21 @@ zoom: 0.74
 # Small multiples with `repeat` solution preview
 
 <VegaLitePlayground
-  title="Six repeated choropleth views"
+  title="Solution preview: three columns and a blue colour scheme"
   :height="340"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     title: 'Median house price per suburb',
     repeat: ['2010', '2012', '2014', '2016', '2018', '2020'],
-    columns: 2,
+    columns: 3,
     spec: {
       projection: {
         type: 'equirectangular',
         center: [144.4, -37.6],
         scale: 21000,
       },
-      width: 210,
-      height: 160,
+      width: 160,
+      height: 145,
       layer: [
         {
           data: {
@@ -1253,7 +1340,7 @@ zoom: 0.74
             color: {
               field: { repeat: 'repeat' },
               type: 'quantitative',
-              scale: { domain: [400000, 1800000], scheme: 'reds' },
+              scale: { domain: [400000, 1800000], scheme: 'blues' },
               legend: { format: '.2s', title: 'Median price' },
             },
             tooltip: [
@@ -1293,38 +1380,6 @@ zoom: 0.74
     },
   }"
 />
-
-
-::right::
-
-<div style="overflow-y: auto; max-height: 460px;">
-
-```json {75-86|87-93|94|all} {lines:true,startLine:74}
-{
-  "data": {
-    "values": [
-      {
-        "2010": "Year: 2010",
-        "2012": "Year: 2012",
-        "2014": "Year: 2014",
-        "2016": "Year: 2016",
-        "2018": "Year: 2018",
-        "2020": "Year: 2020"
-      }
-    ]
-  },
-  "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "bottom",
-    "x": "width",
-    "y": 0
-  },
-  "encoding": {"text": {"field": {"repeat": "repeat"}}}
-}
-```
-
-</div>
 ---
 layout: default
 ---
