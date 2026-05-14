@@ -10,17 +10,14 @@ drawings:
   persist: false
 transition: slide-left
 ---
-
 # FIT2179 Data Visualisation Week 10
 
 Advanced interactions and multiple views in Vega-Lite
 
 Songhai Fan · Monash University
-
 ---
 layout: default
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Session plan</p>
 
 # Today's agenda
@@ -32,11 +29,9 @@ layout: default
 | End | Exercise time, questions, and Test 2 reminder |
 
 Today is mainly about reading Vega-Lite code patterns and then reusing them in your `DV2`.
-
 ---
 layout: default
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Studio goals</p>
 
 # By the end of today
@@ -46,42 +41,19 @@ layout: default
 - use parameters for sliders and dropdowns
 - build small multiples with `repeat`
 - recognise which pattern is useful for your `DV2`
-
 ---
 layout: section
 ---
-
 # Part 1
 
 Overview + detail
-
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 1</p>
-
-# Build overview + detail
-
-Starting from the earthquake stacked area chart:
-
-- put the stacked area chart in the first view
-- add a short line chart as the second view
-- define a brush on the line chart
-- use the brush to filter or zoom the main chart
-
-Make each view work separately first. Then connect them.
-
-
 ---
 layout: default
 zoom: 0.78
 ---
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Full demo</p>
-
-# Overview + detail
+# Overview + detail demo
 
 <VegaLitePlayground
   title="Brush the lower chart to zoom the upper chart"
@@ -128,12 +100,10 @@ zoom: 0.78
     ],
   }"
 />
-
 ---
 layout: two-cols
 zoom: 0.88
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # `vconcat`
@@ -178,12 +148,10 @@ zoom: 0.88
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.88
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Brush selection
@@ -214,15 +182,28 @@ zoom: 0.88
 ```
 
 </div>
+---
+layout: default
+---
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 1</p>
 
+# Build overview + detail
+
+Starting from the earthquake stacked area chart:
+
+- put the stacked area chart in the first view
+- add a short line chart as the second view
+- define a brush on the line chart
+- use the brush to filter or zoom the main chart
+
+Make each view work separately first. Then connect them.
 ---
 layout: default
 zoom: 0.78
 ---
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Full demo</p>
-
-# Overview + detail
+# Overview + detail solution preview
 
 <VegaLitePlayground
   title="Brush the lower chart to zoom the upper chart"
@@ -269,34 +250,15 @@ zoom: 0.78
     ],
   }"
 />
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 1</p>
-
-# Build overview + detail
-
-Starting from the earthquake stacked area chart:
-
-- put the stacked area chart in the first view
-- add a short line chart as the second view
-- define a brush on the line chart
-- use the brush to filter or zoom the main chart
-
-Make each view work separately first. Then connect them.
-
 ---
 layout: section
 ---
-
 # Part 2
 
 Coordinated views
-
 ---
-
+layout: default
+---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Coordinated earthquake views demo
@@ -401,12 +363,10 @@ Coordinated views
     config: { title: { fontSize: 13 } },
   }"
 />
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Three linked views
@@ -444,12 +404,10 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Map filter and colour scale
@@ -483,12 +441,10 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Filter vs zoom
@@ -525,12 +481,10 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Annotation transform
@@ -564,9 +518,9 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
-
+layout: default
+---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 2</p>
 
 # Coordinated view practice
@@ -586,7 +540,6 @@ zoom: 0.86
 layout: default
 zoom: 0.73
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
 # Coordinated view solution preview
@@ -691,21 +644,15 @@ zoom: 0.73
     config: { title: { fontSize: 13 } },
   }"
 />
-
-
----
-layout: default
-zoom: 0.73
 ---
 layout: section
 ---
-
 # Part 3
 
 Parameters for maps
-
 ---
-
+layout: default
+---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Choropleth with controls demo
@@ -791,12 +738,10 @@ Parameters for maps
     ],
   }"
 />
-
 ---
 layout: two-cols
 zoom: 0.84
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Year and zoom sliders
@@ -838,12 +783,10 @@ zoom: 0.84
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.84
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Map centre dropdown
@@ -877,12 +820,10 @@ zoom: 0.84
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Projection and base layer
@@ -925,12 +866,10 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Lookup, filter, and encoding
@@ -982,9 +921,9 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
-
+layout: default
+---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice</p>
 
 # Why load the CSV first?
@@ -998,7 +937,6 @@ zoom: 0.86
 layout: default
 zoom: 0.72
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
 # Choropleth with controls solution preview
@@ -1084,23 +1022,15 @@ zoom: 0.72
     ],
   }"
 />
-
-
----
-layout: default
-zoom: 0.72
----
-layout: default
 ---
 layout: section
 ---
-
 # Part 4
 
 Small multiples
-
 ---
-
+layout: default
+---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Small multiples with `repeat` demo
@@ -1192,12 +1122,10 @@ Small multiples
     },
   }"
 />
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # `repeat`
@@ -1245,12 +1173,10 @@ zoom: 0.86
 ```
 
 </div>
-
 ---
 layout: two-cols
 zoom: 0.86
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Manual year labels
@@ -1262,7 +1188,6 @@ zoom: 0.86
 ---
 layout: default
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice</p>
 
 # Modify the small multiples
@@ -1273,12 +1198,10 @@ Try one change before looking at the preview again:
 - change `columns` from `2` to `3`
 - remove the text label layer and compare readability
 - change the colour scheme
-
 ---
 layout: default
 zoom: 0.74
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
 # Small multiples with `repeat` solution preview
@@ -1402,14 +1325,9 @@ zoom: 0.74
 ```
 
 </div>
-
----
-layout: default
-zoom: 0.74
 ---
 layout: default
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Choosing a pattern</p>
 
 # Use the pattern that matches the task
@@ -1420,11 +1338,9 @@ layout: default
 | coordinated views | multiple charts should respond to one selection |
 | bound parameters | users need sliders or dropdown controls |
 | `repeat` | you want the same chart repeated for several fields |
-
 ---
 layout: default
 ---
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Reminder</p>
 
 # Before next week
