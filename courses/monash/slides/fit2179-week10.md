@@ -134,58 +134,6 @@ layout: two-cols
 zoom: 0.88
 ---
 
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
-
-# Overview + detail demo
-
-<VegaLitePlayground
-  title="Brush the lower chart to zoom the upper chart"
-  :height="300"
-  :initialSpec="{
-    '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
-    data: {
-      url: 'https://raw.githubusercontent.com/vega/vega-datasets/next/data/sp500.csv',
-    },
-    vconcat: [
-      {
-        width: 480,
-        height: 220,
-        mark: 'area',
-        encoding: {
-          x: {
-            field: 'date',
-            type: 'temporal',
-            scale: { domain: { param: 'brush' } },
-            axis: { title: '' },
-          },
-          y: { field: 'price', type: 'quantitative' },
-        },
-      },
-      {
-        width: 480,
-        height: 60,
-        mark: 'area',
-        params: [
-          {
-            name: 'brush',
-            select: { type: 'interval', encodings: ['x'] },
-          },
-        ],
-        encoding: {
-          x: { field: 'date', type: 'temporal' },
-          y: {
-            field: 'price',
-            type: 'quantitative',
-            axis: { tickCount: 3, grid: false },
-          },
-        },
-      },
-    ],
-  }"
-/>
-
----
-
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # `vconcat`
