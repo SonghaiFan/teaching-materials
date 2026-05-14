@@ -55,6 +55,80 @@ layout: section
 
 Overview + detail
 
+
+---
+layout: default
+---
+
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 1</p>
+
+# Build overview + detail
+
+Starting from the earthquake stacked area chart:
+
+- put the stacked area chart in the first view
+- add a short line chart as the second view
+- define a brush on the line chart
+- use the brush to filter or zoom the main chart
+
+Make each view work separately first. Then connect them.
+
+
+---
+layout: default
+zoom: 0.78
+---
+
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Full demo</p>
+
+# Overview + detail
+
+<VegaLitePlayground
+  title="Brush the lower chart to zoom the upper chart"
+  :height="400"
+  :initialSpec="{
+    '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
+    data: {
+      url: 'https://raw.githubusercontent.com/vega/vega-datasets/next/data/sp500.csv',
+    },
+    vconcat: [
+      {
+        width: 460,
+        height: 220,
+        mark: 'area',
+        encoding: {
+          x: {
+            field: 'date',
+            type: 'temporal',
+            scale: { domain: { param: 'brush' } },
+            axis: { title: '' },
+          },
+          y: { field: 'price', type: 'quantitative' },
+        },
+      },
+      {
+        width: 460,
+        height: 60,
+        mark: 'line',
+        params: [
+          {
+            name: 'brush',
+            select: { type: 'interval', encodings: ['x'] },
+          },
+        ],
+        encoding: {
+          x: { field: 'date', type: 'temporal' },
+          y: {
+            field: 'price',
+            type: 'quantitative',
+            axis: { tickCount: 3, grid: false },
+          },
+        },
+      },
+    ],
+  }"
+/>
+
 ---
 layout: two-cols
 zoom: 0.88
@@ -141,77 +215,6 @@ zoom: 0.88
 
 </div>
 
----
-layout: default
-zoom: 0.78
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Full demo</p>
-
-# Overview + detail
-
-<VegaLitePlayground
-  title="Brush the lower chart to zoom the upper chart"
-  :height="300"
-  :initialSpec="{
-    '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
-    data: {
-      url: 'https://raw.githubusercontent.com/vega/vega-datasets/next/data/sp500.csv',
-    },
-    vconcat: [
-      {
-        width: 480,
-        height: 220,
-        mark: 'area',
-        encoding: {
-          x: {
-            field: 'date',
-            type: 'temporal',
-            scale: { domain: { param: 'brush' } },
-            axis: { title: '' },
-          },
-          y: { field: 'price', type: 'quantitative' },
-        },
-      },
-      {
-        width: 480,
-        height: 60,
-        mark: 'area',
-        params: [
-          {
-            name: 'brush',
-            select: { type: 'interval', encodings: ['x'] },
-          },
-        ],
-        encoding: {
-          x: { field: 'date', type: 'temporal' },
-          y: {
-            field: 'price',
-            type: 'quantitative',
-            axis: { tickCount: 3, grid: false },
-          },
-        },
-      },
-    ],
-  }"
-/>
-
----
-layout: default
----
-
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 1</p>
-
-# Build overview + detail
-
-Starting from the earthquake stacked area chart:
-
-- put the stacked area chart in the first view
-- add a short line chart as the second view
-- define a brush on the line chart
-- use the brush to filter or zoom the main chart
-
-Make each view work separately first. Then connect them.
 
 ---
 layout: section
@@ -395,7 +398,7 @@ zoom: 0.73
 
 <VegaLitePlayground
   title="Brush the line chart to filter the map and zoom the area chart"
-  :height="320"
+  :height="450"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -403,7 +406,7 @@ zoom: 0.73
     },
     vconcat: [
       {
-        width: 480,
+        width: 450,
         height: 230,
         projection: { type: 'equalEarth', rotate: [-150, 0, 0] },
         layer: [
