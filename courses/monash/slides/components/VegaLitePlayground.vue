@@ -84,7 +84,7 @@ async function renderSpec() {
 
     target.innerHTML = ''
     await window.vegaEmbed(target, parsed, {
-      actions: false,
+      // actions: false,
       renderer: 'svg',
     })
   }
@@ -120,7 +120,7 @@ onMounted(() => {
     <div class="grid">
       <div class="panel">
         <p class="panel-title">Spec</p>
-        <textarea v-model="specText" class="editor" spellcheck="false" />
+        <textarea v-model="specText" class="editor" :style="{ height: `${height}px` }" spellcheck="false" />
       </div>
 
       <div class="panel">
@@ -196,7 +196,6 @@ onMounted(() => {
 
 .editor {
   width: 100%;
-  height: 320px;
   box-sizing: border-box;
   border: 1px solid rgba(15, 23, 42, 0.16);
   background: #f8fafc;
@@ -208,8 +207,39 @@ onMounted(() => {
 .preview {
   border: 1px solid rgba(15, 23, 42, 0.16);
   background: white;
-  overflow: auto;
+  overflow: hidden;
   padding: 0.35rem;
+  box-sizing: border-box;
+}
+
+.preview :deep(.vega-embed) {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.preview :deep(svg) {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.preview :deep(.vega-bindings) {
+  font-size: 0.68rem;
+  line-height: 1.2;
+}
+
+.preview :deep(.vega-bind) {
+  margin-bottom: 0.12rem;
+}
+
+.preview :deep(input[type="range"]) {
+  width: 7rem;
+  max-width: 45%;
+}
+
+.preview :deep(select) {
+  max-width: 9rem;
 }
 
 .error {

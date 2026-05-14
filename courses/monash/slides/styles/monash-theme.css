@@ -9,9 +9,9 @@
   --monash-rule: rgba(15, 23, 42, 0.08);
   --monash-primary: #006dae;
   --monash-callout: #0369a1;
-  --monash-code-bg: #f6f8fa;
+  --monash-code-bg: rgba(248, 250, 252, 0.72);
   --monash-code-fg: #24292f;
-  --monash-code-border: #d0d7de;
+  --monash-code-border: rgba(15, 23, 42, 0.08);
   --monash-code-inline-bg: rgba(175, 184, 193, 0.2);
   --monash-heading: "Arial Narrow", "Helvetica Neue Condensed", "Helvetica Neue", Arial, sans-serif;
   --monash-body: "Open Sans", Arial, sans-serif;
@@ -220,10 +220,10 @@
 }
 
 .slidev-layout pre {
-  margin-top: 1rem;
-  padding: 1rem;
-  border: 1px solid var(--monash-border);
-  background: rgba(255, 255, 255, 0.74);
+  margin-top: 0.7rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
   overflow: auto;
 }
 
@@ -233,8 +233,9 @@
 }
 
 .slidev-layout .slidev-code-wrapper {
-  border: 1px solid var(--monash-code-border);
-  border-radius: var(--slidev-code-radius);
+  border: 0;
+  border-left: 2px solid var(--monash-code-border);
+  border-radius: 0;
   overflow: hidden;
 }
 
@@ -253,12 +254,13 @@
 }
 
 .slidev-layout .slidev-code {
-  border-top: 0;
+  border: 0;
+  padding: 0.72rem 0.85rem !important;
 }
 
 .slidev-layout .slidev-code-block-title,
 .slidev-layout .slidev-code-group-tabs {
-  border-bottom: 1px solid var(--monash-code-border);
+  border-bottom: 0;
 }
 
 .slidev-layout :not(pre) > code {

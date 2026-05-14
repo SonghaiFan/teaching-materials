@@ -49,15 +49,15 @@ layout: section
 Overview + detail
 ---
 layout: default
-zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Overview + detail demo
 
 <VegaLitePlayground
   title="Brush the lower chart to zoom the upper chart"
-  :height="400"
+  :height="300"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -100,10 +100,12 @@ zoom: 0.78
     ],
   }"
 />
+
 ---
 layout: two-cols
-zoom: 0.88
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # `vconcat`
@@ -116,7 +118,7 @@ zoom: 0.88
 
 ::right::
 
-<div style="overflow-y: auto; max-height: 500px;">
+<div style="overflow-y: auto; max-height: 580px;">
 
 ```json {6|8-9|12|17-18|all} {lines:true,startLine:1}
 {
@@ -148,10 +150,12 @@ zoom: 0.88
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.88
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Brush selection
@@ -166,7 +170,7 @@ zoom: 0.88
 
 <div style="overflow-y: auto; max-height: 500px;">
 
-```json {15|all} {lines:true,startLine:12}
+```json {all} {lines:true,startLine:12}
 "x": {
   "field": "date",
   "type": "temporal",
@@ -175,13 +179,14 @@ zoom: 0.88
 }
 ```
 
-```json {25-27|26|all} {lines:true,startLine:25}
+```json {all} {lines:true,startLine:25}
 "params": [
   {"name": "brush", "select": {"type": "interval", "encodings": ["x"]}}
 ]
 ```
 
 </div>
+
 ---
 layout: default
 ---
@@ -201,13 +206,14 @@ Make each view work separately first. Then connect them.
 layout: default
 zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
 # Overview + detail solution preview
 
 <VegaLitePlayground
   title="Earthquake overview + detail solution preview"
-  :height="340"
+  :height="400"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -215,8 +221,8 @@ zoom: 0.78
     },
     vconcat: [
       {
-        width: 480,
-        height: 230,
+        width: 360,
+        height: 170,
         transform: [
           {
             bin: { step: 0.5, extent: [5, 7] },
@@ -242,8 +248,8 @@ zoom: 0.78
         },
       },
       {
-        width: 480,
-        height: 60,
+        width: 360,
+        height: 48,
         mark: 'line',
         title: 'Brush here to select a time period',
         params: [
@@ -269,6 +275,7 @@ zoom: 0.78
     ],
   }"
 />
+
 ---
 layout: section
 ---
@@ -277,14 +284,16 @@ layout: section
 Coordinated views
 ---
 layout: default
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Coordinated earthquake views demo
 
 <VegaLitePlayground
   title="Coordinated earthquake views demo"
-  :height="360"
+  :height="420"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -292,7 +301,7 @@ layout: default
     },
     vconcat: [
       {
-        width: 480,
+        width: 400,
         height: 230,
         projection: { type: 'equalEarth', rotate: [-150, 0, 0] },
         layer: [
@@ -382,40 +391,43 @@ layout: default
     config: { title: { fontSize: 13 } },
   }"
 />
+
 ---
 layout: two-cols
-zoom: 0.86
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Three linked views
 
-- Lines `6-141`: `vconcat` combines three vertically stacked views.
-- Lines `7-89`: the map view.
-- Lines `90-113`: the line chart view that defines `time_brush`.
-- Lines `114-140`: the stacked area chart view.
+- `vconcat` combines three vertically stacked views.
+- The first view is the map.
+- The second view is the line chart that defines `time_brush`.
+- The third view is the stacked area chart.
 - The same named parameter can control multiple views.
 
 ::right::
 
 <div style="overflow-y: auto; max-height: 500px;">
 
-```json {6|7-12|13-18|19-25|all} {lines:true,startLine:6}
+```json {1|3-8|10-15|17-22|all} {lines:true}
 "vconcat": [
   {
-    "width": "container",
-    "height": 400,
+    "width": 400,
+    "height": 230,
     "projection": {"type": "equalEarth", "rotate": [-150, 0, 0]},
     "layer": [...]
   },
   {
-    "width": "container",
+    "width": 480,
     "height": 60,
     "mark": "line",
     "params": [...]
   },
   {
-    "width": "container",
+    "width": 480,
+    "height": 110,
     "mark": "area",
     "encoding": {...}
   }
@@ -423,25 +435,27 @@ zoom: 0.86
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.86
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Map filter and colour scale
 
-- Line `38`: the map only shows earthquakes inside `time_brush`.
-- Lines `40-41`: longitude and latitude place circles on the map.
-- Lines `42-45`: colour encodes magnitude.
-- Lines `46-50`: a threshold scale creates magnitude classes.
+- The map only shows earthquakes inside `time_brush`.
+- Longitude and latitude place circles on the map.
+- Colour encodes magnitude.
+- A threshold scale creates magnitude classes.
 - The colour bins match the stacked area chart later.
 
 ::right::
 
 <div style="overflow-y: auto; max-height: 460px;">
 
-```json {38|40-41|42-50|all} {lines:true,startLine:38}
+```json {1|3-4|5-13|9-12|all} {lines:true}
 "transform": [{"filter": {"param": "time_brush"}}],
 "encoding": {
   "longitude": {"field": "longitude", "type": "quantitative"},
@@ -460,17 +474,19 @@ zoom: 0.86
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.86
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Filter vs zoom
 
-- Lines `95-100`: the line chart creates the `time_brush` parameter.
-- Line `38`: the map filters rows to the selected time period.
-- Line `128`: the area chart keeps all rows but zooms the x-axis.
+- The line chart creates the `time_brush` parameter.
+- The map filters rows to the selected time period.
+- The area chart keeps all rows but zooms the x-axis.
 - Use `filter` when the marks should disappear.
 - Use `scale.domain` when the view should zoom into the selected range.
 
@@ -478,7 +494,7 @@ zoom: 0.86
 
 <div style="overflow-y: auto; max-height: 430px;">
 
-```json {95-100|all} {lines:true,startLine:95}
+```json {1-6|all} {lines:true}
 "params": [
   {
     "name": "time_brush",
@@ -487,11 +503,11 @@ zoom: 0.86
 ]
 ```
 
-```json {38|all} {lines:true,startLine:38}
+```json {all} {lines:true}
 "transform": [{"filter": {"param": "time_brush"}}]
 ```
 
-```json {128|all} {lines:true,startLine:125}
+```json {all} {lines:true}
 "x": {
   "field": "time",
   "timeUnit": "yearmonth",
@@ -500,72 +516,39 @@ zoom: 0.86
 ```
 
 </div>
----
-layout: two-cols
-zoom: 0.86
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
-# Annotation transform
-
-- Lines `63-64`: rank earthquakes by magnitude, largest first.
-- Line `66`: keep only the highest ranked row.
-- Lines `67-70`: create text for the annotation.
-- Lines `71-74`: split the text into two lines.
-- This pattern is useful when annotation depends on the current selection.
-
-::right::
-
-<div style="overflow-y: auto; max-height: 460px;">
-
-```json {63-64|66|67-70|71-74|all} {lines:true,startLine:61}
-"transform": [
-  {
-    "window": [{"op": "rank", "as": "ranking"}],
-    "sort": [{"field": "mag", "order": "descending"}]
-  },
-  {"filter": "datum.ranking == 1"},
-  {
-    "calculate": "'The worst earthquake of; the selected period: ' + datum['mag']",
-    "as": "text_annotation_raw"
-  },
-  {
-    "calculate": "split(datum.text_annotation_raw, ';')",
-    "as": "text_annotation"
-  }
-]
-```
-
-</div>
 ---
 layout: default
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Exercise 2</p>
 
 # Coordinated view practice
 
-## Practice 1: greatest earthquake mark
+## Practice 1: layout
+
+- change the layout to match Figure 6 from the studio handout
+- place the map and stacked area chart side by side
+- keep the filtering line chart underneath
+
+## Practice 2: greatest earthquake mark
 
 - change the size and shape of the mark for the greatest earthquake
 - example: use a `point` mark with a custom star-shaped SVG path
 - hint: check the `shape` property for Vega-Lite point marks
 
-## Practice 2: layout
-
-- change the layout to match Figure 6 from the studio handout
-- place the map and stacked area chart side by side
-- keep the filtering line chart underneath
 ---
 layout: default
-zoom: 0.73
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
 # Coordinated view solution preview
 
 <VegaLitePlayground
   title="Brush the line chart to filter the map and zoom the area chart"
-  :height="320"
+  :height="420"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     data: {
@@ -575,7 +558,7 @@ zoom: 0.73
       {
         hconcat: [
           {
-            width: 330,
+            width: 340,
             height: 230,
             title: 'Earthquakes above a magnitude of 5',
             projection: { type: 'equalEarth', rotate: [-150, 0, 0] },
@@ -641,7 +624,7 @@ zoom: 0.73
             ],
           },
           {
-            width: 260,
+            width: 250,
             height: 230,
             transform: [
               {
@@ -671,7 +654,7 @@ zoom: 0.73
         ],
       },
       {
-        width: 630,
+        width: 720,
         height: 60,
         mark: 'line',
         title: 'Brush here to select a time period',
@@ -700,6 +683,7 @@ zoom: 0.73
     config: { title: { fontSize: 13 } },
   }"
 />
+
 ---
 layout: section
 ---
@@ -708,18 +692,20 @@ layout: section
 Parameters for maps
 ---
 layout: default
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
 
 # Choropleth with controls demo
 
 <VegaLitePlayground
   title="Use the controls to change year, zoom, and centre"
-  :height="340"
+  :height="420"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     title: 'Median house price per suburb (2010-2020)',
-    width: 500,
+    width: 480,
     height: 320,
     params: [
       {
@@ -794,10 +780,12 @@ layout: default
     ],
   }"
 />
+
 ---
 layout: two-cols
-zoom: 0.84
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Year and zoom sliders
@@ -809,7 +797,7 @@ zoom: 0.84
 
 ::right::
 
-<div style="overflow-y: auto; max-height: 460px;">
+<div style="overflow-y: auto; max-height: 600px;">
 
 ```json {7-17|18-28|all} {lines:true,startLine:6}
 "params": [
@@ -839,10 +827,12 @@ zoom: 0.84
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.84
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Map centre dropdown
@@ -855,7 +845,7 @@ zoom: 0.84
 
 ::right::
 
-<div style="overflow-y: auto; max-height: 460px;">
+<div style="overflow-y: auto; max-height: 600px;">
 
 ```json {29-43|31|34-39|40|all} {lines:true,startLine:29}
 {
@@ -876,25 +866,27 @@ zoom: 0.84
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.86
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Projection and base layer
 
 - Lines `45-49`: the projection reads `center_to` and `zoom_level`.
 - Lines `47-48`: `expr` means the value comes from a parameter expression.
-- Lines `51-69`: the base map shows suburbs with no available data.
-- Lines `56-60`: create a tooltip note for missing data.
-- Lines `62-68`: draw the grey base-map polygons.
+- Lines `51-69`: the first layer draws the grey suburb polygons.
+- This base layer gives the choropleth a visible background.
+- We will turn this into a missing-data tooltip in the practice.
 
 ::right::
 
-<div style="overflow-y: auto; max-height: 460px;">
+<div style="overflow-y: auto; max-height: 600px;">
 
-```json {47-48|all} {lines:true,startLine:45}
+```json {all}{lines:true,startLine:45}
 "projection": {
   "type": "equirectangular",
   "center": {"expr": "center_to"},
@@ -902,45 +894,32 @@ zoom: 0.86
 }
 ```
 
-```json {56-60|all} {lines:true,startLine:56}
-"transform": [
-  {
-    "calculate": "'Data is not available in ' + datum.properties.NAME",
-    "as": "note"
-  }
-]
-```
-
-```json {62-68|all} {lines:true,startLine:62}
+```json {all}{lines:true,startLine:62}
 "mark": {
   "type": "geoshape",
   "fill": "#ddd",
   "stroke": "white",
   "strokeWidth": 1
-},
-"encoding": {"tooltip": {"field": "note"}}
+}
 ```
 
 </div>
+
 ---
 layout: two-cols
-zoom: 0.86
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
 
 # Lookup, filter, and encoding
 
 - Lines `76-87`: join each CSV row to its suburb geometry.
 - Line `89`: keep only rows from the selected year.
-- Line `93`: use the joined `geo` field as the shape.
-- Lines `94-99`: colour each suburb by median price.
-- Lines `101-110`: add readable tooltip fields.
+- This is the key data join: CSV values first, matching geometry second.
+- The filter happens after the lookup so the selected year still has geometry.
 
-::right::
-
-<div style="overflow-y: auto; max-height: 430px;">
-
-```json {76-87|89|all} {lines:true,startLine:76}
+```json {76-87|89} {lines:true,startLine:76}
 "lookup": "locality",
 "from": {
   "data": {
@@ -957,147 +936,85 @@ zoom: 0.86
 {"filter": "datum.year == Year_selection"}
 ```
 
-```json {93|94-99|101-110|all} {lines:true,startLine:91}
-"mark": {"type": "geoshape", "stroke": "#fff", "strokeWidth": 0.5},
-"encoding": {
-  "shape": {"field": "geo", "type": "geojson"},
-  "color": {
-    "field": "price",
-    "type": "quantitative",
-    "title": "Price",
-    "scale": {"domain": [400000, 1800000], "scheme": "reds"},
-    "legend": {"format": ".2s"}
-  },
-  "tooltip": [
-    {"field": "locality", "type": "nominal", "title": "Suburb"},
-    {"field": "price", "type": "quantitative", "title": "Median Price"},
-    {"field": "year", "type": "quantitative", "title": "Year"}
-  ]
+::right::
+
+
+Thus the original data：
+```json
+{
+  "locality": "MURNUNGING",
+  "year": 2018,
+  "price": 500000
 }
 ```
 
-</div>
+After `lookup`：
+
+```json
+{
+  "locality": "MURNUNGING",
+  "year": 2018,
+  "price": 500000,
+  "geo": {
+    "type": "Polygon",
+    "properties": {
+      "NAME": "MURNUNGING"
+    },
+    "coordinates": [...]
+  }
+}
+```
+
 ---
 layout: default
 ---
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice</p>
 
-# Why load the CSV first?
+# Try `facet`
 
-- the CSV has one row per `suburb-year`
-- the TopoJSON has one feature per suburb
-- the selected year is a row filter, so the year lives naturally in the CSV layer
-- after filtering, each selected CSV row looks up its matching geometry
-- if suburb names do not match, the geometry will be missing
+Convert the house-price small multiple from `repeat` to `facet`:
+
+- use the long-format CSV
+- facet the map by `year`
+- use `columns: 2`
+- remove the manual year-label layer
+- compare what you gain and lose compared with `repeat`
 ---
 layout: default
-zoom: 0.72
+zoom: 0.78
 ---
+
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
 
-# Choropleth with controls solution preview
+# Small multiples with `facet` solution preview
 
 <VegaLitePlayground
-  title="Use the controls to change year, zoom, and centre"
-  :height="340"
-  :initialSpec="{
-    '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
-    title: 'Median house price per suburb (2010-2020)',
-    width: 500,
-    height: 320,
-    params: [
-      {
-        name: 'Year_selection',
-        value: 2018,
-        bind: { input: 'range', min: 2010, max: 2020, step: 1, name: 'Year: ' },
-      },
-      {
-        name: 'zoom_level',
-        value: 30000,
-        bind: { input: 'range', min: 3500, max: 60000, step: 100, name: 'Zoom: ' },
-      },
-      {
-        name: 'center_to',
-        value: [145, -37.95],
-        bind: {
-          input: 'select',
-          options: [[145, -37.95], [144.3, -38.1], [144.9, -36.7], [147.1, -38.1]],
-          labels: ['Melbourne CBD', 'Geelong', 'Bendigo', 'Sale'],
-          name: 'Map Centre: ',
-        },
-      },
-    ],
-    projection: {
-      type: 'equirectangular',
-      center: { expr: 'center_to' },
-      scale: { expr: 'zoom_level' },
-    },
-    layer: [
-      {
-        data: {
-          url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-          format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-        },
-        mark: { type: 'geoshape', fill: '#ddd', stroke: 'white', strokeWidth: 1 },
-      },
-      {
-        data: {
-          url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/house_price_by_suburb_long_format.csv',
-        },
-        transform: [
-          {
-            lookup: 'locality',
-            from: {
-              data: {
-                url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-                format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-              },
-              key: 'properties.NAME',
-            },
-            as: 'geo',
-          },
-          { filter: 'datum.year == Year_selection' },
-        ],
-        mark: { type: 'geoshape', stroke: '#fff', strokeWidth: 0.5 },
-        encoding: {
-          shape: { field: 'geo', type: 'geojson' },
-          color: {
-            field: 'price',
-            type: 'quantitative',
-            title: 'Price',
-            scale: { domain: [400000, 1800000], scheme: 'reds' },
-            legend: { format: '.2s' },
-          },
-          tooltip: [
-            { field: 'locality', type: 'nominal', title: 'Suburb' },
-            { field: 'price', type: 'quantitative', title: 'Median Price', format: ',' },
-            { field: 'year', type: 'quantitative', title: 'Year' },
-          ],
-        },
-      },
-    ],
-  }"
-/>
----
-layout: section
----
-# Part 4
-
-Small multiples
----
-layout: default
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Demo first</p>
-
-# Small multiples with `repeat` demo
-
-<VegaLitePlayground
-  title="Six repeated choropleth views"
-  :height="340"
+  title="Solution preview: faceted long-format data"
+  :height="450"
   :initialSpec="{
     '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
     title: 'Median house price per suburb',
-    repeat: ['2010', '2012', '2014', '2016', '2018', '2020'],
+    data: {
+      url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/house_price_by_suburb_long_format.csv',
+    },
+    transform: [
+      {
+        lookup: 'locality',
+        from: {
+          data: {
+            url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
+            format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
+          },
+          key: 'properties.NAME',
+        },
+        as: 'geo',
+      },
+    ],
+    facet: {
+      field: 'year',
+      type: 'ordinal',
+      header: { title: null, labelAngle: 0 },
+    },
     columns: 2,
     spec: {
       projection: {
@@ -1105,281 +1022,41 @@ layout: default
         center: [144.4, -37.6],
         scale: 21000,
       },
-      width: 210,
-      height: 160,
-      layer: [
-        {
-          data: {
-            url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-            format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-          },
-          mark: { type: 'geoshape', fill: '#ddd', stroke: 'white', strokeWidth: 1 },
+      width: 200,
+      height: 118,
+      mark: { type: 'geoshape', stroke: '#fff', strokeWidth: 0.5 },
+      encoding: {
+        shape: { field: 'geo', type: 'geojson' },
+        color: {
+          field: 'price',
+          type: 'quantitative',
+          title: 'Median price',
+          scale: { domain: [400000, 1800000], scheme: 'reds' },
+          legend: { format: '.2s' },
         },
-        {
-          data: {
-            url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/house_price_by_suburb_wide_format.csv',
-          },
-          transform: [
-            {
-              lookup: 'locality',
-              from: {
-                data: {
-                  url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-                  format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-                },
-                key: 'properties.NAME',
-              },
-              as: 'geo',
-            },
-          ],
-          mark: { type: 'geoshape', stroke: '#fff', strokeWidth: 0.5 },
-          encoding: {
-            shape: { field: 'geo', type: 'geojson' },
-            color: {
-              field: { repeat: 'repeat' },
-              type: 'quantitative',
-              scale: { domain: [400000, 1800000], scheme: 'reds' },
-              legend: { format: '.2s', title: 'Median price' },
-            },
-            tooltip: [
-              { field: 'locality', type: 'nominal', title: 'Suburb' },
-              {
-                field: { repeat: 'repeat' },
-                type: 'quantitative',
-                title: 'Median Price',
-                format: ',',
-              },
-            ],
-          },
-        },
-        {
-          data: {
-            values: [
-              {
-                '2010': 'Year: 2010',
-                '2012': 'Year: 2012',
-                '2014': 'Year: 2014',
-                '2016': 'Year: 2016',
-                '2018': 'Year: 2018',
-                '2020': 'Year: 2020',
-              },
-            ],
-          },
-          mark: {
-            type: 'text',
-            align: 'right',
-            baseline: 'bottom',
-            x: 'width',
-            y: 0,
-          },
-          encoding: { text: { field: { repeat: 'repeat' } } },
-        },
-      ],
-    },
-  }"
-/>
----
-layout: two-cols
-zoom: 0.86
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
-
-# `repeat`
-
-- Line `4`: create one view for each listed field.
-- Line `5`: arrange the repeated views in two columns.
-- Line `6`: `spec` is the template reused for every view.
-- Line `58`: colour uses the current repeated field.
-- Line `66`: tooltip also uses the current repeated field.
-
-::right::
-
-<div style="overflow-y: auto; max-height: 500px;">
-
-```json {4|5|6|all} {lines:true,startLine:1}
-{
-  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": "Median house price per suburb",
-  "repeat": ["2010", "2012", "2014", "2016", "2018", "2020"],
-  "columns": 2,
-  "spec": {
-    ...
-  }
-}
-```
-
-```json {58|66|all} {lines:true,startLine:55}
-"encoding": {
-  "shape": {"field": "geo", "type": "geojson"},
-  "color": {
-    "field": {"repeat": "repeat"},
-    "type": "quantitative",
-    "scale": {"domain": [400000, 1800000], "scheme": "reds"}
-  },
-  "tooltip": [
-    {"field": "locality", "type": "nominal", "title":
-    "Suburb"},
-    {
-      "field": {"repeat": "repeat"},
-      "type": "quantitative",
-      "title": "Median Price"
-    }
-  ]
-}
-```
-
-</div>
----
-layout: two-cols
-zoom: 0.86
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Explain the code</p>
-
-# Manual year labels
-
-- Lines `75-86`: create one inline row containing labels for every year.
-- Lines `87-93`: draw a text mark in the top-right of each repeated view.
-- Line `94`: choose the correct label using the current repeated field.
-- This workaround is needed because repeated view titles are not easy to set dynamically.
-
-::right::
-
-<div style="overflow-y: auto; max-height: 460px;">
-
-```json {75-86|87-93|94|all} {lines:true,startLine:74}
-{
-  "data": {
-    "values": [
-      {
-        "2010": "Year: 2010",
-        "2012": "Year: 2012",
-        "2014": "Year: 2014",
-        "2016": "Year: 2016",
-        "2018": "Year: 2018",
-        "2020": "Year: 2020"
-      }
-    ]
-  },
-  "mark": {
-    "type": "text",
-    "align": "right",
-    "baseline": "bottom",
-    "x": "width",
-    "y": 0
-  },
-  "encoding": {"text": {"field": {"repeat": "repeat"}}}
-}
-```
-
-</div>
----
-layout: default
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Practice</p>
-
-# Modify the small multiples
-
-Try one change before looking at the preview again:
-
-- change the years in `repeat`
-- change `columns` from `2` to `3`
-- remove the text label layer and compare readability
-- change the colour scheme
----
-layout: default
-zoom: 0.74
----
-<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Solution preview</p>
-
-# Small multiples with `repeat` solution preview
-
-<VegaLitePlayground
-  title="Solution preview: three columns and a blue colour scheme"
-  :height="340"
-  :initialSpec="{
-    '$schema': 'https://vega.github.io/schema/vega-lite/v5.json',
-    title: 'Median house price per suburb',
-    repeat: ['2010', '2012', '2014', '2016', '2018', '2020'],
-    columns: 3,
-    spec: {
-      projection: {
-        type: 'equirectangular',
-        center: [144.4, -37.6],
-        scale: 21000,
+        tooltip: [
+          { field: 'locality', type: 'nominal', title: 'Suburb' },
+          { field: 'price', type: 'quantitative', title: 'Median Price', format: ',' },
+          { field: 'year', type: 'ordinal', title: 'Year' },
+        ],
       },
-      width: 160,
-      height: 145,
-      layer: [
-        {
-          data: {
-            url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-            format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-          },
-          mark: { type: 'geoshape', fill: '#ddd', stroke: 'white', strokeWidth: 1 },
-        },
-        {
-          data: {
-            url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/house_price_by_suburb_wide_format.csv',
-          },
-          transform: [
-            {
-              lookup: 'locality',
-              from: {
-                data: {
-                  url: 'https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/6_advanced_examples/data/VIC_LOCALITY_POLYGON_SHP.json',
-                  format: { type: 'topojson', feature: 'VIC_LOCALITY_POLYGON_SHP' },
-                },
-                key: 'properties.NAME',
-              },
-              as: 'geo',
-            },
-          ],
-          mark: { type: 'geoshape', stroke: '#fff', strokeWidth: 0.5 },
-          encoding: {
-            shape: { field: 'geo', type: 'geojson' },
-            color: {
-              field: { repeat: 'repeat' },
-              type: 'quantitative',
-              scale: { domain: [400000, 1800000], scheme: 'blues' },
-              legend: { format: '.2s', title: 'Median price' },
-            },
-            tooltip: [
-              { field: 'locality', type: 'nominal', title: 'Suburb' },
-              {
-                field: { repeat: 'repeat' },
-                type: 'quantitative',
-                title: 'Median Price',
-                format: ',',
-              },
-            ],
-          },
-        },
-        {
-          data: {
-            values: [
-              {
-                '2010': 'Year: 2010',
-                '2012': 'Year: 2012',
-                '2014': 'Year: 2014',
-                '2016': 'Year: 2016',
-                '2018': 'Year: 2018',
-                '2020': 'Year: 2020',
-              },
-            ],
-          },
-          mark: {
-            type: 'text',
-            align: 'right',
-            baseline: 'bottom',
-            x: 'width',
-            y: 0,
-          },
-          encoding: { text: { field: { repeat: 'repeat' } } },
-        },
-      ],
     },
   }"
 />
+
+---
+layout: default
+---
+<p class="text-xs uppercase tracking-[0.18em] text-slate-500">Pattern comparison</p>
+
+# `repeat` or `facet`?
+
+| Pattern | Good fit |
+|---|---|
+| `repeat` | repeated fields in wide-format data |
+| `repeat` | layered small multiples, like base map + data map + text label |
+| `facet` | one long-format table with a panel category, such as `year` |
+| `facet` | simpler small multiples with automatic panel labels |
 ---
 layout: default
 ---
@@ -1393,6 +1070,7 @@ layout: default
 | coordinated views | multiple charts should respond to one selection |
 | bound parameters | users need sliders or dropdown controls |
 | `repeat` | you want the same chart repeated for several fields |
+| `facet` | you want one chart per category in long-format data |
 ---
 layout: default
 ---
