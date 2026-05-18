@@ -1,0 +1,18 @@
+name: fit5196-ass2
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pandas
+  - numpy
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - matplotlib
+  - seaborn
+  - networkx
+  - openpyxl
+  - jupyter
+  - nbconvert
+  - ipykernel
+
