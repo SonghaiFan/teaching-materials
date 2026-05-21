@@ -100,31 +100,7 @@ layout: default
 
 # Pairing
 
-<PairingBoard :initial-names="[
-  'Saschia Mutongoza',
-  'Bao Nguyen',
-  'Shafneen Rahman',
-  'Vade Prasob',
-  'Lucy Dong',
-  'Sophia Hsu',
-  'Ziya Liu',
-  'Nguyen Tuong',
-  'Quinlan Karthawinata',
-  'Xiao Lu',
-  'Peng Hu',
-  'Reeon Saldanha',
-  'Max Cunningham',
-  'Sina Najafi',
-  'Aneri Shah',
-  'Roger Jiang',
-  'Peter Hajduk',
-  'Hannah McGinness',
-  'Duy Nguyen',
-  'Arnob Saha',
-  'Divyanshu Sharma',
-  'Raghav Dewan',
-  'Kai-Jen Shih',
-]" />
+<PairingBoard :initial-names="[]" />
 
 <div class="mt-5 border-l-2 border-slate-400 pl-4 text-sm text-slate-600">
 Shuffle the groups here first. The next slide will use the same order for presentation timing.

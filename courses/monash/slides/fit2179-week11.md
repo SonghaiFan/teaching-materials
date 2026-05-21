@@ -90,13 +90,15 @@ The goal is to find the most useful improvements before the final submission.
 
 ---
 layout: default
+zoom: 0.78
 ---
 
 <p class="text-xs uppercase tracking-[0.18em] text-slate-500">In-Class Tools</p>
 
 # Pairing From The Critique Forum
 
-<PairingBoard :initial-names="[]" />
+<PairingBoard :initial-names="[
+]" />
 
 <div class="mt-5 border-l-2 border-slate-400 pl-4 text-sm text-slate-600">
 Paste the names of students who posted a usable forum URL, then shuffle. Groups of three are only used when needed.
